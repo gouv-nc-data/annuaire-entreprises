@@ -49,7 +49,7 @@ export default function SearchPagination({ searchResults }: { searchResults: Sea
                 </PaginationLink>
             </PaginationItem>
             {
-                Array.from(Array(totalPages).keys()).slice(currentPage + 1, currentPage + 5 < totalPages ? currentPage + 5 : totalPages).map((item) => (
+                Array.from(Array(totalPages).keys()).slice(currentPage, currentPage + 5 < totalPages ? currentPage + 5 : totalPages).map((item) => (
                     <PaginationItem key={item + 1}>
                         <PaginationLink
                             href={createPaginationLink(item + 1)}>
