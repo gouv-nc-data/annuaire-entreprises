@@ -1,23 +1,21 @@
-import { useLoaderData } from "@remix-run/react";
-import { getSearchResultsLoader } from "~/application/search";
+import { SearchResults } from "~/domain/entity/search-results"
+import SearchResultsItem from "./search-results-item"
+import SearchPagination from "./search-pagination"
 
-export function SearchResultsList() {
-    const results = useLoaderData<typeof getSearchResultsLoader>();
-
+export function SearchResultsList({ searchResults }: { searchResults: SearchResults }) {
     return (
-        <div>
-            <h1>Results</h1>
-            <ul className="flex flex-col gap-2 divide-y-2">
+        <div className="flex flex-col gap-4">
+            <span>{`${searchResults.total_results} ${searchResults.total_results > 1 ? 'résultats' : 'résultat'}`}</span>
+            <ul className="flex flex-col gap-6">
                 {
-                    results.results.map((result) => {
+                    searchResults.results.map((result) => {
                         return (
-                            <li key={result.ridet}>
-                                <p>{result.nom_complet}</p>
-                            </li>
+                            <SearchResultsItem key={result.ridet} result={result} />
                         )
                     })
                 }
             </ul>
+            <SearchPagination searchResults={searchResults} />
         </div>
     )
 }
