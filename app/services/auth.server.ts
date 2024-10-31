@@ -3,9 +3,9 @@ import { Authenticator } from "remix-auth";
 import { sessionStorage } from "~/services/session.server";
 import { FormStrategy } from "remix-auth-form";
 
-import { User, fakeAgentUser } from "~/types/user.type";
+import { IUser, fakeAgentUser } from "~/domain/entity/user";
 
-export let authenticator = new Authenticator<User>(sessionStorage);
+export let authenticator = new Authenticator<IUser>(sessionStorage);
 
 authenticator.use(
     new FormStrategy(async ({ form }) => {

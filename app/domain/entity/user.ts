@@ -1,4 +1,4 @@
-export interface User {
+export interface IUser {
     userId: string,
     firstname: string,
     lastname: string,
@@ -10,4 +10,4 @@ export const fakeAgentUser = {
     firstname: "Agent",
     lastname: "Gouv.nc",
     email: "agent@gouv.nc"
-} as User
+} as IUser
