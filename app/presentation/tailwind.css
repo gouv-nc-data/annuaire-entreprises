@@ -73,3 +73,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .tag {
+    @apply rounded-lg flex items-center gap-2 text-xs overflow-hidden
+  }
+}
