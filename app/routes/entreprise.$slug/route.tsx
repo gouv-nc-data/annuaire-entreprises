@@ -1,3 +1,4 @@
-export default function UniteLegalRoute() {
-    return <h1>une route entreprise</h1>
-}
+import UniteLegalPage from "~/presentation/unite-legal";
+export { getUniteLegalLoader as loader } from '~/application/unite-legal/get-unite-legal-by-ridet'
+
+export default UniteLegalPage

@@ -8,7 +8,7 @@ export default function SearchPage() {
     const searchResults = useLoaderData<typeof getSearchResultsLoader>();
 
     return (
-        <div>
+        <div className="p-4">
             <SearchBar />
             {
                 searchResults !== null

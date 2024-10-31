@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react"
-import { MapPin, Building2 } from "lucide-react"
+import { MapPin, Building2, User, ChevronRight } from "lucide-react"
 import { UniteLegal } from "~/domain/entity/unite-legal"
 
 export default function SearchResultsItem({ result }: { result: UniteLegal }) {
@@ -13,12 +13,19 @@ export default function SearchResultsItem({ result }: { result: UniteLegal }) {
                         <span className="font-normal pe-2 text-slate-700">Entreprise</span>
                     </div>
                 </div>
-                <div className="flex items-center gap-1 text-slate-600">
-                    <MapPin className="w-4 h-4" />
-                    <p className="text-sm font-normal">{result.adresse_complete}</p>
-                </div>
-                <div>
-                    <p className="text-slate-600 text-sm font-normal">{result.forme_juridique}</p>
+                <div className="flex flex-col ps-2 border-s-2">
+                    <div className="flex items-center gap-1 text-slate-600">
+                        <ChevronRight className="w-4 h-4" />
+                        <p className="text-sm font-normal">{result.ridet}</p>
+                    </div>
+                    <div className="flex items-center gap-1 text-slate-600">
+                        <User className="w-4 h-4" />
+                        <p className="text-sm font-normal">{result.sigle}</p>
+                    </div>
+                    <div className="flex items-center gap-1 text-slate-600">
+                        <MapPin className="w-4 h-4" />
+                        <p className="text-sm font-normal">{result.adresse_complete}</p>
+                    </div>
                 </div>
             </Link>
         </div>
