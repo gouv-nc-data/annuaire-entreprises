@@ -31,6 +31,6 @@ jobs:
       - uses: firehed/multistage-docker-build-action@v1
         id: build
         with:
-          repository: ghcr.io/annuaire-entreprises/actions
+          repository: ghcr.io/gouv-nc-data/actions
           stages: base, deps, production-deps, build, server
           server-stage: server
