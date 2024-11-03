@@ -32,7 +32,7 @@ ADD . .
 RUN npm run build
 
 # Finally, build the production image with minimal footprint
-FROM base as server
+FROM base as annuaire-entreprises
 
 WORKDIR /myapp
 

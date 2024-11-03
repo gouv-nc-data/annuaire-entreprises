@@ -32,5 +32,5 @@ jobs:
         id: build
         with:
           repository: ghcr.io/gouv-nc-data/actions
-          stages: base, deps, production-deps, build, server
-          server-stage: server
+          stages: base, deps, production-deps, build, annuaire-entreprises
+          server-stage: annuaire-entreprises
