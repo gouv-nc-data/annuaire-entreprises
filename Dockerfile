@@ -41,5 +41,6 @@ COPY --from=production-deps /myapp/node_modules /myapp/node_modules
 COPY --from=build /myapp/build /myapp/build
 COPY --from=build /myapp/public /myapp/public
 ADD . .
+ENV SEARCH_API_URL="/api/v1/"
 
 CMD ["npm", "start"]
