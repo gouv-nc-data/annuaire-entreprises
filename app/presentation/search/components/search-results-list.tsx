@@ -3,9 +3,15 @@ import SearchResultsItem from "./search-results-item"
 import SearchPagination from "./search-pagination"
 
 export function SearchResultsList({ searchResults }: { searchResults: SearchResults }) {
+
+    const currentPage = searchResults.page
+
     return (
         <div className="flex flex-col gap-4">
-            <span>{`${searchResults.total_results} ${searchResults.total_results > 1 ? 'résultats' : 'résultat'}`}</span>
+            <div className="flex items-center gap-1 text-primary text-sm text-zinc-600 font-normal">
+                {currentPage > 1 && <span>page {currentPage} de</span>}
+                <span>{`${searchResults.total_results} ${searchResults.total_results > 1 ? 'résultats trouvés.' : 'résultat trouvé.'}`}</span>
+            </div>
             <ul className="flex flex-col gap-6">
                 {
                     searchResults.results.map((result) => {
@@ -15,7 +21,9 @@ export function SearchResultsList({ searchResults }: { searchResults: SearchResu
                     })
                 }
             </ul>
-            <SearchPagination searchResults={searchResults} />
+            { searchResults.total_results > 0 &&
+                <SearchPagination searchResults={searchResults} />
+            }
         </div>
     )
 }

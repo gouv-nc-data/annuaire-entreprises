@@ -20,7 +20,7 @@ export default function SearchResultsItem({ result }: { result: UniteLegal }) {
                     </div>
                     <div className="flex items-center gap-1 text-slate-600">
                         <User className="w-4 h-4" />
-                        <p className="text-sm font-normal">{result.sigle}</p>
+                        <p className="text-sm font-normal">{result.designation}</p>
                     </div>
                     <div className="flex items-center gap-1 text-slate-600">
                         <MapPin className="w-4 h-4" />

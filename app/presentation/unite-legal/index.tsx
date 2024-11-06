@@ -7,7 +7,7 @@ export default function UniteLegalPage() {
     const uniteLegal = useLoaderData<typeof getUniteLegalLoader>();
 
     return (
-        <div className="flex flex-col">
+        <div className="container flex flex-col py-10">
             <SearchResultsItem result={uniteLegal} />
         </div>
     )
