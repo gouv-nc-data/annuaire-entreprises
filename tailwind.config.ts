@@ -5,8 +5,15 @@ export default {
 	content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		extend: {
+			container: {
+				center: true,
+				padding:'2rem'
+			},
 			fontFamily: {
 				sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji']
+			},
+			borderWidth: {
+				'1':'1px'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -27,11 +34,12 @@ export default {
 				},
 				primary: {
 					DEFAULT: 'var(--primary)',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					200: 'var(--primary-200)',
+					300: 'var(--primary-300)'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: 'var(--secondary)',
 				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
