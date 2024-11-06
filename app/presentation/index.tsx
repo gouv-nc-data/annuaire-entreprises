@@ -2,6 +2,12 @@ import { type MetaFunction } from "@remix-run/node";
 
 import SearchBar from "./search/components/search-bar";
 
+import { MapPinned, User, Scale, Landmark, ArrowRight } from "lucide-react";
+import HomeIllustration from "./assets/home-illustration";
+import { Link } from "@remix-run/react";
+import { Button } from "./ui/button";
+import SearchModal from "./search/components/search-modal";
+
 export const meta: MetaFunction = () => {
     return [
         { title: "Annuaire entreprise | Site" },
@@ -11,10 +17,45 @@ export const meta: MetaFunction = () => {
 
 export default function HomePage() {
     return (
-        <div className="flex h-screen items-center justify-center">
-            <div className="flex flex-col gap-4 items-center">
-                <h1>Annuaire entreprise</h1>
-                <SearchBar />
+        <div className="flex flex-col gap-4 items-center justify-center h-full bg-zinc-100">
+            <div className="flex flex-col items-center gap-6 max-w-xl w-full p-4 py-40">
+                <div className="flex flex-col gap-4 w-full items-center">
+                    <div className="flex flex-col gap-0 w-full">
+                        <h1 className="text-4xl text-blue font-medium">L'Annuaire des entreprises</h1>
+                        <h2 className="text-xl text-primary">De Nouvelle-Calédonie.</h2>
+                    </div>
+                    <p className="text-zinc-900 font-light text-md">Vérifiez les informations légales publiques des entreprises, associations et services publics en Nouvelle-Calédonie.</p>
+                </div>
+                <div className="flex flex-col items-start gap-2">
+                    <div className="flex gap-2">
+                        <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-lg p-4">
+                            <span className="text-xs leading-tight font-medium text-zinc-700">Par son emplacement</span>
+                            <MapPinned className="w-4 h-4 text-zinc-500" />
+                        </div>
+                        <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-lg p-4">
+                            <span className="text-xs leading-tight font-medium text-zinc-700">Par ses dirigeants</span>
+                            <User className="w-4 h-4 text-zinc-500" />
+                        </div>
+                        <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-lg p-4">
+                            <span className="text-xs leading-tight font-medium text-zinc-700">Par sa forme juridique</span>
+                            <Scale className="w-4 h-4 text-zinc-500" />
+                        </div>
+                        <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-lg p-4">
+                            <span className="text-xs leading-tight font-medium text-zinc-700">Par son type de structure</span>
+                            <Landmark className="w-4 h-4 text-zinc-500" />
+                        </div>
+                    </div>
+                </div>
+                <div className="flex flex-col items-start gap-2 bg-white w-full p-4 rounded-lg shadow-sm">
+                    <p>Recherche une entreprise</p>
+                    <SearchModal />
+                </div>
+                <Link to="/rechercher">
+                    <Button variant={"link"}>
+                        <ArrowRight className="w-3 h-3" />
+                        Effectuer une recherche avancée
+                    </Button>
+                </Link>
             </div>
         </div>
     );

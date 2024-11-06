@@ -11,7 +11,7 @@ export class SearchParams {
 
         this.q = params.get('terme') ?? '';
         this.page = params.get('page') ?? '1';
-        const ville = params.get('ville')
+        const ville = params.get('ville')?.replace(/\s/g, '');
         const codePostal = params.get('code_postal')
 
 
