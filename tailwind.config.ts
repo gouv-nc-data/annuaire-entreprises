@@ -7,13 +7,13 @@ export default {
 		extend: {
 			container: {
 				center: true,
-				padding:'2rem'
+				padding: '2rem'
 			},
 			fontFamily: {
 				sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji']
 			},
 			borderWidth: {
-				'1':'1px'
+				'1': '1px'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -23,7 +23,7 @@ export default {
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				blue: 'var(--blue)',
+				"blue-dinum": 'var(--blue)',
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'

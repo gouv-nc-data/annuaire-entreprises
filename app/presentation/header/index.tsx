@@ -12,7 +12,7 @@ export default function Header() {
 
     return (
         <header className="flex bg-zinc-100 w-full">
-            <div className='container w-full flex justify-between py-4 gap-8'>
+            <div className='container w-full flex justify-between items-center py-4 gap-8'>
                 <Link to="/">
                     <Logo />
                 </Link>
@@ -20,7 +20,7 @@ export default function Header() {
                 <div>
                     <Link to="/se-connecter">
                         <Button>
-                            Agent publique
+                            Agent public
                             <ArrowUpRight className='w-4 h-4' />
                         </Button>
                     </Link>
