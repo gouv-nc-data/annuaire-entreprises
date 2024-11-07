@@ -41,6 +41,7 @@ export interface IUniteLegal {
     numero_rap: string | null
     date_immat_rap: Date | null
     date_radiation_rap: Date | null
+
 }
 
 export class UniteLegal implements IUniteLegal {
@@ -86,4 +87,8 @@ export class UniteLegal implements IUniteLegal {
     numero_rap: string | null = null
     date_immat_rap: Date | null = null
     date_radiation_rap: Date | null = null
+
+    constructor(props: Partial<UniteLegal>) {
+        Object.assign(this, props)
+    }
 }

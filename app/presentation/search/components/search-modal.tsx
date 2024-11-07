@@ -1,7 +1,6 @@
-import { Form, useSearchParams } from "@remix-run/react"
-import { Search as SearchIcon, ArrowUp, ArrowDown } from "lucide-react"
+import { ArrowUp, ArrowDown } from "lucide-react"
+import { useLocation } from "@remix-run/react"
 
-import { Input } from "../../ui/input"
 import { Button } from "../../ui/button"
 import {
     Dialog,
@@ -11,44 +10,80 @@ import {
     DialogTitle,
 } from "../../ui/dialog"
 import SearchBar from "./search-bar"
-import { useState } from "react"
-import { ExistingSearchParams } from "~/application/search/existing-search-params"
+import { useEffect, useState } from "react"
+import SearchModalForm from "./search-modal-form"
+import SearchModalHistory from "./search-modal-history"
+import SearchAdvancesLink from "./search-advanced-link"
+import { getUniteLegalHistoryFromLocalStorage, UniteLegalHistoryItem } from "~/application/unite-legal/unite-legal-history-store"
 
 export default function SearchModal() {
-    let [searchParams] = useSearchParams();
-    let query = searchParams.get('terme') || '';
+
+    const location = useLocation()
 
     const [isOpen, setIsOpen] = useState(false)
+    const [history, setHistory] = useState<UniteLegalHistoryItem[]>([])
+    const [currentHistoryItem, setCurrentHistoryItem] = useState<UniteLegalHistoryItem | null>(null)
+
+    useEffect(() => {
+        const currentHistory = getUniteLegalHistoryFromLocalStorage()
+        setHistory(currentHistory)
+    }, [])
+
+    useEffect(() => {
+        setCurrentHistoryItem(null)
+    }, [isOpen])
+
+    useEffect(() => {
+        setIsOpen(false)
+    }, [location])
+
+    const handleChangeCurrentHistoryItem = (action: 'prev' | 'next') => {
+        if (history) {
+            if (action === 'next') {
+                if (!currentHistoryItem) {
+                    setCurrentHistoryItem(history[0])
+                } else {
+                    const current = history.findIndex(item => item.name === currentHistoryItem.name)
+
+                    if (history[current + 1]) {
+                        setCurrentHistoryItem(history[current + 1])
+                    }
+                }
+            }
+            if (action === 'prev') {
+                if (currentHistoryItem) {
+                    const current = history.findIndex(item => item.name === currentHistoryItem.name)
+
+                    if (history[current - 1]) {
+                        setCurrentHistoryItem(history[current - 1])
+                    }
+                }
+            }
+        }
+    }
 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <div className="w-full" onClick={() => setIsOpen(true)}>
                 <SearchBar withoutOutline={true} />
             </div>
-            <DialogContent className="bg-transparent flex flex-col gap-4 sm:max-w-xl p-0">
+            <DialogContent className="flex flex-col gap-4 sm:max-w-xl p-2 bg-transparent !focus-visible:ring-0">
                 <div className="hidden">
-                    <DialogTitle>Share link</DialogTitle>
+                    <DialogTitle>Barre de recherche</DialogTitle>
                     <DialogDescription>
-                        Anyone who has this link will be able to view this.
+                        Barre de recherche de l'application Annuaire des entreprises de Nouvelle-Calédonie
                     </DialogDescription>
                 </div>
-                <div className="flex flex-col bg-white overflow-hidden rounded-lg ring-2 ring-blue">
-                    <Form method="GET" action="/rechercher" className="w-full py-2 border-b-[1px] border-zinc-300">
-                        <ExistingSearchParams exclude={["terme"]} />
-                        <div className="flex w-full items-center space-x-2">
-                            <SearchIcon className="w-5 h-5 text-blue absolute left-4" />
-                            <Input className="!ps-10 shadow-none border-0 p-4 py-6 focus-visible:outline-none focus-visible:ring-0 outline-none ring-0" type="text" name="terme" placeholder="Nom, adresse, n° RIDET..." defaultValue={query ?? ''} />
-                            <Button onClick={() => setIsOpen(false)} className="absolute right-4"><SearchIcon className="w-5 h-5" /></Button>
-                        </div>
-                    </Form>
-                    <div className="flex items-center justify-between bg-blue/20 p-4 py-2">
+                <div className="flex flex-col bg-white overflow-hidden rounded-lg ring-2 ring-blue-dinum scale-110">
+                    <SearchModalForm setIsOpen={setIsOpen} handleChangeCurrentHistoryItem={handleChangeCurrentHistoryItem} currentHistoryItem={currentHistoryItem} />
+                    <div className="flex items-center justify-between bg-slate-100 p-4 py-2">
                         <div className="flex items-center gap-2">
                             <span className="text-xs font-normal text-primary">Naviguer</span>
                             <div className="flex items-center gap-1">
-                                <Button variant="keyboard">
+                                <Button variant="keyboard" onClick={() => handleChangeCurrentHistoryItem('prev')}>
                                     <ArrowUp className="!w-4 !h-4 text-primary" />
                                 </Button>
-                                <Button variant="keyboard">
+                                <Button variant="keyboard" onClick={() => handleChangeCurrentHistoryItem('next')}>
                                     <ArrowDown className="!w-4 !h-4 text-primary" />
                                 </Button>
                             </div>
@@ -60,16 +95,11 @@ export default function SearchModal() {
                         </DialogClose>
                     </div>
                 </div>
-                <div className="bg-white p-4">
-                    <p>Dernières recherche effectuées</p>
-                    <ul>
-                        <li><span>Tech</span></li>
-                        <li><span>Tech</span></li>
-                        <li><span>Tech</span></li>
-                        <li><span>Tech</span></li>
-                        <li><span>Tech</span></li>
-                        <li><span>Tech</span></li>
-                    </ul>
+                <div className="bg-zinc-50 rounded-lg flex flex-col divide-y-1 overflow-hidden">
+                    <SearchModalHistory history={history} currentHistoryItem={currentHistoryItem} />
+                    <div className="flex items-center justify-center p-2 bg-white">
+                        <SearchAdvancesLink />
+                    </div>
                 </div>
             </DialogContent>
         </Dialog>

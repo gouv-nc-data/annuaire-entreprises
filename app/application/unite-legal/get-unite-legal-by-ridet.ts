@@ -1,5 +1,6 @@
 import { json, LoaderFunctionArgs, redirect } from "@remix-run/node";
 import { Repository } from "~/adapter/repository";
+import { UniteLegal } from "~/domain/entity/unite-legal";
 
 export async function getUniteLegalLoader({ params }: LoaderFunctionArgs) {
 
@@ -19,6 +20,6 @@ export async function getUniteLegalLoader({ params }: LoaderFunctionArgs) {
         throw json(uniteLegal.erreur, { status: 400 });
     }
 
-    return uniteLegal.results[0]
+    return new UniteLegal(uniteLegal.results[0])
 };
 

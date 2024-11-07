@@ -1,12 +1,8 @@
 import { type MetaFunction } from "@remix-run/node";
 
-import SearchBar from "./search/components/search-bar";
-
-import { MapPinned, User, Scale, Landmark, ArrowRight } from "lucide-react";
-import HomeIllustration from "./assets/home-illustration";
-import { Link } from "@remix-run/react";
-import { Button } from "./ui/button";
+import { MapPinned, User, Scale, Landmark } from "lucide-react";
 import SearchModal from "./search/components/search-modal";
+import SearchAdvancesLink from "./search/components/search-advanced-link";
 
 export const meta: MetaFunction = () => {
     return [
@@ -21,7 +17,7 @@ export default function HomePage() {
             <div className="flex flex-col items-center gap-6 max-w-xl w-full p-4 py-40">
                 <div className="flex flex-col gap-4 w-full items-center">
                     <div className="flex flex-col gap-0 w-full">
-                        <h1 className="text-4xl text-blue font-medium">L'Annuaire des entreprises</h1>
+                        <h1 className="text-4xl text-blue-dinum font-medium">L'Annuaire des entreprises</h1>
                         <h2 className="text-xl text-primary">De Nouvelle-Calédonie.</h2>
                     </div>
                     <p className="text-zinc-900 font-light text-md">Vérifiez les informations légales publiques des entreprises, associations et services publics en Nouvelle-Calédonie.</p>
@@ -50,12 +46,7 @@ export default function HomePage() {
                     <p>Recherche une entreprise</p>
                     <SearchModal />
                 </div>
-                <Link to="/rechercher">
-                    <Button variant={"link"}>
-                        <ArrowRight className="w-3 h-3" />
-                        Effectuer une recherche avancée
-                    </Button>
-                </Link>
+                <SearchAdvancesLink />
             </div>
         </div>
     );
