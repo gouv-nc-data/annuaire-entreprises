@@ -6,7 +6,7 @@ import { MapPinned } from "lucide-react"
 const searchFiltersCityProps: ISearchFilter =
 {
     label: 'Zone géographique',
-    icon: <MapPinned className="text-blue" />,
+    icon: <MapPinned className="text-blue-dinum" />,
 }
 
 export default function SearchFilters() {

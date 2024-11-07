@@ -46,7 +46,7 @@ export default function SearchFiltersCity({ label, icon }: ISearchFilter) {
         }
 
         const newSearchParams = new URLSearchParams(searchParams.toString())
-        const newCitySearchParams = city ? city + ', ' + newCityFilter : newCityFilter as string
+        const newCitySearchParams = city ? city + ', ' + newCityFilter : newCityFilter
 
         newSearchParams.set('ville', newCitySearchParams)
 
@@ -57,7 +57,7 @@ export default function SearchFiltersCity({ label, icon }: ISearchFilter) {
     return (
         <Popover open={isOpen} onOpenChange={setIsOpen}>
             <PopoverTrigger asChild>
-                <Button variant="outline" className={`${isOpen ? 'ring-2 ring-blue' : ''}`}>
+                <Button variant="outline" className={`${isOpen ? 'ring-2 ring-blue-dinum' : ''}`}>
                     {icon}
                     {
                         searchParamsCity && searchParamsCity.length > 0
