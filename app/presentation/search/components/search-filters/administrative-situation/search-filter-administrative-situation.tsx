@@ -8,9 +8,10 @@ import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, Command
 import { Input } from "~/presentation/ui/input"
 import { Popover, PopoverTrigger, PopoverContent, } from "~/presentation/ui/popover"
 import { cn } from "~/utils/tailwind"
-import { SearchParams } from "~/domain/entity/search-params"
+import { SearchParams, SearchParamskeyStringType } from "~/domain/entity/search-params"
+import ActiveFilters from "../../active-filters"
 
-export default function SearchFilterAdministrativeSituation({ paramName, label, values, placeholder }: { paramName: string, label: string, values: string[], placeholder: string }) {
+export default function SearchFilterAdministrativeSituation({ paramName, label, values, placeholder }: { paramName: SearchParamskeyStringType, label: string, values: string[], placeholder: string }) {
 
     let [searchParams] = useSearchParams();
 
@@ -44,53 +45,38 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
     }
 
     return (
-        <Form method="GET" action="/rechercher" className="w-full">
+        <Form method="GET" action="/rechercher" className="flex flex-col gap-4">
             <Input type="hidden" name={paramName} value={inputValue} />
             <ExistingSearchParams exclude={[paramName]} />
             {activeSearchParams && activeSearchParams.length > 0 &&
-                <div className="flex gap-2 flex-wrap items-center">
-                    <span className="text-sm font-medium text-primary">Filtres actifs :</span>
-                    <ul className="flex items-center gap-1 justify-start flex-wrap">
-                        {
-                            activeSearchParams.map(activeFilter => {
-                                return (
-                                    <div className="filter-tag flex items-center gap-1" key={activeFilter}>
-                                        <span className="py-1 px-2">{activeFilter}</span>
-                                        <Link to={createFilterLink(activeFilter)} className="bg-emerald-200 py-2 px-1">
-                                            <X className="w-3 h-3" />
-                                        </Link>
-                                    </div>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
+                <ActiveFilters activeFilters={activeSearchParams} filterLink={createFilterLink} />
             }
-            <div className="flex w-full items-center space-x-2">
+            <div className="flex items-center space-x-2">
                 <Popover open={open} onOpenChange={setOpen}>
-                    <PopoverTrigger asChild>
+                    <PopoverTrigger asChild className={`relative w-full ${open ? 'ring-2 ring-blue-dinum' : 'ring-2 ring-transparent'}`}>
                         <Button
                             variant="outline"
                             role="combobox"
                             aria-expanded={open}
-                            className="justify-between w-full"
+                            className="flex flex-wrap max-w-xs h-full items-center justify-start whitespace-normal text-left pe-6 ps-2"
                         >
                             {filterValue
                                 ? values.find((item) => item === filterValue)
                                 : label}
-                            <ChevronsUpDown className="opacity-50" />
+                            <ChevronsUpDown className="opacity-50 absolute right-2" />
                         </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-full p-0">
+                    <PopoverContent className={`w-xs p-0 shadow-2xl border-1 border-slate-300 mt-4`}>
                         <Command>
                             <CommandInput placeholder={placeholder} className="h-9" />
                             <CommandList>
-                                <CommandEmpty>pas de {label} trouvé</CommandEmpty>
-                                <CommandGroup>
+                                <CommandEmpty className="text-left p-2 text-sm">Liste vide</CommandEmpty>
+                                <CommandGroup className="w-full">
                                     {values.filter(item => !activeSearchParams?.includes(item)).map((item) => (
                                         <CommandItem
                                             key={item}
                                             value={item}
+                                            className="text-sm text-slate-600 font-normal hover:text-primary"
                                             onSelect={(currentValue: string) => {
                                                 handleChangeValue(currentValue === filterValue ? "" : currentValue)
                                                 setOpen(false)

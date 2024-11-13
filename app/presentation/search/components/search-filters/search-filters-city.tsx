@@ -8,6 +8,7 @@ import { ChevronDown, Plus, X } from "lucide-react"
 import { Button } from "~/presentation/ui/button"
 import { Input } from "~/presentation/ui/input"
 import { Popover, PopoverContent, PopoverTrigger } from "~/presentation/ui/popover"
+import ActiveFilters from "../active-filters"
 
 export default function SearchFiltersCity({ label, icon }: ISearchFilter) {
 
@@ -79,7 +80,7 @@ export default function SearchFiltersCity({ label, icon }: ISearchFilter) {
                     <ChevronDown className={`w-3 h-3 ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
                 </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-80" align="start">
+            <PopoverContent className="w-xs shadow-xl" align="start">
                 <div className="flex flex-col justify-start gap-4">
                     <div className="space-y-2">
                         <h4 className="font-medium leading-none text-primary">Ville, province ou région</h4>
@@ -88,23 +89,7 @@ export default function SearchFiltersCity({ label, icon }: ISearchFilter) {
                         </p>
                     </div>
                     {searchParamsCity && searchParamsCity.length > 0 &&
-                        <div className="flex gap-2 flex-wrap items-center">
-                            <span className="text-sm font-medium text-primary">Filtres actifs :</span>
-                            <ul className="flex items-center gap-1 justify-start flex-wrap">
-                                {
-                                    searchParamsCity.map(city => {
-                                        return (
-                                            <div className="filter-tag flex items-center gap-1" key={city}>
-                                                <span className="py-1 px-2">{city}</span>
-                                                <Link to={createFilterLink(city)} className="bg-emerald-200 py-2 px-1">
-                                                    <X className="w-3 h-3" />
-                                                </Link>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </ul>
-                        </div>
+                        <ActiveFilters activeFilters={searchParamsCity} filterLink={createFilterLink} />
                     }
                     <Form method="GET" action="/rechercher" onSubmit={handleOnSubmit} className="w-full">
                         <ExistingSearchParams exclude={["ville"]} />
