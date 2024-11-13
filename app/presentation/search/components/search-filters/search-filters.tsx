@@ -1,7 +1,9 @@
 import { ISearchFilter } from "~/domain/entity/search-filters"
-
 import SearchFiltersCity from "./search-filters-city"
-import { MapPinned } from "lucide-react"
+import SearchFiltersAdministrativeSituation from "./search-filters-administrative-situation"
+
+
+import { MapPinned, Landmark } from "lucide-react"
 
 const searchFiltersCityProps: ISearchFilter =
 {
@@ -9,11 +11,24 @@ const searchFiltersCityProps: ISearchFilter =
     icon: <MapPinned className="text-blue-dinum" />,
 }
 
+const searchFiltersAdministrativeSituation: ISearchFilter =
+{
+    label: 'Situation administrative',
+    icon: <Landmark className="text-blue-dinum" />,
+}
+
+const activeFilters = [
+    <SearchFiltersCity key={searchFiltersCityProps.label} {...searchFiltersCityProps} />,
+    <SearchFiltersAdministrativeSituation key={searchFiltersAdministrativeSituation.label} {...searchFiltersAdministrativeSituation} />,
+]
+
 export default function SearchFilters() {
     return (
         <div className="py-2 bg-slate-200">
             <div className="container">
-                <SearchFiltersCity {...searchFiltersCityProps} />
+                <ul className="flex items-center gap-2">
+                    {activeFilters.map(filter => filter)}
+                </ul>
             </div>
         </div>
     )
