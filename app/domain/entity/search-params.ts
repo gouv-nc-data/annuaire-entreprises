@@ -1,4 +1,15 @@
-export class SearchParams {
+
+export type SearchParamskeyStringType = 'forme_juridique' | 'ville';
+
+interface ISearchParams {
+    q: string | null,
+    ville: string[] | null,
+    codePostal: string[] | null,
+    page: string | null,
+    formeJuridique: string[] | null
+}
+
+export class SearchParams implements ISearchParams {
 
     q: string | null = null;
     ville: string[] | null = null;
@@ -6,13 +17,18 @@ export class SearchParams {
     page: string | null = "1"
     formeJuridique: string[] | null = null;
 
+    //Final query sent to the search API
     query: string = ''
+
+    //Booleans values to know if category filters are active
+    isAdministrativeFilterActive: boolean = false
+    isCityFilterActive: boolean = false
 
     constructor(params: URLSearchParams) {
 
         this.q = params.get('terme') ?? '';
         this.page = params.get('page') ?? '1';
-        const ville = params.get('ville')?.replace(/\s/g, '');
+        const ville = params.get('ville');
         const codePostal = params.get('code_postal')
         const formeJuridique = params.get('forme_juridique')
 
@@ -28,22 +44,47 @@ export class SearchParams {
             this.formeJuridique = formeJuridique.split(',')
         }
 
+        this.checkActiveFilters()
         this.buildQuery()
     }
 
-    getValue(key: string) {
+    getValue(key: SearchParamskeyStringType) {
         switch (key) {
             case ("forme_juridique"):
                 return this.formeJuridique
         }
     }
 
-    setValue(key: string, value: any) {
+    setValue(key: SearchParamskeyStringType, value: any) {
+
         switch (key) {
             case ("forme_juridique"):
                 this.formeJuridique = value
+                return
             case ("ville"):
                 this.ville = value
+                return
+        }
+    }
+
+    checkActiveFilters() {
+        this.checkCityFilters()
+        this.checkAdministrativeFilters()
+    }
+
+    checkCityFilters() {
+        if (this.ville && this.ville.length > 0) {
+            this.isCityFilterActive = true
+        } else {
+            this.isCityFilterActive = false
+        }
+    }
+
+    checkAdministrativeFilters() {
+        if (this.formeJuridique && this.formeJuridique.length > 0) {
+            this.isAdministrativeFilterActive = true
+        } else {
+            this.isAdministrativeFilterActive = false
         }
     }
 
