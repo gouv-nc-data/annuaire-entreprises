@@ -52,7 +52,7 @@ export default function SearchModalForm({ setIsOpen, handleChangeCurrentHistoryI
 
     return (
         <Form method="GET" action="/rechercher" className="w-full py-2 border-b-[1px] border-zinc-300">
-            <ExistingSearchParams exclude={["terme"]} />
+            <ExistingSearchParams exclude={["terme", "page"]} />
             <div className="flex w-full items-center relative">
                 <SearchIcon className="w-5 h-5 text-blue-dinum absolute left-4" />
                 <Input value={value} onChange={(e) => setValue(e.currentTarget.value)} className="!ps-12 shadow-none border-0 p-4 py-6 focus-visible:outline-none focus-visible:ring-0 outline-none ring-0" type="text" name="terme" placeholder="Nom, adresse, n° RIDET..." />
