@@ -36,7 +36,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className="flex flex-col flex-1 h-svh">
         <Header />
-        <div className="flex-grow">
+        <div className="flex-grow bg-zinc-100">
           {children}
         </div>
         <Footer />

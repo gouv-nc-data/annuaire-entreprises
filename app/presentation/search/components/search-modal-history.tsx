@@ -26,7 +26,7 @@ export default function SearchModalHistory({ history, currentHistoryItem }: { hi
                                     return (
                                         <Link key={item.name} to={item.link} className={`${isFocused ? 'bg-blue-200' : 'hover:bg-blue-100 text-zinc-500'} inline-flex items-center gap-2 group px-4 py-2`}>
                                             <UniteLegalCategory category={"entreprise"} />
-                                            <span className="text-xs   font-normal flex items-center gap-1 group-hover:text-primary">
+                                            <span className="text-xs font-normal flex items-center gap-1 group-hover:text-primary">
                                                 {item.name}
                                             </span>
                                         </Link>

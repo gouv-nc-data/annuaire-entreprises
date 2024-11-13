@@ -74,7 +74,7 @@ export default function SearchModal() {
                         Barre de recherche de l'application Annuaire des entreprises de Nouvelle-Calédonie
                     </DialogDescription>
                 </div>
-                <div className="flex flex-col bg-white overflow-hidden rounded-lg ring-2 ring-blue-dinum scale-110">
+                <div className="flex flex-col bg-white overflow-hidden rounded-lg border-2 border-blue-dinum scale-110 pulse">
                     <SearchModalForm setIsOpen={setIsOpen} handleChangeCurrentHistoryItem={handleChangeCurrentHistoryItem} currentHistoryItem={currentHistoryItem} />
                     <div className="flex items-center justify-between bg-slate-100 p-4 py-2">
                         <div className="flex items-center gap-2">
