@@ -42,6 +42,8 @@ export class SearchParams {
         switch (key) {
             case ("forme_juridique"):
                 this.formeJuridique = value
+            case ("ville"):
+                this.ville = value
         }
     }
 

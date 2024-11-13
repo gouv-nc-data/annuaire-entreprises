@@ -16,19 +16,20 @@ export default function SearchFiltersCity({ label, icon }: ISearchFilter) {
     let [searchParams] = useSearchParams();
     const navigate = useNavigate();
 
-    const city = searchParams.get('ville')
     const searchParamsFormatted = new SearchParams(searchParams)
     const searchParamsCity = searchParamsFormatted.ville
 
-    function createFilterLink(city: string) {
-        const newSearchParams = new URLSearchParams(searchParams.toString())
-        const newSearchParamsCity = searchParamsFormatted.ville?.filter(cityParam => cityParam !== city)
+    function createFilterLink(item: string) {
+        const newSearchParams = new SearchParams(searchParams)
+        const newActiveSearchParams = searchParamsCity?.filter(filter => filter !== item)
 
-        newSearchParams.set('ville', newSearchParamsCity && newSearchParamsCity.length > 0 ? newSearchParamsCity?.join() : '')
-        newSearchParams.set('page', JSON.stringify(1))
+        newSearchParams.page = "1"
+        newSearchParams.setValue("ville", newActiveSearchParams ? newActiveSearchParams : [])
 
-        return `/rechercher?${newSearchParams.toString()}`
+        newSearchParams.buildQuery();
+        return `/rechercher?${newSearchParams.query}`
     }
+
 
     function handleOnSubmit(e: any) {
         e.preventDefault()
@@ -46,7 +47,7 @@ export default function SearchFiltersCity({ label, icon }: ISearchFilter) {
         }
 
         const newSearchParams = new URLSearchParams(searchParams.toString())
-        const newCitySearchParams = city ? city + ', ' + newCityFilter : newCityFilter
+        const newCitySearchParams = searchParamsCity ? searchParamsCity + ', ' + newCityFilter : newCityFilter
 
         newSearchParams.set('ville', newCitySearchParams)
 

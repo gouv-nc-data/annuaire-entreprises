@@ -1,6 +1,4 @@
 import { useState } from "react"
-import { Form, Link, useSearchParams, useNavigate } from "@remix-run/react"
-import { ExistingSearchParams } from "~/application/search/existing-search-params"
 import { ISearchFilter } from "~/domain/entity/search-filters"
 
 import NatureJuridiques from "~/domain/filters/nature-juridiques.json"
@@ -9,7 +7,7 @@ import { ChevronDown, Plus, X } from "lucide-react"
 import { Button } from "~/presentation/ui/button"
 import { Input } from "~/presentation/ui/input"
 import { Popover, PopoverContent, PopoverTrigger } from "~/presentation/ui/popover"
-import LegalForm from "./administrative-situation/legal-form"
+import SearchFilterAdministrativeSituation from "./search-filter-administrative-situation"
 
 export default function searchFiltersAdministrativeSituation({ label, icon }: ISearchFilter) {
 
@@ -38,7 +36,7 @@ export default function searchFiltersAdministrativeSituation({ label, icon }: IS
                             <p className="font-medium leading-none text-primary">Forme juridique</p>
                         </div>
                     </div>
-                    <LegalForm
+                    <SearchFilterAdministrativeSituation
                         label="Forme juridique"
                         values={Object.values(NatureJuridiques)}
                         placeholder="Choisir une forme juridique"

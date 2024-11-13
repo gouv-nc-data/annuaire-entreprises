@@ -1,6 +1,6 @@
 import { ISearchFilter } from "~/domain/entity/search-filters"
 import SearchFiltersCity from "./search-filters-city"
-import SearchFiltersAdministrativeSituation from "./search-filters-administrative-situation"
+import SearchFiltersAdministrativeSituation from "./administrative-situation/search-filters-administrative-situation"
 
 
 import { MapPinned, Landmark } from "lucide-react"

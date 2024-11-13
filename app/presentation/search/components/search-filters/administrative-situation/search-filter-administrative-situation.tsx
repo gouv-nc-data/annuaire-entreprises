@@ -10,7 +10,7 @@ import { Popover, PopoverTrigger, PopoverContent, } from "~/presentation/ui/popo
 import { cn } from "~/utils/tailwind"
 import { SearchParams } from "~/domain/entity/search-params"
 
-export default function LegalForm({ paramName, label, values, placeholder }: { paramName: string, label: string, values: string[], placeholder: string }) {
+export default function SearchFilterAdministrativeSituation({ paramName, label, values, placeholder }: { paramName: string, label: string, values: string[], placeholder: string }) {
 
     let [searchParams] = useSearchParams();
 
