@@ -1,5 +1,5 @@
 
-export type SearchParamskeyStringType = 'forme_juridique' | 'ville';
+export type SearchParamskeyStringType = 'activite_principale' | 'forme_juridique' | 'ville';
 
 interface ISearchParams {
     q: string | null,
@@ -7,6 +7,7 @@ interface ISearchParams {
     codePostal: string[] | null,
     page: string | null,
     formeJuridique: string[] | null
+    activitePrincipale: string[] | null
 }
 
 export class SearchParams implements ISearchParams {
@@ -16,6 +17,7 @@ export class SearchParams implements ISearchParams {
     codePostal: string[] | null = null;
     page: string | null = "1"
     formeJuridique: string[] | null = null;
+    activitePrincipale: string[] | null = null;
 
     //Final query sent to the search API
     query: string = ''
@@ -31,6 +33,7 @@ export class SearchParams implements ISearchParams {
         const ville = params.get('ville');
         const codePostal = params.get('code_postal')
         const formeJuridique = params.get('forme_juridique')
+        const activitePrincipale = params.get('activite_principale')
 
         if (ville && ville.length > 0) {
             this.ville = ville.split(',')
@@ -44,6 +47,10 @@ export class SearchParams implements ISearchParams {
             this.formeJuridique = formeJuridique.split(',')
         }
 
+        if (activitePrincipale && activitePrincipale.length > 0) {
+            this.activitePrincipale = activitePrincipale.split(',')
+        }
+
         this.checkActiveFilters()
         this.buildQuery()
     }
@@ -52,14 +59,18 @@ export class SearchParams implements ISearchParams {
         switch (key) {
             case ("forme_juridique"):
                 return this.formeJuridique
+            case ("activite_principale"):
+                return this.activitePrincipale
         }
     }
 
-    setValue(key: SearchParamskeyStringType, value: any) {
-
+    setValue(key: SearchParamskeyStringType, value: string[]) {
         switch (key) {
             case ("forme_juridique"):
                 this.formeJuridique = value
+                return
+            case ("activite_principale"):
+                this.activitePrincipale = value
                 return
             case ("ville"):
                 this.ville = value
@@ -110,6 +121,10 @@ export class SearchParams implements ISearchParams {
 
         if (this.formeJuridique && this.formeJuridique.length > 0) {
             searchParams.set('forme_juridique', this.formeJuridique.join())
+        }
+
+        if (this.activitePrincipale && this.activitePrincipale.length > 0) {
+            searchParams.set('activite_principale', this.activitePrincipale.join())
         }
 
         this.query = searchParams.toString()

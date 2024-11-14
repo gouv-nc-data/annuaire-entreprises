@@ -11,7 +11,7 @@ export default function Header() {
     const isIndex = location.pathname === '/'
 
     return (
-        <header className="flex bg-zinc-100 w-full">
+        <header className="flex bg-white w-full">
             <div className='container w-full flex justify-between items-center py-4 gap-8'>
                 <Link to="/">
                     <Logo />

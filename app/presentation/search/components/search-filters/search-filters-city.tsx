@@ -83,8 +83,8 @@ export default function SearchFiltersCity({ label, icon }: ISearchFilter) {
             <PopoverContent className="w-xs shadow-xl" align="start">
                 <div className="flex flex-col justify-start gap-4">
                     <div className="space-y-2">
-                        <h4 className="font-medium leading-none text-primary">Ville, province ou région</h4>
-                        <p className="text-sm text-muted-foreground">
+                        <h4 className="font-medium leading-none text-md text-primary">Ville, province ou région</h4>
+                        <p className="text-xs text-muted-foreground">
                             Vous pouvez ajouter plusieurs filtre géolocalisé à la fois.
                         </p>
                     </div>
