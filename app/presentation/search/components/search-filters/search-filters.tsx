@@ -26,7 +26,7 @@ export default function SearchFilters() {
     return (
         <div className="py-2 bg-slate-200">
             <div className="container">
-                <ul className="flex items-center gap-2">
+                <ul className="flex flex-col items-start md:flex-row md:items-center gap-2">
                     {activeFilters.map(filter => filter)}
                 </ul>
             </div>

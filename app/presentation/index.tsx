@@ -14,7 +14,7 @@ export const meta: MetaFunction = () => {
 export default function HomePage() {
     return (
         <div className="flex flex-col gap-4 items-center justify-center h-full bg-zinc-100">
-            <div className="flex flex-col items-center gap-6 max-w-xl w-full p-4 py-40">
+            <div className="flex flex-col items-center gap-6 max-w-xl w-full p-4 py-20 md:py-40">
                 <div className="flex flex-col gap-4 w-full items-center">
                     <div className="flex flex-col gap-0 w-full">
                         <h1 className="text-4xl text-blue-dinum font-medium">L'Annuaire des entreprises</h1>
@@ -23,7 +23,7 @@ export default function HomePage() {
                     <p className="text-zinc-900 font-light text-md">Vérifiez les informations légales publiques des entreprises, associations et services publics en Nouvelle-Calédonie.</p>
                 </div>
                 <div className="flex flex-col items-start gap-2">
-                    <div className="flex gap-2">
+                    <div className="sm:flex hidden gap-2">
                         <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-lg p-4">
                             <span className="text-xs leading-tight font-medium text-zinc-700">Par son emplacement</span>
                             <MapPinned className="w-4 h-4 text-zinc-500" />

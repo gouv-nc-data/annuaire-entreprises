@@ -11,12 +11,12 @@ export default function Header() {
     const isIndex = location.pathname === '/'
 
     return (
-        <header className="flex bg-white w-full">
+        <header className="flex flex-col gap-4bg-white w-full">
             <div className='container w-full flex justify-between items-center py-4 gap-8'>
                 <Link to="/">
                     <Logo />
                 </Link>
-                {!isIndex && <SearchModal />}
+                <div className='hidden md:flex'>{!isIndex && <SearchModal />}</div>
                 <div>
                     <Link to="/se-connecter">
                         <Button>
@@ -26,6 +26,11 @@ export default function Header() {
                     </Link>
                 </div>
             </div>
+            {!isIndex &&
+                <div className='md:hidden px-4 pb-4'>
+                    <SearchModal />
+                </div>
+            }
         </header>
     )
 }

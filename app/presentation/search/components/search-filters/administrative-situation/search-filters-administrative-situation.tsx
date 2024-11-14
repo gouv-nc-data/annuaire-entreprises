@@ -38,7 +38,7 @@ export default function searchFiltersAdministrativeSituation({ label, icon }: IS
                     <ChevronDown className={`w-3 h-3 ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
                 </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-[400px] shadow-2xl" align="start">
+            <PopoverContent className="md:w-[400px] shadow-2xl max-h-[400px] overflow-y-auto" align="start">
                 <div className="flex flex-col justify-start gap-4">
                     <div className="space-y-2">
                         <h4 className="font-medium text-md leading-none text-primary">Situation administrative</h4>
