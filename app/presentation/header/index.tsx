@@ -13,10 +13,10 @@ export default function Header() {
     return (
         <header className="flex flex-col gap-4bg-white w-full">
             <div className='container w-full flex justify-between items-center py-4 gap-8'>
-                <Link to="/">
+                <Link to="/" className='w-80'>
                     <Logo />
                 </Link>
-                <div className='hidden md:flex'>{!isIndex && <SearchModal />}</div>
+                <div className='hidden md:flex w-full'>{!isIndex && <SearchModal />}</div>
                 <div>
                     <Link to="/se-connecter">
                         <Button>

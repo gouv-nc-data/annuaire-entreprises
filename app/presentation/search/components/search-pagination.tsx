@@ -24,7 +24,7 @@ export default function SearchPagination({ searchResults }: { searchResults: Sea
     }
 
     return (
-        <PaginationContent className="flex items w-full items-center justify-center max-w-xs sm:max-w-max overflow-x-auto sm:overflow-auto">
+        <PaginationContent className="flex items w-full items-center justify-center max-w-xs sm:max-w-full overflow-x-auto sm:overflow-auto mt-4">
             <PaginationItem>
                 <PaginationLink href={createPaginationLink(1)}><ChevronsLeft /></PaginationLink>
             </PaginationItem>
