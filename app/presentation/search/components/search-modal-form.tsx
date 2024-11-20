@@ -4,9 +4,9 @@ import { Input } from "~/presentation/ui/input";
 import { ExistingSearchParams } from "~/application/search/existing-search-params";
 import { Button } from "~/presentation/ui/button";
 import { useCallback, useEffect, useState } from "react";
-import { UniteLegalHistoryItem } from "~/application/unite-legal/unite-legal-history-store";
+import { UniteLegaleHistoryItem } from "~/application/unite-legale/unite-legale-history-store";
 
-export default function SearchModalForm({ setIsOpen, handleChangeCurrentHistoryItem, currentHistoryItem }: { setIsOpen: (bool: boolean) => void, handleChangeCurrentHistoryItem: (action: 'prev' | 'next') => void, currentHistoryItem: UniteLegalHistoryItem | null }) {
+export default function SearchModalForm({ setIsOpen, handleChangeCurrentHistoryItem, currentHistoryItem }: { setIsOpen: (bool: boolean) => void, handleChangeCurrentHistoryItem: (action: 'prev' | 'next') => void, currentHistoryItem: UniteLegaleHistoryItem | null }) {
 
     const navigate = useNavigate();
     let [searchParams] = useSearchParams();

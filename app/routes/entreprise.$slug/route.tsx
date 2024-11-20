@@ -1,4 +1,4 @@
-import UniteLegalPage from "~/presentation/unite-legal";
-export { getUniteLegalLoader as loader } from '~/application/unite-legal/get-unite-legal-by-ridet'
+import UniteLegalePage from "~/presentation/unite-legale";
+export { getUniteLegaleLoader as loader } from '~/application/unite-legale/get-unite-legale-by-ridet'
 
-export default UniteLegalPage
+export default UniteLegalePage

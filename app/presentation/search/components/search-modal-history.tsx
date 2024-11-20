@@ -1,7 +1,7 @@
 import { History } from "lucide-react"
 import { Link } from "@remix-run/react"
-import UniteLegalCategory from "~/presentation/unite-legal/unite-legal-category"
-import { UniteLegalHistoryItem } from "~/application/unite-legal/unite-legal-history-store"
+import UniteLegalCategory from "~/presentation/unite-legale/unite-legale-category"
+import { UniteLegalHistoryItem } from "~/application/unite-legale/unite-legale-history-store"
 
 export default function SearchModalHistory({ history, currentHistoryItem }: { history: UniteLegalHistoryItem[], currentHistoryItem: UniteLegalHistoryItem | null }) {
 

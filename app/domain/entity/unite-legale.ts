@@ -1,4 +1,4 @@
-export interface IUniteLegal {
+export interface IUniteLegale {
     ridet: string | null
     designation: string | null
     enseigne: string | null
@@ -44,7 +44,7 @@ export interface IUniteLegal {
 
 }
 
-export class UniteLegal implements IUniteLegal {
+export class UniteLegale implements IUniteLegale {
     ridet: string | null = null
     designation: string | null = null
     enseigne: string | null = null
@@ -88,7 +88,7 @@ export class UniteLegal implements IUniteLegal {
     date_immat_rap: Date | null = null
     date_radiation_rap: Date | null = null
 
-    constructor(props: Partial<UniteLegal>) {
+    constructor(props: Partial<UniteLegale>) {
         Object.assign(this, props)
     }
 }

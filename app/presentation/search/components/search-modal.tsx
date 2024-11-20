@@ -14,18 +14,18 @@ import { useEffect, useState } from "react"
 import SearchModalForm from "./search-modal-form"
 import SearchModalHistory from "./search-modal-history"
 import SearchAdvancesLink from "./search-advanced-link"
-import { getUniteLegalHistoryFromLocalStorage, UniteLegalHistoryItem } from "~/application/unite-legal/unite-legal-history-store"
+import { getUniteLegaleHistoryFromLocalStorage, UniteLegaleHistoryItem } from "~/application/unite-legale/unite-legale-history-store"
 
 export default function SearchModal() {
 
     const location = useLocation()
 
     const [isOpen, setIsOpen] = useState(false)
-    const [history, setHistory] = useState<UniteLegalHistoryItem[]>([])
-    const [currentHistoryItem, setCurrentHistoryItem] = useState<UniteLegalHistoryItem | null>(null)
+    const [history, setHistory] = useState<UniteLegaleHistoryItem[]>([])
+    const [currentHistoryItem, setCurrentHistoryItem] = useState<UniteLegaleHistoryItem | null>(null)
 
     useEffect(() => {
-        const currentHistory = getUniteLegalHistoryFromLocalStorage()
+        const currentHistory = getUniteLegaleHistoryFromLocalStorage()
         setHistory(currentHistory)
     }, [])
 

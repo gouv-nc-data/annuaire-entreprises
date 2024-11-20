@@ -1,5 +1,5 @@
 import { SearchResults } from "~/domain/entity/search-results"
-import SearchResultUniteLegal from "./search-results-unite-legal"
+import SearchResultUniteLegale from "./search-results-unite-legal"
 import SearchPagination from "./search-pagination"
 
 export function SearchResultsList({ searchResults }: { searchResults: SearchResults }) {
@@ -16,7 +16,7 @@ export function SearchResultsList({ searchResults }: { searchResults: SearchResu
                 {
                     searchResults.results.map((result) => {
                         return (
-                            <SearchResultUniteLegal key={result.ridet} uniteLegal={result} />
+                            <SearchResultUniteLegale key={result.ridet} uniteLegale={result} />
                         )
                     })
                 }

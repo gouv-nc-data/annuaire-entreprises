@@ -1,7 +1,7 @@
-import { UniteLegal } from "./unite-legal";
+import { UniteLegale } from "./unite-legale";
 
 export class SearchResults {
-    results: UniteLegal[] = [];
+    results: UniteLegale[] = [];
     total_results: number = 0;
     page: number = 1;
     per_page: number = 0;
