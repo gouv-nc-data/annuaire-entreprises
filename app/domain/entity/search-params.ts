@@ -22,6 +22,9 @@ export class SearchParams implements ISearchParams {
     //Final query sent to the search API
     query: string = ''
 
+    //Final search params url in client
+    url: string = ''
+
     //Booleans values to know if category filters are active
     isAdministrativeFilterActive: boolean = false
     isCityFilterActive: boolean = false
@@ -53,6 +56,7 @@ export class SearchParams implements ISearchParams {
 
         this.checkActiveFilters()
         this.buildQuery()
+        this.buildUrl()
     }
 
     getValue(key: SearchParamskeyStringType) {
@@ -128,5 +132,36 @@ export class SearchParams implements ISearchParams {
         }
 
         this.query = searchParams.toString()
+    }
+
+    buildUrl() {
+
+        const searchParams = new URLSearchParams()
+
+        if (this.q && this.q.length > 0) {
+            searchParams.set('terme', this.q)
+        }
+
+        if (this.page) {
+            searchParams.set('page', this.page)
+        }
+
+        if (this.ville && this.ville.length > 0) {
+            searchParams.set('ville', this.ville.join())
+        }
+
+        if (this.codePostal && this.codePostal.length > 0) {
+            searchParams.set('code_postal', this.codePostal.join())
+        }
+
+        if (this.formeJuridique && this.formeJuridique.length > 0) {
+            searchParams.set('forme_juridique', this.formeJuridique.join())
+        }
+
+        if (this.activitePrincipale && this.activitePrincipale.length > 0) {
+            searchParams.set('activite_principale', this.activitePrincipale.join())
+        }
+
+        this.url = searchParams.toString()
     }
 }

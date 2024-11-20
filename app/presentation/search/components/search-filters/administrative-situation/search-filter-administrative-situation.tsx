@@ -41,8 +41,8 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
         newSearchParams.page = "1"
         newSearchParams.setValue(paramName, newActiveSearchParams ? newActiveSearchParams : [])
 
-        newSearchParams.buildQuery();
-        return `/rechercher?${newSearchParams.query}`
+        newSearchParams.buildUrl();
+        return `/rechercher?${newSearchParams.url}`
     }
 
     function handleDisplayValueName(selectedItem: string) {

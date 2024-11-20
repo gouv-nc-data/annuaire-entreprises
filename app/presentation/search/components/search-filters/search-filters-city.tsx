@@ -27,8 +27,8 @@ export default function SearchFiltersCity({ label, icon }: ISearchFilter) {
         newSearchParams.page = "1"
         newSearchParams.setValue("ville", newActiveSearchParams ? newActiveSearchParams : [])
 
-        newSearchParams.buildQuery();
-        return `/rechercher?${newSearchParams.query}`
+        newSearchParams.buildUrl();
+        return `/rechercher?${newSearchParams.url}`
     }
 
 
