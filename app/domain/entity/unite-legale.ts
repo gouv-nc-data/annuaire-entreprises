@@ -22,28 +22,28 @@ export interface IUniteLegale {
     nb_salaries: number | null
     tranche_effectif_salaries: string | null
     taille_structure: string | null
-    date_creation: Date | null
-    date_radiation: Date | null
+    date_creation: string | null
+    date_radiation: string | null
     motif_radiation: string | null
     convention_collective: string | null
     nom_complet: string | null
     adresse_complete: string | null
 
     numero_rcs: string | null
-    date_immat_rcs: Date | null
-    date_radiation_rsc: Date | null
+    date_immat_rcs: string | null
+    date_radiation_rsc: string | null
     capital_social: number | null
     capital_fixe: boolean
     data_cloture_exercice_comptable: string | null
     duree_personne_morale: string | null
 
     numero_rm: string | null
-    date_immat_rm: Date | null
-    date_radiation_rm: Date | null
+    date_immat_rm: string | null
+    date_radiation_rm: string | null
 
     numero_rap: string | null
-    date_immat_rap: Date | null
-    date_radiation_rap: Date | null
+    date_immat_rap: string | null
+    date_radiation_rap: string | null
 
     dirigeants: IDirigeant[],
     etablissements: IEtablissement[]
@@ -70,28 +70,28 @@ export class UniteLegale implements IUniteLegale {
     nb_salaries: number | null = null
     tranche_effectif_salaries: string | null = null
     taille_structure: string | null = null
-    date_creation: Date | null = null
-    date_radiation: Date | null = null
+    date_creation: string | null = null
+    date_radiation: string | null = null
     motif_radiation: string | null = null
     convention_collective: string | null = null
     nom_complet: string | null = null
     adresse_complete: string | null = null
 
     numero_rcs: string | null = null
-    date_immat_rcs: Date | null = null
-    date_radiation_rsc: Date | null = null
+    date_immat_rcs: string | null = null
+    date_radiation_rsc: string | null = null
     capital_social: number | null = null
     capital_fixe: boolean = false
     data_cloture_exercice_comptable: string | null = null
     duree_personne_morale: string | null = null
 
     numero_rm: string | null = null
-    date_immat_rm: Date | null = null
-    date_radiation_rm: Date | null = null
+    date_immat_rm: string | null = null
+    date_radiation_rm: string | null = null
 
     numero_rap: string | null = null
-    date_immat_rap: Date | null = null
-    date_radiation_rap: Date | null = null
+    date_immat_rap: string | null = null
+    date_radiation_rap: string | null = null
 
     dirigeants: IDirigeant[] = []
     etablissements: IEtablissement[] = []

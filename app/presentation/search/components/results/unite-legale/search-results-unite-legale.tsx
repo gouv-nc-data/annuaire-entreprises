@@ -4,10 +4,9 @@ import { IUniteLegale } from "~/domain/entity/unite-legale"
 import UniteLegaleCategory from "~/presentation/unite-legale/unite-legale-category"
 import SearchResultsUniteLegaleDirigeants from "./search-results-unite-legale-dirigeants"
 import SearchResultsUniteLegaleEtablissements from "./search-results-unite-legale-etablissements"
+import UniteLegaleStatus from "~/presentation/unite-legale/unite-legale-status"
 
 export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale: IUniteLegale }) {
-
-    console.log(uniteLegale)
 
     return (
         <div className="flex flex-col items-start gap-2">
@@ -15,8 +14,9 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
                 <div className="flex flex-col gap-0">
                     <div className="flex flex-col gap-0">
                         <div className="flex items-center gap-4">
-                            <p className="text-blue-800 uppercase group-hover:underline font-normal text-lg">{uniteLegale.nom_complet}</p>
+                            <p className="text-blue-dinum uppercase group-hover:underline font-medium text-lg">{uniteLegale.nom_complet}</p>
                             <UniteLegaleCategory category="entreprise" />
+                            <UniteLegaleStatus dateRadiation={uniteLegale.date_radiation} onlyShowExpired={true} />
                         </div>
                         <div className="flex items-center gap-2">
                             {uniteLegale.ape && <p className="text-slate-800 text-md font-normal">{uniteLegale.ape}</p>}

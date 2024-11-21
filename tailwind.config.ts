@@ -15,6 +15,9 @@ export default {
 					'2xl': '6rem',
 				},
 			},
+			ringWidth: {
+				"6": "6px"
+			},
 			fontFamily: {
 				sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji']
 			},

@@ -51,7 +51,7 @@ export default function SearchModalForm({ setIsOpen, handleChangeCurrentHistoryI
     }, [currentHistoryItem])
 
     return (
-        <Form method="GET" action="/rechercher" className="w-full py-2 border-b-[1px] border-zinc-300">
+        <Form method="GET" action="/rechercher" className="w-full py-2 border-b-[1px] border-zinc-300 ring-6 ring-blue-50">
             <ExistingSearchParams exclude={["terme", "page"]} />
             <div className="flex w-full items-center relative">
                 <SearchIcon className="w-5 h-5 text-blue-dinum absolute left-4" />

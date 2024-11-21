@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Form, useSearchParams } from "@remix-run/react"
 
 import { ChevronsUpDown, Check, Plus, CornerDownRight } from "lucide-react"
@@ -65,7 +65,7 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
 
     return (
         <div className="flex flex-col gap-4 border-t-1 border-slate-200 pt-4">
-            <p className="text-zinc-600 text-sm font-medium flex items-center gap-2"><CornerDownRight className="w-4 h-4 text-blue-dinum -mt-1"/> {label}</p>
+            <p className="text-zinc-600 text-sm font-medium flex items-center gap-2"><CornerDownRight className="w-4 h-4 text-blue-dinum -mt-1" /> {label}</p>
             <Form method="GET" action="/rechercher" className="flex flex-col gap-4">
                 <Input type="hidden" name={paramName} value={inputValue} />
                 <ExistingSearchParams exclude={[paramName]} />
@@ -87,7 +87,7 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
                                 <ChevronsUpDown className="opacity-50 absolute right-2" />
                             </Button>
                         </PopoverTrigger>
-                        <PopoverContent className={`w-xs p-0 shadow-2xl border-1 border-slate-300`}>
+                        <PopoverContent className={`w-xs p-0 shadow-2xl`}>
                             <Command>
                                 <CommandInput placeholder={placeholder} className="h-9" />
                                 <CommandList>

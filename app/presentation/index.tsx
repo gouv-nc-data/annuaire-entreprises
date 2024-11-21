@@ -13,7 +13,7 @@ export const meta: MetaFunction = () => {
 
 export default function HomePage() {
     return (
-        <div className="flex flex-col gap-4 items-center justify-center h-full bg-zinc-100">
+        <div className="flex flex-col gap-4 items-center justify-center h-full">
             <div className="flex flex-col items-center gap-6 max-w-xl w-full p-4 py-20 md:py-40">
                 <div className="flex flex-col gap-4 w-full items-center">
                     <div className="flex flex-col gap-0 w-full">
@@ -24,25 +24,25 @@ export default function HomePage() {
                 </div>
                 <div className="flex flex-col items-start gap-2">
                     <div className="sm:flex hidden gap-2">
-                        <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-lg p-4">
+                        <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
                             <span className="text-xs leading-tight font-medium text-zinc-700">Par son emplacement</span>
                             <MapPinned className="w-4 h-4 text-zinc-500" />
                         </div>
-                        <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-lg p-4">
+                        <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
                             <span className="text-xs leading-tight font-medium text-zinc-700">Par ses dirigeants</span>
                             <User className="w-4 h-4 text-zinc-500" />
                         </div>
-                        <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-lg p-4">
+                        <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
                             <span className="text-xs leading-tight font-medium text-zinc-700">Par sa forme juridique</span>
                             <Scale className="w-4 h-4 text-zinc-500" />
                         </div>
-                        <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-lg p-4">
+                        <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
                             <span className="text-xs leading-tight font-medium text-zinc-700">Par son type de structure</span>
                             <Landmark className="w-4 h-4 text-zinc-500" />
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col items-start gap-2 bg-white w-full p-4 rounded-lg shadow-sm">
+                <div className="flex flex-col items-start gap-2 bg-white w-full p-4 rounded-2xl shadow-sm">
                     <p>Recherche une entreprise</p>
                     <SearchModal />
                 </div>

@@ -3,8 +3,6 @@ import { IDirigeant } from '~/domain/entity/dirigeant'
 
 export default function SearchResultsUniteLegaleDirigeants({ dirigeants }: { dirigeants: IDirigeant[] }) {
 
-    console.log('dirigeants : ', dirigeants)
-
     return (
         <div className='text-slate-600 flex items-center gap-2'>
             <User className="w-5 h-5" />

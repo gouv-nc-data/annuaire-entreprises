@@ -67,14 +67,14 @@ export default function SearchModal() {
             <div className="w-full" onClick={() => setIsOpen(true)}>
                 <SearchBar withoutOutline={true} />
             </div>
-            <DialogContent className="flex flex-col gap-4 sm:max-w-xl p-2 bg-transparent !focus-visible:ring-0">
+            <DialogContent className="flex flex-col gap-6 sm:max-w-xl p-2 bg-transparent !focus-visible:ring-0">
                 <div className="hidden">
                     <DialogTitle>Barre de recherche</DialogTitle>
                     <DialogDescription>
                         Barre de recherche de l'application Annuaire des entreprises de Nouvelle-Calédonie
                     </DialogDescription>
                 </div>
-                <div className="flex flex-col bg-white overflow-hidden rounded-lg border-2 border-blue-dinum md:scale-110 pulse">
+                <div className="flex flex-col bg-white overflow-hidden rounded-2xl ring-6 ring-blue-50">
                     <SearchModalForm setIsOpen={setIsOpen} handleChangeCurrentHistoryItem={handleChangeCurrentHistoryItem} currentHistoryItem={currentHistoryItem} />
                     <div className="flex items-center justify-between bg-slate-100 p-4 py-2">
                         <div className="flex items-center gap-2">
@@ -95,7 +95,7 @@ export default function SearchModal() {
                         </DialogClose>
                     </div>
                 </div>
-                <div className="bg-zinc-50 rounded-lg flex flex-col divide-y-1 overflow-hidden">
+                <div className="bg-zinc-50 rounded-2xl flex flex-col divide-y-1 overflow-hidden ring-6 ring-blue-50">
                     <SearchModalHistory history={history} currentHistoryItem={currentHistoryItem} />
                     <div className="flex items-center justify-center p-2 bg-white">
                         <SearchAdvancesLink />

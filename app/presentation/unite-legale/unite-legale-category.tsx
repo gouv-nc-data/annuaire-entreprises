@@ -2,9 +2,9 @@ import { Building2 } from 'lucide-react'
 
 export default function UniteLegaleCategory({ category }: { category: string }) {
     return (
-        <div className="tag bg-slate-200 hidden sm:flex">
-            <Building2 className="w-6 h-6 bg-blue-300 p-1 text-primary fill-slate-300" />
-            <span className="font-normal pe-2 text-slate-700">Entreprise</span>
+        <div className="tag flex ring-2 ring-orange-300 px-2 py-1">
+            <Building2 className="w-4 h-4 text-orange-400" />
+            <span className="font-medium text-md text-primary tracking-wide">Entreprise</span>
         </div>
     )
 }
