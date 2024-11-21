@@ -26,6 +26,11 @@ export function setUniteLegaleHistoryToLocalStorage(uniteLegale: IUniteLegale) {
     }
 
     newHistory.push(newUniteLegaleItem)
+
+    if (newHistory.length > 3) {
+        newHistory.shift()
+    }
+
     window.localStorage.setItem(HISTORY_LOCAL_STORAGE_KEY, JSON.stringify(newHistory));
 }
 
