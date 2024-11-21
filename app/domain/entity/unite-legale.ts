@@ -1,3 +1,6 @@
+import { IDirigeant } from "./dirigeant"
+import { IEtablissement } from "./etablissement"
+
 export interface IUniteLegale {
     ridet: string | null
     designation: string | null
@@ -42,6 +45,8 @@ export interface IUniteLegale {
     date_immat_rap: Date | null
     date_radiation_rap: Date | null
 
+    dirigeants: IDirigeant[],
+    etablissements: IEtablissement[]
 }
 
 export class UniteLegale implements IUniteLegale {
@@ -87,6 +92,9 @@ export class UniteLegale implements IUniteLegale {
     numero_rap: string | null = null
     date_immat_rap: Date | null = null
     date_radiation_rap: Date | null = null
+
+    dirigeants: IDirigeant[] = []
+    etablissements: IEtablissement[] = []
 
     constructor(props: Partial<UniteLegale>) {
         Object.assign(this, props)
