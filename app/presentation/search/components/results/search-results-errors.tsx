@@ -1,5 +1,5 @@
 import { useRouteError, isRouteErrorResponse } from "@remix-run/react";
-import SearchFilters from "./search-filters/search-filters";
+import SearchFilters from "../search-filters/search-filters";
 
 export function SearchResultsListErrors() {
     const error = useRouteError();

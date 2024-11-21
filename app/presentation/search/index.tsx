@@ -1,7 +1,7 @@
 import { useLoaderData } from "@remix-run/react";
 import { getSearchResultsLoader } from "~/application/search";
-import { SearchResultsList } from "./components/search-results-list"
-import SearchResultsGuide from "./components/search-results-guide";
+import { SearchResultsList } from "./components/results/search-results-list"
+import SearchResultsGuide from "./components/results/search-results-guide";
 import SearchFilters from "./components/search-filters/search-filters";
 
 export default function SearchPage() {

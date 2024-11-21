@@ -1,6 +1,6 @@
 import { SearchResults } from "~/domain/entity/search-results"
-import SearchResultUniteLegale from "./search-results-unite-legal"
-import SearchPagination from "./search-pagination"
+import SearchResultUniteLegale from "./unite-legale/search-results-unite-legale"
+import SearchPagination from "../search-pagination"
 
 export function SearchResultsList({ searchResults }: { searchResults: SearchResults }) {
 
@@ -12,7 +12,7 @@ export function SearchResultsList({ searchResults }: { searchResults: SearchResu
                 {currentPage > 1 && <span>page {currentPage} de</span>}
                 <span>{`${searchResults.total_results} ${searchResults.total_results > 1 ? 'résultats trouvés.' : 'résultat trouvé.'}`}</span>
             </div>
-            <ul className="flex flex-col gap-6">
+            <ul className="flex flex-col gap-10">
                 {
                     searchResults.results.map((result) => {
                         return (

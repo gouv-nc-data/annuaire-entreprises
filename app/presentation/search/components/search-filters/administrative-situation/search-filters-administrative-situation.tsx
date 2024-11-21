@@ -31,7 +31,7 @@ export default function searchFiltersAdministrativeSituation({ label, icon }: IS
                     {icon}
                     {
                         filtersAreActive
-                            ? <span className="filter-tag flex bg-emerald-300 py-1 px-2">+1 Filtres administratifs</span>
+                            ? <span className="filter-tag flex py-1 px-2">+1 Filtres administratifs</span>
                             : <span>{label}</span>
                     }
 
