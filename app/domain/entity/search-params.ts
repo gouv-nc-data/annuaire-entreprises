@@ -1,5 +1,4 @@
-
-export type SearchParamskeyStringType = 'activite_principale' | 'forme_juridique' | 'ville';
+export type SearchParamskeyStringType = 'activite_principale' | 'forme_juridique' | 'ville' | 'dirigeant';
 
 interface ISearchParams {
     q: string | null,
@@ -18,6 +17,7 @@ export class SearchParams implements ISearchParams {
     page: string | null = "1"
     formeJuridique: string[] | null = null;
     activitePrincipale: string[] | null = null;
+    dirigeant: string | null = null;
 
     //Final query sent to the search API
     query: string = ''
@@ -32,6 +32,7 @@ export class SearchParams implements ISearchParams {
     constructor(params: URLSearchParams) {
 
         this.q = params.get('terme') ?? '';
+        this.dirigeant = params.get('dirigeant') ?? '';
         this.page = params.get('page') ?? '1';
         const ville = params.get('ville');
         const codePostal = params.get('code_postal')
@@ -68,16 +69,31 @@ export class SearchParams implements ISearchParams {
         }
     }
 
-    setValue(key: SearchParamskeyStringType, value: string[]) {
+    setValue(key: SearchParamskeyStringType, value: string[] | string) {
         switch (key) {
             case ("forme_juridique"):
-                this.formeJuridique = value
+                if (Array.isArray(value)) {
+                    this.formeJuridique = value
+                }
                 return
+
             case ("activite_principale"):
-                this.activitePrincipale = value
+                if (Array.isArray(value)) {
+                    this.activitePrincipale = value
+                }
                 return
+
             case ("ville"):
-                this.ville = value
+                if (Array.isArray(value)) {
+                    this.ville = value
+                }
+                return
+
+            case ("dirigeant"):
+                if (typeof value === 'string') {
+                    this.dirigeant = value
+                }
+
                 return
         }
     }
@@ -111,6 +127,10 @@ export class SearchParams implements ISearchParams {
             searchParams.set('q', this.q)
         }
 
+        if (this.dirigeant && this.dirigeant.length > 0) {
+            searchParams.set('q', this.q && this.q.length > 0 ? this.q + ' ' + this.dirigeant : this.dirigeant)
+        }
+
         if (this.page) {
             searchParams.set('page', this.page)
         }
@@ -138,8 +158,12 @@ export class SearchParams implements ISearchParams {
 
         const searchParams = new URLSearchParams()
 
-        if (this.q && this.q.length > 0) {
+        if ((this.q && this.q.length > 0)) {
             searchParams.set('terme', this.q)
+        }
+
+        if ((this.dirigeant && this.dirigeant.length > 0)) {
+            searchParams.set('dirigeant', this.dirigeant)
         }
 
         if (this.page) {
