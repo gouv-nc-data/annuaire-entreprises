@@ -32,9 +32,9 @@ export default function SearchFiltersCity({ label, icon }: ISearchFilter) {
     }
 
 
-    function handleOnSubmit(e: any) {
+    function handleOnSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
-        const formData = new FormData(e.target)
+        const formData = new FormData(e.currentTarget)
         const newCityFilter = formData.get('ville')?.toString().toLocaleLowerCase()
 
         if (!newCityFilter) {
