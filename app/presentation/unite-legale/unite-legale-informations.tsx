@@ -38,10 +38,10 @@ export default function UniteLegaleInformations({ uniteLegale }: { uniteLegale: 
                 </div>
                 <div className='flex md:flex-row flex-col w-full md:gap-10'>
                     <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px]'>
-                        <span className='text-base font-medium text-primary'>RIDET</span>
+                        <span className='text-base font-medium text-primary'>RID</span>
                     </div>
                     <div className='w-full md:w-2/3 md:py-[6px]'>
-                        <BasicInformation information={uniteLegale.ridet} />
+                        <BasicInformation information={uniteLegale.rid} />
                     </div>
                 </div>
                 <div className='flex md:flex-row flex-col w-full md:gap-10'>
@@ -87,7 +87,7 @@ export default function UniteLegaleInformations({ uniteLegale }: { uniteLegale: 
             </div>
 
             <div className='flex flex-col md:flex-row items-start md:items-center justify-between gap-4'>
-                <UniteLegaleShareButton ridet={uniteLegale.ridet} align='start'/>
+                <UniteLegaleShareButton rid={uniteLegale.rid} align='start'/>
                 <div className='flex items-center gap-4'>
                     <span className='text-xs font-light text-slate-500'>Mise à jour le 25/11/2024</span>
                     <Link to="https://www.isee.nc/" target='_blank'>

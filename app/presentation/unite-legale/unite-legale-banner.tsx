@@ -10,7 +10,7 @@ export default function UniteLegalBanner({ uniteLegale }: { uniteLegale: IUniteL
                     {/* <UniteLegaleCategory category={"Établissement"} /> */}
                     <UniteLegaleCategory category={"entreprise"} />
                 </div>
-                <UniteLegaleShareButton ridet={uniteLegale.ridet} align="end" />
+                <UniteLegaleShareButton rid={uniteLegale.rid} align="end" />
             </div>
         </div>
     )

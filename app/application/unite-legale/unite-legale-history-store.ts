@@ -2,7 +2,7 @@ import { IUniteLegale } from "~/domain/entity/unite-legale";
 const HISTORY_LOCAL_STORAGE_KEY = "annuaire-entreprise-search-history"
 
 export type UniteLegaleHistoryItem = {
-    ridet: string
+    rid: string
     name: string,
     link: string,
     category: string
@@ -13,9 +13,9 @@ export function setUniteLegaleHistoryToLocalStorage(uniteLegale: IUniteLegale) {
     let newHistory: UniteLegaleHistoryItem[] = currentHistory ? JSON.parse(currentHistory) : []
 
     const newUniteLegaleItem = {
-        ridet: uniteLegale.ridet ? uniteLegale.ridet : '',
-        name: `${uniteLegale.ridet} ${uniteLegale.nom_complet}`,
-        link: `/entreprise/${uniteLegale.ridet}`,
+        rid: uniteLegale.rid ? uniteLegale.rid : '',
+        name: `${uniteLegale.rid} ${uniteLegale.nom_complet}`,
+        link: `/entreprise/${uniteLegale.rid}`,
         category: 'entreprise'
     }
 

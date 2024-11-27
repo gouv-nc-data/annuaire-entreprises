@@ -5,7 +5,7 @@ import { Button } from "../ui/button"
 import { Share, Linkedin, Twitter, Facebook, Printer } from "lucide-react"
 import { Link } from "@remix-run/react"
 
-export default function UniteLegaleShareButton({ ridet, align }: { ridet: IUniteLegale['ridet'], align?: "center" | "end" | "start" }) {
+export default function UniteLegaleShareButton({ rid, align }: { rid: IUniteLegale['rid'], align?: "center" | "end" | "start" }) {
 
     const [isOpen, setIsOpen] = useState(false)
 

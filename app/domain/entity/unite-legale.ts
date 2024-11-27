@@ -2,7 +2,7 @@ import { IDirigeant } from "./dirigeant"
 import { IEtablissement } from "./etablissement"
 
 export interface IUniteLegale {
-    ridet: string | null
+    rid: string | null
     designation: string | null
     enseigne: string | null
     forme_juridique: string | null
@@ -52,7 +52,7 @@ export interface IUniteLegale {
 }
 
 export class UniteLegale implements IUniteLegale {
-    ridet: string | null = null
+    rid: string | null = null
     designation: string | null = null
     enseigne: string | null = null
     forme_juridique: string | null = null

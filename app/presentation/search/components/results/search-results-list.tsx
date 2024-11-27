@@ -16,7 +16,7 @@ export function SearchResultsList({ searchResults }: { searchResults: SearchResu
                 {
                     searchResults.results.map((result) => {
                         return (
-                            <SearchResultUniteLegale key={result.ridet} uniteLegale={result} />
+                            <SearchResultUniteLegale key={result.rid} uniteLegale={result} />
                         )
                     })
                 }

@@ -17,7 +17,7 @@ export default function UniteLegaleHeader({ uniteLegale }: { uniteLegale: IUnite
                         <div className="flex items-start justify-between w-full">
                             <div className="flex items-center gap-2">
                                 <span className="flex items-center gap-2 text-lg text-primary font-medium border-2 border-orange-dinum bg-orange-100 rounded-2xl px-4 py-1">
-                                    <IdCard className="w-5 h-5 text-orange-600" /> <strong className="text-orange-600 font-medium">RIDET ‣</strong> {uniteLegale.ridet}
+                                    <IdCard className="w-5 h-5 text-orange-600" /> <strong className="text-orange-600 font-medium">RID ‣</strong> {uniteLegale.rid}
                                 </span>
                             </div>
                         </div>

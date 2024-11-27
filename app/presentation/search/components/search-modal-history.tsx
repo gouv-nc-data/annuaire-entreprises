@@ -21,7 +21,7 @@ export default function SearchModalHistory({ history, currentHistoryItem }: { hi
                         <ul className="flex flex-col bg-white">
                             {
                                 history.map((item: UniteLegaleHistoryItem) => {
-                                    const isFocused = currentHistoryItem ? currentHistoryItem.ridet === item.ridet : false
+                                    const isFocused = currentHistoryItem ? currentHistoryItem.rid === item.rid : false
 
                                     return (
                                         <Link key={item.name} to={item.link} className={`${isFocused ? 'bg-slate-100' : 'hover:bg-slate-100 text-slate-500'} inline-flex items-center gap-2 group px-4 py-2`}>

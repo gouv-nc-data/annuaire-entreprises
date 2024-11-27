@@ -1,5 +1,5 @@
 import { useLoaderData } from "@remix-run/react";
-import { getUniteLegaleLoader } from "~/application/unite-legale/get-unite-legale-by-ridet";
+import { getUniteLegaleLoader } from "~/application/unite-legale/get-unite-legale-by-rid";
 import { useEffect } from "react";
 import { setUniteLegaleHistoryToLocalStorage } from "~/application/unite-legale/unite-legale-history-store";
 import UniteLegaleHeader from "../unite-legale-header";
@@ -20,7 +20,7 @@ export default function UniteLegaleDirigeantsPage() {
             <UniteLegalBanner uniteLegale={uniteLegale} />
             <div className="max-w-7xl mx-auto px-4 py-10">
                 <UniteLegaleHeader uniteLegale={uniteLegale} />
-                <UniteLegalNavigation ridet={uniteLegale.ridet} />
+                <UniteLegalNavigation rid={uniteLegale.rid} />
             </div>
         </div>
     )

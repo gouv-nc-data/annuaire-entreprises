@@ -4,13 +4,13 @@ import { UniteLegale } from "~/domain/entity/unite-legale";
 
 export async function getUniteLegaleLoader({ params }: LoaderFunctionArgs) {
 
-    const ridet = params.slug
+    const rid = params.slug
 
-    if (!ridet || ridet.length === 0) {
+    if (!rid || rid.length === 0) {
         throw redirect(`/rechercher`)
     }
 
-    const uniteLegale = await Repository.uniteLegale.getUniteLegaleByRidet(ridet)
+    const uniteLegale = await Repository.uniteLegale.getUniteLegaleByRid(rid)
 
     if (uniteLegale === null || uniteLegale.results.length === 0) {
         throw json("Not Found", { status: 404 });

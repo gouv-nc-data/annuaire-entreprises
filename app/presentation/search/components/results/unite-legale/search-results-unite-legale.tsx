@@ -10,7 +10,7 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
 
     return (
         <div className="flex flex-col items-start gap-2">
-            <Link to={`/entreprise/${uniteLegale.ridet}`} className="group flex flex-col gap-2">
+            <Link to={`/entreprise/${uniteLegale.rid}`} className="group flex flex-col gap-2">
                 <div className="flex flex-col gap-0">
                     <div className="flex flex-col gap-0">
                         <div className="flex items-center gap-4">

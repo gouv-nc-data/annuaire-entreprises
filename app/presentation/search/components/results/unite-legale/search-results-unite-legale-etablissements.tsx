@@ -11,7 +11,7 @@ export default function SearchResultsUniteLegaleEtablissements({ etablissements 
                     etablissements.slice(0, 3).map((etablissement, index) =>
                         <li key={index} className="relative flex items-center border-s-1 border-slate-300">
                             <figure className="w-4 h-[1px] bg-slate-300" />
-                            <Link to={`/entreprise/${etablissement.ridet}`} className="ps-2 hover:underline">
+                            <Link to={`/entreprise/${etablissement.rid}`} className="ps-2 hover:underline">
                                 <span className='address'>{etablissement.adresse_physique}</span>
                             </Link>
                         </li>
