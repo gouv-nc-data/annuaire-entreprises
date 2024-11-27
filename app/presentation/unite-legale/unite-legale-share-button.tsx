@@ -5,7 +5,7 @@ import { Button } from "../ui/button"
 import { Share, Linkedin, Twitter, Facebook, Printer } from "lucide-react"
 import { Link } from "@remix-run/react"
 
-export default function UniteLegaleShareButton({ ridet }: { ridet: IUniteLegale['ridet'] }) {
+export default function UniteLegaleShareButton({ ridet, align }: { ridet: IUniteLegale['ridet'], align?: "center" | "end" | "start" }) {
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -16,7 +16,7 @@ export default function UniteLegaleShareButton({ ridet }: { ridet: IUniteLegale[
                     <Share className="w-4 h-4" /> Partager
                 </Button>
             </PopoverTrigger>
-            <PopoverContent className="shadow-2xl" align="end">
+            <PopoverContent className="shadow-2xl" align={align ? align : 'start'}>
                 <div className="flex flex-col justify-start gap-4">
                     <div className="space-y-2">
                         <h4 className="font-medium text-md leading-none text-primary">Partager cette fiche entreprise</h4>

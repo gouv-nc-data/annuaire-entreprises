@@ -1,6 +1,4 @@
-import { Popover, PopoverTrigger, PopoverContent, } from "~/presentation/ui/popover"
 import { IUniteLegale } from "~/domain/entity/unite-legale";
-import UniteLegaleShareButton from "./unite-legale-share-button";
 
 export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegale: IUniteLegale }) {
 
@@ -10,20 +8,20 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
 
     return (
         <div className="flex flex-col gap-2">
-            <p className="text-slate-700 font-normal text-base tracking-normal">
+            <p className="text-zinc-900 font-light text-md">
                 {fromDate && yearDifference &&
                     <>
-                        La société {uniteLegale.nom_complet} a été créée le <strong className="text-blue-900 font-medium">{uniteLegale.date_creation}</strong>, il y {yearDifference} {yearDifference > 1 ? 'ans. ' : 'an. '}
+                        La société {uniteLegale.nom_complet} a été créée le <strong className="font-medium">{uniteLegale.date_creation}</strong>, il y {yearDifference} {yearDifference > 1 ? 'ans. ' : 'an. '}
                     </>
                 }
                 {uniteLegale.forme_juridique &&
                     <>
-                        Sa forme juridique est <strong className="text-blue-900 font-medium">{uniteLegale.forme_juridique}. </strong>
+                        Sa forme juridique est <strong className="font-medium">{uniteLegale.forme_juridique}. </strong>
                     </>
                 }
                 {uniteLegale.ape &&
                     <>
-                        Son domaine d'activité est : <strong className="text-blue-900 font-medium">{uniteLegale.ape}. </strong>
+                        Son domaine d'activité est : <strong className="font-medium">{uniteLegale.ape}. </strong>
                     </>
                 }
                 {uniteLegale.nb_salaries ?
@@ -36,7 +34,7 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
                     </>
                 }
             </p>
-            <p className="text-slate-700 font-normal text-base tracking-normal">
+            <p className="text-zinc-900 font-light text-md">
                 {
                     uniteLegale.adresse_complete &&
                     <>

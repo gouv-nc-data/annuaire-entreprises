@@ -16,7 +16,7 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
                         <div className="flex items-center gap-4">
                             <p className="text-blue-dinum uppercase group-hover:underline font-medium text-lg">{uniteLegale.nom_complet}</p>
                             <UniteLegaleCategory category="entreprise" />
-                            <UniteLegaleStatus dateRadiation={uniteLegale.date_radiation} onlyShowExpired={true} />
+                            <UniteLegaleStatus etatRid={uniteLegale.etat_rid} onlyShowExpired={true} />
                         </div>
                         <div className="flex items-center gap-2">
                             {uniteLegale.ape && <p className="text-slate-800 text-md font-normal">{uniteLegale.ape}</p>}

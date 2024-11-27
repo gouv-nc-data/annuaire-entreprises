@@ -42,7 +42,7 @@ export default function HomePage() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col items-start gap-2 bg-white w-full p-4 rounded-2xl shadow-sm">
+                <div className="flex flex-col items-start gap-2 bg-white w-full p-6 rounded-2xl shadow-sm">
                     <p>Recherche une entreprise</p>
                     <SearchModal />
                 </div>

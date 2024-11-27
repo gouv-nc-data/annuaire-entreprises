@@ -12,7 +12,7 @@ export default function Header() {
 
     return (
         <header className="flex flex-col gap-4bg-white w-full">
-            <div className='container w-full flex justify-between items-center py-4 gap-8'>
+            <div className='max-w-7xl mx-auto px-4 w-full flex justify-between items-center py-4 gap-8'>
                 <Link to="/" className='w-80'>
                     <Logo />
                 </Link>

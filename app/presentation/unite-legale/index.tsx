@@ -5,6 +5,7 @@ import { setUniteLegaleHistoryToLocalStorage } from "~/application/unite-legale/
 import UniteLegaleHeader from "./unite-legale-header";
 import UniteLegalNavigation from "./unite-legale-navigation";
 import UniteLegaleInformations from "./unite-legale-informations";
+import UniteLegalBanner from "./unite-legale-banner";
 
 export default function UniteLegalePage() {
 
@@ -15,10 +16,13 @@ export default function UniteLegalePage() {
     }, [])
 
     return (
-        <div className="container flex flex-col py-10">
-            <UniteLegaleHeader uniteLegale={uniteLegale} />
-            <UniteLegalNavigation ridet={uniteLegale.ridet} />
-            <UniteLegaleInformations uniteLegale={uniteLegale} />
+        <div className="flex flex-col">
+            <UniteLegalBanner uniteLegale={uniteLegale} />
+            <div className="max-w-7xl mx-auto px-4 py-10">
+                <UniteLegaleHeader uniteLegale={uniteLegale} />
+                <UniteLegalNavigation ridet={uniteLegale.ridet} />
+                <UniteLegaleInformations uniteLegale={uniteLegale} />
+            </div>
         </div>
     )
 }

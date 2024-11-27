@@ -25,7 +25,7 @@ const activeFilters = [
 export default function SearchFilters() {
     return (
         <div className="py-2 bg-slate-200">
-            <div className="container">
+            <div className="max-w-7xl mx-auto px-4">
                 <ul className="flex flex-col items-start md:flex-row md:items-center gap-2">
                     {activeFilters.map(filter => filter)}
                 </ul>
