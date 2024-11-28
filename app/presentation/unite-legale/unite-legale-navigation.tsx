@@ -7,7 +7,7 @@ export default function UniteLegalNavigation({ rid }: { rid: IUniteLegale['rid']
     const location = useLocation()
 
     return (
-        <nav className="pt-10 pb-6">
+        <nav className="">
             <ul className="inline-flex items-center gap-1 bg-white p-1 rounded-xl shadow-sm border border-input">
                 <li>
                     <Link className={`flex gap-2 items-center rounded-lg p-2 px-3 font-light border-1 text-sm ${location.pathname.includes('entreprise') ? 'bg-blue-50  ring-blue-200 border-1  text-blue-dinum  font-medium' : 'text-slate-500 hover:bg-blue-50 hover:text-slate-600 border-transparent'}`} to={`/entreprise/${rid}`}><BookText className="w-4 h-4" />Fiche résumé</Link>
