@@ -2,13 +2,15 @@ import { json, LoaderFunctionArgs, redirect } from "@remix-run/node";
 import { Repository } from "~/adapter/repository";
 import { UniteLegale } from "~/domain/entity/unite-legale";
 
-export async function getUniteLegaleLoader({ params }: LoaderFunctionArgs) {
+export async function getUniteLegaleEtablissementLoader({ params }: LoaderFunctionArgs) {
 
-    const rid = params.rid
+    const ridet = params.ridet
 
-    if (!rid || rid.length === 0) {
+    if (!ridet || ridet.length === 0) {
         throw redirect(`/rechercher`)
     }
+
+    const rid = ridet.slice(0, ridet.length - 3)
 
     const uniteLegale = await Repository.uniteLegale.getUniteLegaleByRid(rid)
 

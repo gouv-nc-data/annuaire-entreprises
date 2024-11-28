@@ -2,6 +2,8 @@ export interface IEtablissement {
     type_etablissement: string | null
     situation: string | null
     rid: string | null
+    et:string|null
+    ridet:string|null
     designation: string | null
     enseigne: string | null
     ape: string | null
