@@ -42,6 +42,6 @@ COPY --from=build /myapp/build /myapp/build
 COPY --from=build /myapp/public /myapp/public
 ADD . .
 # ENV SEARCH_API_URL=${SEARCH_API_URL}
-ENV SEARCH_API_URL=http://annuaire-entreprises-api-backend.qualif.gnc:25697/api/v1/
+ENV SEARCH_API_URL=http://annuaire-entreprises-api-backend.qualif.gnc:25697/api/v1/recherche
 
 CMD ["npm", "start"]
