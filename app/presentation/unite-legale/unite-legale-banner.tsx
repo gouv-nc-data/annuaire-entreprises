@@ -17,9 +17,10 @@ export default function UniteLegalBanner({ uniteLegale, etablissement }: { unite
                             <ChevronRight className="w-4 h-4" />
                             Etablissements
                             <ChevronRight className="w-4 h-4" />
-                            {etablissement.enseigne}
-                            {etablissement.designation}
-                            {etablissement.ridet}
+                            <div className="inline-flex items-center gap-1">
+                                <span className="text-blue-dinum font-medium">{etablissement.enseigne}</span>
+                                <span className="text-blue-dinum font-medium">{etablissement.designation}</span>
+                            </div>
                         </div>
                         : <div className="text-sm text-primary font-medium flex items-center gap-1">
                             <ChevronRight className="w-4 h-4" />
