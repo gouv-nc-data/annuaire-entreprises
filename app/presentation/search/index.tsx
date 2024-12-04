@@ -7,12 +7,14 @@ import SearchFilters from "./components/search-filters/search-filters";
 export default function SearchPage() {
     const searchResults = useLoaderData<typeof getSearchResultsLoader>();
 
+    console.log('search results : ', searchResults)
+
     return (
         <div>
             <SearchFilters />
             <div className="py-10 max-w-7xl mx-auto px-4">
                 {
-                    searchResults !== null
+                    searchResults !== null && searchResults.results
                         ? <SearchResultsList searchResults={searchResults} />
                         : <SearchResultsGuide />
                 }
