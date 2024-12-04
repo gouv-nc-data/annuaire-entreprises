@@ -8,7 +8,7 @@ export default function UniteLegaleEtablissement({ etablissement }: { etablissem
     return (
         <li className='flex flex-col md:grid md:grid-cols-12 w-full items-start md:gap-4 gap-3 py-2 md:py-0 border-b-1 border-slate-300 last:border-0 md:border-0'>
             <div className='col-span-1'>
-                <span className="block md:hidden text-base font-medium text-primary pb-2">RID</span>
+                <span className="block md:hidden text-base font-medium text-primary pb-2">RIDET</span>
                 <Link to={`/etablissement/${etablissement.ridet}`} className="!text-blue-dinum hover:underline">
                     <span className={`text-blue-dinum font-medium text-sm`}>{etablissement.rid}</span>
                     <br/>
