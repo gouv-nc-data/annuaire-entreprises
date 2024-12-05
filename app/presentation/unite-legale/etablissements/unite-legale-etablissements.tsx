@@ -19,7 +19,7 @@ export default function UniteLegaleEtablissements({ uniteLegale }: { uniteLegale
     }
 
     return (
-        <section className='flex flex-col gap-4'>
+        <section className='flex flex-col gap-4' id='etablissements'>
             <span className='text-zinc-900 font-light text-md'>Cette structure possède {etablissements.length} établissements. Cliquez sur un n° RIDET pour obtenir plus d’information :</span>
             <div className='flex flex-col gap-6 p-6 bg-white rounded-xl shadow-sm border border-input'>
                 <header className='flex w-full justify-between items-start gap-6'>

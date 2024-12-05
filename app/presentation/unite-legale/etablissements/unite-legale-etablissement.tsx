@@ -11,7 +11,7 @@ export default function UniteLegaleEtablissement({ etablissement }: { etablissem
                 <span className="block md:hidden text-base font-medium text-primary pb-2">RIDET</span>
                 <Link to={`/etablissement/${etablissement.ridet}`} className="!text-blue-dinum hover:underline">
                     <span className={`text-blue-dinum font-medium text-sm`}>{etablissement.rid}</span>
-                    <br/>
+                    <br />
                     <span className={`text-blue-dinum font-medium text-sm`}>{etablissement.et}</span>
                 </Link>
             </div>
@@ -22,9 +22,8 @@ export default function UniteLegaleEtablissement({ etablissement }: { etablissem
             </div>
             <div className='col-span-3 flex flex-col md:flex-row md:inline-block gap-1 items-start'>
                 <span className="block md:hidden text-base font-medium text-primary">Détails (nom, enseigne, adresse)</span>
-                <span className={`text-slate-800 font-normal text-sm`}>{etablissement.designation}</span>
-                <span className={`text-slate-800 font-normal text-sm`}>{etablissement.enseigne}</span>
-                <span className={`text-slate-800 font-normal text-sm`}>{etablissement.adresse_physique}</span>
+                <span className={`text-slate-800 font-normal text-sm`}>{etablissement.nom_complet}</span>
+                <span className={`text-slate-800 font-normal text-sm`}> {etablissement.adresse_physique}</span>
             </div>
             <div className='col-span-2'>
                 <span className="block md:hidden text-base font-medium text-primary">Création</span>

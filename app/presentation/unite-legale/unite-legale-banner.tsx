@@ -11,12 +11,12 @@ export default function UniteLegalBanner({ uniteLegale, etablissement }: { unite
             <div className="max-w-7xl mx-auto px-4 flex justify-between items-center gap-2">
                 <div className="flex items-center gap-2">
                     {etablissement
-                        ? <div className="text-sm text-primary font-medium flex items-center gap-1">
+                        ? <div className="text-sm text-primary font-medium flex flex-col items-start md:flex-row md:items-center gap-1">
                             Entreprise :
-                            <Link to={`entreprise/${uniteLegale.rid}`} className="text-blue-dinum font-medium hover:underline">{uniteLegale.nom_complet}</Link>
-                            <ChevronRight className="w-4 h-4" />
+                            <Link to={`/entreprise/${uniteLegale.rid}`} className="text-blue-dinum font-medium hover:underline">{uniteLegale.nom_complet}</Link>
+                            <ChevronRight className="w-4 h-4 hidden md:inline-flex" />
                             Etablissements
-                            <ChevronRight className="w-4 h-4" />
+                            <ChevronRight className="w-4 h-4 hidden md:inline-flex" />
                             <div className="inline-flex items-center gap-1">
                                 <span className="text-blue-dinum font-medium">{etablissement.enseigne}</span>
                                 <span className="text-blue-dinum font-medium">{etablissement.designation}</span>
