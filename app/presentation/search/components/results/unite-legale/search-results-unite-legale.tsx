@@ -39,7 +39,7 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
                 <div className="flex flex-col ms-6">
                     {
                         uniteLegale.etablissements && uniteLegale.etablissements.length > 0 &&
-                        <SearchResultsUniteLegaleEtablissements etablissements={uniteLegale.etablissements} />
+                        <SearchResultsUniteLegaleEtablissements rid={uniteLegale.rid} etablissements={uniteLegale.etablissements} />
                     }
                 </div>
             </div>
