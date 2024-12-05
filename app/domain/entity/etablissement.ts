@@ -1,4 +1,6 @@
 export interface IEtablissement {
+    nom_complet: string | null
+    adresse_complete: string | null
     type_etablissement: string | null
     situation: string | null
     rid: string | null
