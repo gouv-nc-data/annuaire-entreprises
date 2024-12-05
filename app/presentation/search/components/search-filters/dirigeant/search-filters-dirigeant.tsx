@@ -49,8 +49,6 @@ export default function SearchFiltersDirigeant({ label, icon }: ISearchFilter) {
             return
         }
 
-        console.log('newDirigeantFilter', newDirigeantFilter)
-
         const newSearchParams = new URLSearchParams(searchParams.toString())
         newSearchParams.set('dirigeant', newDirigeantFilter)
 

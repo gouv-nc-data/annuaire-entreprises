@@ -13,8 +13,6 @@ export async function getSearchResultsLoader({ request }: LoaderFunctionArgs) {
     const query = new SearchParams(searchParams).query
     const searchResults = await Repository.search.getSearchResults(query)
 
-    console.log('search results in loader', searchResults)
-
     if (searchResults === null) {
         throw json("Not Found", { status: 404 });
     }
