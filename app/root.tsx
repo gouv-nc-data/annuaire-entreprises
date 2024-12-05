@@ -10,6 +10,8 @@ import type { LinksFunction } from "@remix-run/node";
 
 import Header from "./presentation/header";
 import Footer from "./presentation/footer";
+import GlobalLoading from "./presentation/ui/loader";
+
 import "./presentation/tailwind.css"
 
 export const links: LinksFunction = () => [
@@ -35,6 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="flex flex-col flex-1 h-svh">
+        <GlobalLoading />
         <Header />
         <div className="flex-grow bg-zinc-100">
           {children}
