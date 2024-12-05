@@ -26,19 +26,19 @@ export default function HomePage() {
                     <div className="sm:flex hidden gap-2">
                         <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
                             <span className="text-xs leading-tight font-medium text-zinc-700">Par son emplacement</span>
-                            <MapPinned className="w-4 h-4 text-zinc-500" />
+                            <MapPinned className="w-4 h-4 text-blue-dinum" />
                         </div>
                         <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
                             <span className="text-xs leading-tight font-medium text-zinc-700">Par ses dirigeants</span>
-                            <User className="w-4 h-4 text-zinc-500" />
+                            <User className="w-4 h-4 text-blue-dinum" />
                         </div>
                         <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
                             <span className="text-xs leading-tight font-medium text-zinc-700">Par sa forme juridique</span>
-                            <Scale className="w-4 h-4 text-zinc-500" />
+                            <Scale className="w-4 h-4 text-blue-dinum" />
                         </div>
                         <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
                             <span className="text-xs leading-tight font-medium text-zinc-700">Par son type de structure</span>
-                            <Landmark className="w-4 h-4 text-zinc-500" />
+                            <Landmark className="w-4 h-4 text-blue-dinum" />
                         </div>
                     </div>
                 </div>
