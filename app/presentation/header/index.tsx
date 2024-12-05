@@ -3,7 +3,7 @@ import { Button } from '../ui/button'
 
 import { ArrowUpRight } from 'lucide-react'
 import Logo from './Logo'
-import SearchModal from '../search/components/search-modal'
+import SearchModal from '../search/search-modal'
 
 export default function Header() {
 

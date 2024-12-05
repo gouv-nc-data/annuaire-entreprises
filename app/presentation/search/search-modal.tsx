@@ -1,14 +1,14 @@
 import { ArrowUp, ArrowDown } from "lucide-react"
 import { useLocation } from "@remix-run/react"
 
-import { Button } from "../../ui/button"
+import { Button } from "../ui/button"
 import {
     Dialog,
     DialogClose,
     DialogContent,
     DialogDescription,
     DialogTitle,
-} from "../../ui/dialog"
+} from "../ui/dialog"
 import SearchBar from "./search-bar"
 import { useEffect, useState } from "react"
 import SearchModalForm from "./search-modal-form"

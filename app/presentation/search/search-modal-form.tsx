@@ -1,5 +1,5 @@
 import { Form, useNavigate, useSearchParams } from "@remix-run/react";
-import { SearchIcon, X } from "lucide-react";
+import { SearchIcon } from "lucide-react";
 import { Input } from "~/presentation/ui/input";
 import { ExistingSearchParams } from "~/application/search/existing-search-params";
 import { Button } from "~/presentation/ui/button";

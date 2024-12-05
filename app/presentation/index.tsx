@@ -1,8 +1,8 @@
 import { type MetaFunction } from "@remix-run/node";
 
 import { MapPinned, User, Scale, Landmark } from "lucide-react";
-import SearchModal from "./search/components/search-modal";
-import SearchAdvancesLink from "./search/components/search-advanced-link";
+import SearchModal from "./search/search-modal";
+import SearchAdvancesLink from "./search/search-advanced-link";
 
 export const meta: MetaFunction = () => {
     return [

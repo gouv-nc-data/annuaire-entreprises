@@ -1,8 +1,8 @@
 import { Form, useSearchParams } from "@remix-run/react"
 import { Search as SearchIcon } from "lucide-react"
 
-import { Input } from "../../ui/input"
-import { Button } from "../../ui/button"
+import { Input } from "../ui/input"
+import { Button } from "../ui/button"
 import { ExistingSearchParams } from "~/application/search/existing-search-params";
 
 export default function SearchBar({ withoutOutline }: { withoutOutline?: boolean }) {
