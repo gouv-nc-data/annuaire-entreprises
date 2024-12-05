@@ -14,7 +14,7 @@ export default function SearchPage() {
             <SearchFilters />
             <div className="py-10 max-w-7xl mx-auto px-4">
                 {
-                    searchResults !== null && searchResults.results
+                    searchResults !== null && searchResults.results && searchResults.total_results
                         ? <SearchResultsList searchResults={searchResults} />
                         : <SearchResultsGuide />
                 }
