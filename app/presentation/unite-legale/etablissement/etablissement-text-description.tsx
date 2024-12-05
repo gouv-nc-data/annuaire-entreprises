@@ -21,7 +21,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
                     <p className="hidden md:flex">
                         <TooltipInfo
                             label='Cet établissement'
-                            content='Une société est constituée d’autant d’établissements qu’il y a de lieux différents où elle exerce - ou a exercé - son activité. Il faut bien distinguer la fiche résumé de la société et les fiches de ses établissements.'
+                            content="Une société est constituée d’autant d’établissements qu’il y a de lieux différents où elle exerce - ou a exercé - son activité. Il faut bien distinguer la fiche résumé de l'entreprise et les fiches de ses établissements."
                         />
                     </p>
                     <p className="">
@@ -55,7 +55,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
             <p className="text-zinc-900 font-light text-md">
                 {fromDate && yearDifference && creationDate &&
                     <>
-                        {etablissement.nom_complet} est un établissement de la société {uniteLegale.nom_complet} qui a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference} {yearDifference > 1 ? 'ans. ' : 'an. '}
+                        {etablissement.nom_complet} est un établissement de l'entreprise {uniteLegale.nom_complet} qui a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference} {yearDifference > 1 ? 'ans. ' : 'an. '}
                     </>
                 }
                 {uniteLegale.forme_juridique &&

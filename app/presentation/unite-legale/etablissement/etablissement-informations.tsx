@@ -31,10 +31,18 @@ export default function EtablissementInformations({ uniteLegale, etablissement }
                 </div>
                 <div className='flex md:flex-row flex-col w-full md:gap-10'>
                     <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px]'>
-                        <span className='text-base font-medium text-primary'>Dénomination de la société</span>
+                        <span className='text-base font-medium text-primary'>Dénomination de l'entreprise</span>
                     </div>
                     <div className='w-full md:w-2/3 md:py-[6px]'>
                         <BasicInformation information={uniteLegale.nom_complet} />
+                    </div>
+                </div>
+                <div className='flex md:flex-row flex-col w-full md:gap-10'>
+                    <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px]'>
+                        <span className='text-base font-medium text-primary'>Sigle de l'entreprise</span>
+                    </div>
+                    <div className='w-full md:w-2/3 md:py-[6px]'>
+                        <BasicInformation information={uniteLegale.sigle} />
                     </div>
                 </div>
                 <div className='flex md:flex-row flex-col w-full md:gap-10'>

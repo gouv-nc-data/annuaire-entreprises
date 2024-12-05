@@ -4,7 +4,7 @@ import { IEtablissement } from "./etablissement"
 export interface IUniteLegale {
     rid: string | null
     designation: string | null
-    enseigne: string | null
+    sigle: string | null
     forme_juridique: string | null
     adresse_physique: string | null
     code_postal_physique: string | null
@@ -54,7 +54,7 @@ export interface IUniteLegale {
 export class UniteLegale implements IUniteLegale {
     rid: string | null = null
     designation: string | null = null
-    enseigne: string | null = null
+    sigle: string | null = null
     forme_juridique: string | null = null
     adresse_physique: string | null = null
     code_postal_physique: string | null = null

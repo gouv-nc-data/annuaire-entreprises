@@ -10,8 +10,6 @@ import SituationStatus from "./common/situation-status";
 
 export default function UniteLegaleHeader({ uniteLegale, showShareButton, etablissement }: { uniteLegale: IUniteLegale, showShareButton?: boolean, etablissement?: IEtablissement }) {
 
-    console.log('établissement : ', etablissement)
-
     return (
         <header className="flex flex-col gap-4">
             <div className="flex items-start gap-20 w-full">
@@ -23,7 +21,7 @@ export default function UniteLegaleHeader({ uniteLegale, showShareButton, etabli
                                     {etablissement ?
                                         <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
                                             <span>Établissement</span>
-                                            {etablissement.nom_complet}
+                                            {etablissement.nom_complet} ({uniteLegale.sigle ? uniteLegale.sigle : uniteLegale.designation})
                                         </div>
                                         :
                                         uniteLegale.nom_complet

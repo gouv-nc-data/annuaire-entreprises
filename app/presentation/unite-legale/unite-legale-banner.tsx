@@ -18,8 +18,9 @@ export default function UniteLegalBanner({ uniteLegale, etablissement }: { unite
                             Etablissements
                             <ChevronRight className="w-4 h-4 hidden md:inline-flex" />
                             <div className="inline-flex items-center gap-1">
-                                <span className="text-blue-dinum font-medium">{etablissement.enseigne}</span>
-                                <span className="text-blue-dinum font-medium">{etablissement.designation}</span>
+                                {etablissement.enseigne && <span className="text-blue-dinum font-medium">{etablissement.enseigne}</span>}
+                                {etablissement.designation && <span className="text-blue-dinum font-medium">{etablissement.designation}</span>}
+                                <span className="text-blue-dinum font-medium">({uniteLegale.sigle ? uniteLegale.sigle : uniteLegale.designation})</span>
                             </div>
                         </div>
                         : <div className="text-sm text-primary font-medium flex items-center gap-1">
