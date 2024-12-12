@@ -12,7 +12,7 @@ import { SearchParams, SearchParamskeyStringType } from "~/domain/entity/search-
 import ActiveFilters from "../../active-filters"
 import { DataType } from "./search-filters-administrative-situation"
 
-export default function SearchFilterAdministrativeSituation({ paramName, label, values, valuesLabel, data, placeholder }: { paramName: SearchParamskeyStringType, label: string, values: string[], valuesLabel: string[], data: DataType, placeholder: string }) {
+export default function SearchFilterAdministrativeSituation({ paramName, label, data, placeholder }: { paramName: SearchParamskeyStringType, label: string, values: string[], valuesLabel: string[], data: DataType, placeholder: string }) {
 
     let [searchParams] = useSearchParams();
 
