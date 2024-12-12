@@ -18,6 +18,7 @@ export class SearchParams implements ISearchParams {
     formeJuridique: string[] | null = null;
     activitePrincipale: string[] | null = null;
     dirigeant: string | null = null;
+    perPage: string | null = null;
 
     //Final query sent to the search API
     query: string = ''
@@ -34,6 +35,7 @@ export class SearchParams implements ISearchParams {
         this.q = params.get('terme') ?? '';
         this.dirigeant = params.get('dirigeant') ?? '';
         this.page = params.get('page') ?? '1';
+        this.perPage = params.get('per_page') ?? '';
         const ville = params.get('ville');
         const codePostal = params.get('code_postal')
         const formeJuridique = params.get('forme_juridique')
@@ -133,6 +135,10 @@ export class SearchParams implements ISearchParams {
 
         if (this.page) {
             searchParams.set('page', this.page)
+        }
+
+        if (this.perPage) {
+            searchParams.set('per_page', this.perPage)
         }
 
         if (this.ville && this.ville.length > 0) {

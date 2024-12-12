@@ -15,6 +15,8 @@ import SearchModalForm from "./search-modal-form"
 import SearchModalHistory from "./search-modal-history"
 import SearchAdvancesLink from "./search-advanced-link"
 import { getUniteLegaleHistoryFromLocalStorage, UniteLegaleHistoryItem } from "~/application/unite-legale/unite-legale-history-store"
+import { SearchResults } from "~/domain/entity/search-results"
+import { SearchModalResultsList } from "./search-modal-results"
 
 export default function SearchModal() {
 
@@ -22,7 +24,9 @@ export default function SearchModal() {
 
     const [isOpen, setIsOpen] = useState(false)
     const [history, setHistory] = useState<UniteLegaleHistoryItem[]>([])
-    const [currentHistoryItem, setCurrentHistoryItem] = useState<UniteLegaleHistoryItem | null>(null)
+    const [currentSelectedItem, setCurrentSelectedItem] = useState<UniteLegaleHistoryItem | null>(null)
+    const [searchResults, setSearchResults] = useState<SearchResults | null>(null)
+    const [searchValue, setSearchValue] = useState('')
 
     useEffect(() => {
         const currentHistory = getUniteLegaleHistoryFromLocalStorage()
@@ -30,32 +34,57 @@ export default function SearchModal() {
     }, [])
 
     useEffect(() => {
-        setCurrentHistoryItem(null)
+        setCurrentSelectedItem(null)
     }, [isOpen])
 
     useEffect(() => {
         setIsOpen(false)
     }, [location])
 
-    const handleChangeCurrentHistoryItem = (action: 'prev' | 'next') => {
-        if (history) {
-            if (action === 'next') {
-                if (!currentHistoryItem) {
-                    setCurrentHistoryItem(history[0])
-                } else {
-                    const current = history.findIndex(item => item.name === currentHistoryItem.name)
+    // bind command + k
+    useEffect(() => {
+        let listener = (event: KeyboardEvent) => {
+            if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+                event.preventDefault()
+                setIsOpen(true)
+            }
+        }
+        window.addEventListener('keydown', listener)
+        return () => window.removeEventListener('keydown', listener)
+    }, [])
 
-                    if (history[current + 1]) {
-                        setCurrentHistoryItem(history[current + 1])
+    const handleChangeCurrentHistoryItem = (action: 'prev' | 'next') => {
+
+        let items = [] as any[]
+
+        console.log(searchResults?.results)
+
+        if (history && history.length > 0) {
+            items = [...history.map(item => item.rid)]
+        }
+
+        if (searchResults && searchResults.total_results > 0) {
+            items = [...searchResults.results.map(item => item.rid)]
+        }
+
+        if (items && items.length > 0) {
+            if (action === 'next') {
+                if (!currentSelectedItem) {
+                    setCurrentSelectedItem(items[0])
+                } else {
+                    const current = items.findIndex(rid => rid === currentSelectedItem)
+
+                    if (items[current + 1]) {
+                        setCurrentSelectedItem(items[current + 1])
                     }
                 }
             }
             if (action === 'prev') {
-                if (currentHistoryItem) {
-                    const current = history.findIndex(item => item.name === currentHistoryItem.name)
+                if (currentSelectedItem) {
+                    const current = items.findIndex(rid => rid === currentSelectedItem)
 
-                    if (history[current - 1]) {
-                        setCurrentHistoryItem(history[current - 1])
+                    if (items[current - 1]) {
+                        setCurrentSelectedItem(history[current - 1])
                     }
                 }
             }
@@ -74,8 +103,14 @@ export default function SearchModal() {
                         Barre de recherche de l'application Annuaire des entreprises de Nouvelle-Calédonie
                     </DialogDescription>
                 </div>
-                <div className="flex flex-col bg-white overflow-hidden rounded-2xl ring-6 ring-blue-50">
-                    <SearchModalForm setIsOpen={setIsOpen} handleChangeCurrentHistoryItem={handleChangeCurrentHistoryItem} currentHistoryItem={currentHistoryItem} />
+                <div className="relative flex flex-col bg-white overflow-hidden rounded-2xl ring-4 ring-offset-0 ring-blue-dinum/5 border-2 border-blue-dinum">
+                    <SearchModalForm
+                        setIsOpen={setIsOpen}
+                        handleChangeCurrentHistoryItem={handleChangeCurrentHistoryItem}
+                        currentHistoryItem={currentSelectedItem}
+                        handleChangeSearchResults={setSearchResults}
+                        handleChangeSearchValue={setSearchValue}
+                    />
                     <div className="flex items-center justify-between bg-slate-100 p-4 py-2">
                         <div className="flex items-center gap-2">
                             <span className="text-xs font-normal text-primary">Naviguer</span>
@@ -95,11 +130,25 @@ export default function SearchModal() {
                         </DialogClose>
                     </div>
                 </div>
-                <div className="bg-zinc-50 rounded-2xl flex flex-col divide-y-1 overflow-hidden ring-6 ring-blue-50">
-                    <SearchModalHistory history={history} currentHistoryItem={currentHistoryItem} />
+                <div className="gap-0 bg-zinc-50 rounded-2xl flex flex-col divide-y-1 divide-slate-300 overflow-hidden ring-6 ring-blue-50">
+                    {searchResults &&
+                        <div className="flex flex-col divide-y-1 overflow-hidden">
+                            <SearchModalResultsList
+                                searchResults={searchResults}
+                                searchValue={searchValue}
+                            />
+                        </div>
+                    }
+                    {history && history.length > 0 &&
+                        <div className="flex flex-col divide-y-1 overflow-hidden">
+                            <SearchModalHistory history={history} currentHistoryItem={currentSelectedItem} />
+                        </div>
+                    }
+                    {/* {(searchResults && searchResults.total_results > 0) || (history && history.length > 0) && */}
                     <div className="flex items-center justify-center p-2 bg-white">
                         <SearchAdvancesLink />
                     </div>
+                    {/* } */}
                 </div>
             </DialogContent>
         </Dialog>

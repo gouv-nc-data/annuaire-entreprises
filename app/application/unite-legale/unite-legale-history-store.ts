@@ -14,7 +14,7 @@ export function setUniteLegaleHistoryToLocalStorage(uniteLegale: IUniteLegale) {
 
     const newUniteLegaleItem = {
         rid: uniteLegale.rid ? uniteLegale.rid : '',
-        name: `${uniteLegale.rid} ${uniteLegale.nom_complet}`,
+        name: `${uniteLegale.nom_complet}`,
         link: `/entreprise/${uniteLegale.rid}`,
         category: 'entreprise'
     }
