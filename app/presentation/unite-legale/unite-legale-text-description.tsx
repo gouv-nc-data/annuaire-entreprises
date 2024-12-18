@@ -10,13 +10,22 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
     const now = new Date()
     let yearDifference = fromDate?.getFullYear() ? now.getFullYear() - fromDate?.getFullYear() : null
 
+    if (yearDifference === 0) {
+        yearDifference = -1
+    }
+
+
+    console.log('from date ', fromDate)
+    console.log(yearDifference)
+    console.log('creation date : ', creationDate)
+
     return (
         <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-0">
                 <p className="text-zinc-900 font-light text-md">
                     {fromDate && yearDifference && creationDate &&
                         <>
-                            La société {uniteLegale.nom_complet} a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference} {yearDifference > 1 ? 'ans. ' : 'an. '}
+                            La société {uniteLegale.nom_complet} a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference !== -1 ? yearDifference : ''} {yearDifference > 1 ? 'ans. ' : yearDifference === -1 ? "moins d'1 an. " : "an. "}
                         </>
                     }
                     {uniteLegale.forme_juridique &&
