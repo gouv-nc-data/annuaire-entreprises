@@ -30,7 +30,7 @@ export const links: LinksFunction = () => [
 ];
 
 export async function loader() {
-  return json({ ENV: { UMAMI_URL: process.env.UMAMI_URL } });
+  return json({ ENV: { UMAMI_URL: process.env.UMAMI_URL, UMAMI_WEBSITE_ID: process.env.UMAMI_WEBSITE_ID } });
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -53,7 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
         <Footer />
         <ScrollRestoration />
-        <script defer src={`${data.ENV.UMAMI_URL}/script.js`} data-website-id="18e050b8-72ab-4878-a4a0-f24a630f4368" />
+        <script defer src={`${data.ENV.UMAMI_URL}/script.js`} data-website-id={`${data.ENV.UMAMI_WEBSITE_ID}`} />
         <Scripts />
       </body>
     </html>
