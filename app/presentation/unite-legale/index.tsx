@@ -4,9 +4,8 @@ import { getUniteLegaleLoader } from "~/application/unite-legale/get-unite-legal
 import { setUniteLegaleHistoryToLocalStorage } from "~/application/unite-legale/unite-legale-history-store";
 
 import UniteLegaleHeader from "./unite-legale-header";
-import UniteLegalNavigation from "./unite-legale-navigation";
+import UniteLegaleNavigation from "./unite-legale-navigation";
 import UniteLegaleInformations from "./unite-legale-informations";
-import UniteLegalBanner from "./unite-legale-banner";
 import UniteLegaleEtablissements from "./etablissements/unite-legale-etablissements";
 
 export default function UniteLegalePage() {
@@ -19,9 +18,9 @@ export default function UniteLegalePage() {
 
     return (
         <div className="flex flex-col">
-            {/* <UniteLegalBanner uniteLegale={uniteLegale} /> */}
-            <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col gap-10">
-                <UniteLegaleHeader uniteLegale={uniteLegale} showShareButton/>
+            <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col gap-10 w-full">
+                <UniteLegaleHeader uniteLegale={uniteLegale} showShareButton />
+                <UniteLegaleNavigation rid={uniteLegale.rid} />
                 <UniteLegaleInformations uniteLegale={uniteLegale} />
                 <UniteLegaleEtablissements uniteLegale={uniteLegale} />
             </div>
