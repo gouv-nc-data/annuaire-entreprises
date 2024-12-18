@@ -14,7 +14,7 @@ export default function UniteLegaleNavigation({ rid }: { rid: IUniteLegale['rid'
                         className={`flex gap-2 items-center rounded-lg p-2 px-3 font-light border-1 text-sm ${location.pathname.includes('entreprise') ? 'bg-blue-50  ring-blue-200 border-1  text-blue-dinum  font-medium' : 'text-slate-500 hover:bg-blue-50 hover:text-slate-600 border-transparent'}`}
                         to={`/entreprise/${rid}`}
                     >
-                        <BookText strokeWidth={1.2} className={`${location.pathname.includes('entreprise') ? 'fill-blue-200' : 'fill-blue-50'} w-5 h-5 text-blue-dinum fill-blue-50`} />
+                        <BookText strokeWidth={1.2} className={`${location.pathname.includes('entreprise') ? 'fill-blue-200' : 'fill-blue-50'} w-5 h-5 text-blue-dinum`} />
                         <span>Fiche résumé</span>
                     </Link>
                 </li>
@@ -30,7 +30,7 @@ export default function UniteLegaleNavigation({ rid }: { rid: IUniteLegale['rid'
                     <Link
                         className={`flex gap-2 items-center  rounded-lg p-2 px-3 font-light border-1 text-sm ${location.pathname.includes('annonces') ? 'bg-blue-50  ring-blue-200 border-1  text-blue-dinum  font-medium' : 'text-slate-500 hover:bg-blue-50 hover:text-slate-600 border-transparent'}`}
                         to={`/annonces/${rid}`}>
-                        <Newspaper strokeWidth={1.2} className={`${location.pathname.includes('annonces') ? 'fill-blue-200' : 'fill-blue-50'} w-5 h-5 text-blue-dinum fill-blue-50`} />
+                        <Newspaper strokeWidth={1.2} className={`${location.pathname.includes('annonces') ? 'fill-blue-200' : 'fill-blue-50'} w-5 h-5 text-blue-dinum`} />
                         <span>Annonces</span>
                     </Link>
                 </li>
