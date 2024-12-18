@@ -10,14 +10,10 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
     const now = new Date()
     let yearDifference = fromDate?.getFullYear() ? now.getFullYear() - fromDate?.getFullYear() : null
 
-    if (yearDifference === 0) {
+    if (yearDifference === 0) {
         yearDifference = -1
     }
 
-
-    console.log('from date ', fromDate)
-    console.log(yearDifference)
-    console.log('creation date : ', creationDate)
 
     return (
         <div className="flex flex-col gap-2">
