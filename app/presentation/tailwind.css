@@ -102,6 +102,10 @@ body {
     @apply rounded-xl flex items-center gap-2 text-xs overflow-hidden text-primary font-medium tracking-wide
   }
 
+  .link {
+    @apply text-blue-dinum font-medium border-b-1 border-blue-dinum
+  }
+
   .address {
     @apply text-sm font-light text-primary-300 uppercase tracking-wide
   }

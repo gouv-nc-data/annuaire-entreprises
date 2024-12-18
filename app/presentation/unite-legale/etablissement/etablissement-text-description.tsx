@@ -83,7 +83,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
                     <Building className="w-4 h-4 text-blue-dinum hidden md:inline-flex" />
                     {uniteLegale.etablissements ?
                         <>
-                            Elle possède <Link className="text-blue-dinum font-medium border-b-1 border-blue-dinum" to={`/entreprise/${uniteLegale.rid}#etablissements`}>{uniteLegale.etablissements.length} {uniteLegale.etablissements.length > 1 ? 'établissements. ' : 'établissement. '}</Link>
+                            Elle possède <Link className="link" to={`/entreprise/${uniteLegale.rid}#etablissements`}>{uniteLegale.etablissements.length} {uniteLegale.etablissements.length > 1 ? 'établissements. ' : 'établissement. '}</Link>
                         </>
                         :
                         <>
