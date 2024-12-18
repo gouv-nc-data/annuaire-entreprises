@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react'
 import { IUniteLegale } from '~/domain/entity/unite-legale'
 
-import UniteLegaleDirigeantsInformationsListHeader from './unite-legale-dirigeants-informations-list-header'
+import UniteLegaleDirigeantsListHeader from './unite-legale-dirigeants-list-header'
 
 import IseeLogo from '/isee-logo-white.png'
 import { Button } from '../../ui/button'
@@ -11,7 +11,7 @@ import { fakeDirigeants } from '~/domain/entity/dirigeant'
 import UniteLegaleDirigeant from './unite-legale-dirigeant'
 
 
-export default function UniteLegaleDirigeantsInformations({ uniteLegale }: { uniteLegale: IUniteLegale }) {
+export default function UniteLegaleDirigeants({ uniteLegale }: { uniteLegale: IUniteLegale }) {
     return (
         <section className='flex flex-col gap-6 p-6 bg-white rounded-xl shadow-sm border border-input'>
             <header className='flex w-full justify-between items-start gap-6'>
@@ -21,12 +21,12 @@ export default function UniteLegaleDirigeantsInformations({ uniteLegale }: { uni
                 </Link>
             </header>
             <div className='flex flex-col'>
-                <span className='text-zinc-900 font-light text-md'>Cette entreprise possède {fakeDirigeants.length} {fakeDirigeants.length > 1 ? 'dirigeants' : 'dirigeant'}  enregisté au <strong className='font-medium'>Registre du commerce et des sociétés (RCS)</strong> tenu par l'<a className='underline' href='' target='_blank'>INFOGREFFE</a></span>
-                <span className='text-zinc-900 font-light text-md'>Pour en savoir plus, vous pouvez consulter la <a className='underline' href={`https://www.infogreffe.nc/entreprise/digit/${uniteLegale.rid}/`} target='_blank'>page de l'entreprise</a> sur le site de l'INFOGREFFE</span>
+                <span className='text-zinc-900 font-light text-md'>Cette entreprise possède {fakeDirigeants.length} {fakeDirigeants.length > 1 ? 'dirigeants' : 'dirigeant'}  enregisté au <strong className='font-medium'>Registre du commerce et des sociétés (RCS)</strong> tenu par l'<a className='link neutral' href='' target='_blank'>INFOGREFFE</a></span>
+                <span className='text-zinc-900 font-light text-md'>Pour en savoir plus, vous pouvez consulter la <a className='link neutral' href={`https://www.infogreffe.nc/entreprise/digit/${uniteLegale.rid}/`} target='_blank'>page de l'entreprise</a> sur le site de l'INFOGREFFE</span>
             </div>
             <div className='flex flex-col md:gap-0 gap-4'>
                 <div className='flex flex-col gap-6 w-full'>
-                    <UniteLegaleDirigeantsInformationsListHeader />
+                    <UniteLegaleDirigeantsListHeader />
                     <div className='flex flex-col gap-2 w-full'>
                         {
                             fakeDirigeants.map(dirigeant => <UniteLegaleDirigeant key={dirigeant.nom} dirigeant={dirigeant} />)
