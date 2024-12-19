@@ -1,10 +1,9 @@
-import { Link, useFetcher, useNavigate, useSearchParams } from "@remix-run/react";
+import { useFetcher, useNavigate, useSearchParams } from "@remix-run/react";
 import { SearchIcon } from "lucide-react";
 import { Input } from "~/presentation/ui/input";
 import { ExistingSearchParams } from "~/application/search/existing-search-params";
 import { Button } from "~/presentation/ui/button";
-import { useCallback, useEffect, useState } from "react";
-import { UniteLegaleHistoryItem } from "~/application/unite-legale/unite-legale-history-store";
+import { useEffect, useState } from "react";
 import { SearchResults } from "~/domain/entity/search-results";
 import { getSearchResultsLoader } from "~/application/search/get-search-results";
 import { SearchParams } from "~/domain/entity/search-params";
