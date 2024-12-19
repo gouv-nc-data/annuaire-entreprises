@@ -1,5 +1,5 @@
 import { ArrowUp, ArrowDown } from "lucide-react"
-import { useLocation } from "@remix-run/react"
+import { useLocation, useNavigate } from "@remix-run/react"
 
 import { Button } from "../ui/button"
 import {
@@ -21,10 +21,11 @@ import { SearchModalResultsList } from "./search-modal-results"
 export default function SearchModal() {
 
     const location = useLocation()
+    const navigate = useNavigate()
 
     const [isOpen, setIsOpen] = useState(false)
     const [history, setHistory] = useState<UniteLegaleHistoryItem[]>([])
-    const [currentSelectedItem, setCurrentSelectedItem] = useState<UniteLegaleHistoryItem | null>(null)
+    const [currentSelectedItem, setCurrentSelectedItem] = useState<string | null>(null)
     const [searchResults, setSearchResults] = useState<SearchResults | null>(null)
     const [searchValue, setSearchValue] = useState('')
 
@@ -41,30 +42,45 @@ export default function SearchModal() {
         setIsOpen(false)
     }, [location])
 
-    // bind command + k
     useEffect(() => {
         let listener = (event: KeyboardEvent) => {
             if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
                 event.preventDefault()
                 setIsOpen(true)
             }
+            if (event.key === 'ArrowDown') {
+                event.preventDefault()
+                handleChangeCurrentHistoryItem('next')
+            }
+            if (event.key === 'ArrowUp') {
+                event.preventDefault()
+                handleChangeCurrentHistoryItem('prev')
+            }
+            if (event.key === 'Enter') {
+                if (currentSelectedItem) {
+                    event.preventDefault()
+                    const currentSelectedItemRid = currentSelectedItem.split('-')[1]
+
+                    if (currentSelectedItemRid) {
+                        navigate(`/entreprise/${currentSelectedItemRid}`)
+                    }
+                }
+            }
         }
         window.addEventListener('keydown', listener)
         return () => window.removeEventListener('keydown', listener)
-    }, [])
+    }, [searchResults, currentSelectedItem, history])
 
     const handleChangeCurrentHistoryItem = (action: 'prev' | 'next') => {
 
         let items = [] as any[]
 
-        console.log(searchResults?.results)
-
-        if (history && history.length > 0) {
-            items = [...history.map(item => item.rid)]
+        if (searchResults && searchResults.total_results > 0) {
+            items = [...searchResults.results.map(item => 'result-' + item.rid)]
         }
 
-        if (searchResults && searchResults.total_results > 0) {
-            items = [...searchResults.results.map(item => item.rid)]
+        if (history && history.length > 0) {
+            items = [...items, ...history.map(item => 'history-' + item.rid)]
         }
 
         if (items && items.length > 0) {
@@ -76,15 +92,22 @@ export default function SearchModal() {
 
                     if (items[current + 1]) {
                         setCurrentSelectedItem(items[current + 1])
+                    } else {
+                        setCurrentSelectedItem(null)
                     }
                 }
             }
             if (action === 'prev') {
-                if (currentSelectedItem) {
+                if (!currentSelectedItem) {
+                    setCurrentSelectedItem(items[items.length - 1])
+                }
+                else {
                     const current = items.findIndex(rid => rid === currentSelectedItem)
 
                     if (items[current - 1]) {
-                        setCurrentSelectedItem(history[current - 1])
+                        setCurrentSelectedItem(items[current - 1])
+                    } else {
+                        setCurrentSelectedItem(null)
                     }
                 }
             }
@@ -107,7 +130,6 @@ export default function SearchModal() {
                     <SearchModalForm
                         setIsOpen={setIsOpen}
                         handleChangeCurrentHistoryItem={handleChangeCurrentHistoryItem}
-                        currentHistoryItem={currentSelectedItem}
                         handleChangeSearchResults={setSearchResults}
                         handleChangeSearchValue={setSearchValue}
                     />
@@ -134,6 +156,7 @@ export default function SearchModal() {
                     {searchResults &&
                         <div className="flex flex-col divide-y-1 overflow-hidden">
                             <SearchModalResultsList
+                                currentSelectedItem={currentSelectedItem}
                                 searchResults={searchResults}
                                 searchValue={searchValue}
                             />
@@ -141,14 +164,12 @@ export default function SearchModal() {
                     }
                     {history && history.length > 0 &&
                         <div className="flex flex-col divide-y-1 overflow-hidden">
-                            <SearchModalHistory history={history} currentHistoryItem={currentSelectedItem} />
+                            <SearchModalHistory history={history} currentSelectedItem={currentSelectedItem} />
                         </div>
                     }
-                    {/* {(searchResults && searchResults.total_results > 0) || (history && history.length > 0) && */}
                     <div className="flex items-center justify-center p-2 bg-white">
                         <SearchAdvancesLink />
                     </div>
-                    {/* } */}
                 </div>
             </DialogContent>
         </Dialog>

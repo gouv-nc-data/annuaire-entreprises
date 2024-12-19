@@ -12,13 +12,11 @@ import { SearchParams } from "~/domain/entity/search-params";
 export default function SearchModalForm({
     setIsOpen,
     handleChangeCurrentHistoryItem,
-    currentHistoryItem,
     handleChangeSearchResults,
     handleChangeSearchValue
 }: {
     setIsOpen: (bool: boolean) => void,
     handleChangeCurrentHistoryItem: (action: 'prev' | 'next') => void,
-    currentHistoryItem: UniteLegaleHistoryItem | null,
     handleChangeSearchResults: (searchResults: SearchResults) => void,
     handleChangeSearchValue: (searchValue: string) => void
 }) {
@@ -30,34 +28,6 @@ export default function SearchModalForm({
     const [value, setValue] = useState(query ?? '')
 
     let search = useFetcher<typeof getSearchResultsLoader>()
-
-    const handleOnKeydown = useCallback((event: KeyboardEvent) => {
-
-        if (event.key === 'ArrowDown') {
-            event.preventDefault()
-            handleChangeCurrentHistoryItem('next')
-        }
-        if (event.key === 'ArrowUp') {
-            event.preventDefault()
-            handleChangeCurrentHistoryItem('prev')
-        }
-        if (event.key === 'Enter') {
-            if (currentHistoryItem) {
-                if (value === currentHistoryItem.name) {
-                    event.preventDefault()
-
-                    setIsOpen(false)
-                    navigate(`/entreprise/${currentHistoryItem.rid}`)
-                }
-            }
-        }
-    }, [currentHistoryItem, value])
-
-    useEffect(() => {
-        window.document.addEventListener('keydown', handleOnKeydown)
-        return () => window.document.removeEventListener('keydown', handleOnKeydown)
-    }, [currentHistoryItem, value])
-
 
     useEffect(() => {
         if (search && search.data) {
