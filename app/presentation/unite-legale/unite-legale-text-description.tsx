@@ -18,7 +18,7 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
     return (
         <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-0">
-                <p className="text-zinc-900 font-light text-md">
+                <p className="text-common">
                     {fromDate && yearDifference && creationDate &&
                         <>
                             La société {uniteLegale.nom_complet} a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference !== -1 ? yearDifference : ''} {yearDifference > 1 ? 'ans. ' : yearDifference === -1 ? "moins d'1 an. " : "an. "}
@@ -30,7 +30,7 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
                         </>
                     }
                 </p>
-                <p className="text-zinc-900 font-light text-md">
+                <p className="text-common">
                     {uniteLegale.ape &&
                         <>
                             Son domaine d'activité est : <strong className="font-medium">{uniteLegale.ape}. </strong>
@@ -39,7 +39,7 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
                 </p>
             </div>
             <div>
-                <p className="flex items-center gap-2 text-zinc-900 font-light text-md">
+                <p className="flex items-center gap-2 text-common">
                     <MapPin className="w-4 h-4 text-blue-dinum hidden md:inline-flex" />
                     {
                         uniteLegale.adresse_complete &&
@@ -48,7 +48,7 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
                         </>
                     }
                 </p>
-                <p className="flex items-center gap-2 text-zinc-900 font-light text-md">
+                <p className="flex items-center gap-2 text-common">
                     <Building className="w-4 h-4 text-blue-dinum hidden md:inline-flex" />
                     {uniteLegale.etablissements ?
                         <>

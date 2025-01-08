@@ -17,7 +17,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
     return (
         <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-0">
-                <div className="text-zinc-900 font-light text-md flex items-center gap-2">
+                <div className="text-common flex items-center gap-2">
                     <p className="hidden md:flex">
                         <TooltipInfo
                             label='Cet établissement'
@@ -28,7 +28,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
                         <span className="inline-flex md:hidden">Cet établissement</span> immatriculé sous le ridet {etablissement.ridet} est <span className="lowercase">{etablissement.situation}</span>.
                     </p>
                 </div>
-                <p className="text-zinc-900 font-light text-md">
+                <p className="text-common">
                     {etablissement.ape &&
                         <>
                             Son domaine d'activité est : <strong className="font-medium">{etablissement.ape}.</strong>
@@ -41,7 +41,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
                     }
                 </p>
                 {etablissement.adresse_complete &&
-                    <p className="text-zinc-900 font-light text-md flex items-center gap-2">
+                    <p className="text-common flex items-center gap-2">
                         <MapPin className="w-4 h-4 text-orange-500 hidden md:inline-flex" />
                         {
                             uniteLegale.adresse_complete &&
@@ -52,7 +52,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
                     </p>
                 }
             </div>
-            <p className="text-zinc-900 font-light text-md">
+            <p className="text-common">
                 {fromDate && yearDifference && creationDate &&
                     <>
                         {etablissement.nom_complet} est un établissement de l'entreprise {uniteLegale.nom_complet} qui a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference} {yearDifference > 1 ? 'ans. ' : 'an. '}
@@ -70,7 +70,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
                 }
             </p>
             <div>
-                <p className="flex items-center gap-2 text-zinc-900 font-light text-md">
+                <p className="flex items-center gap-2 text-common">
                     <MapPin className="w-4 h-4 text-blue-dinum hidden md:inline-flex" />
                     {
                         uniteLegale.adresse_complete &&
@@ -79,7 +79,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
                         </>
                     }
                 </p>
-                <p className="flex items-center gap-2 text-zinc-900 font-light text-md">
+                <p className="flex items-center gap-2 text-common">
                     <Building className="w-4 h-4 text-blue-dinum hidden md:inline-flex" />
                     {uniteLegale.etablissements ?
                         <>

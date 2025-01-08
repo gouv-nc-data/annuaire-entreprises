@@ -8,7 +8,7 @@ export default function SearchResultsGuide() {
                     <CornerLeftUpIcon strokeWidth={1.5} className="w-10 h-10 text-blue-dinum -translate-y-3" />
                     Grâce aux filtres de recherche, retrouvez n’importe quelle entreprise, association, ou service public en Nouvelle-Calédonie.
                 </h3>
-                <p className="text-zinc-900 font-light text-md">Vérifiez les informations légales publiques des entreprises, associations et services publics en Nouvelle-Calédonie.</p>
+                <p className="text-common">Vérifiez les informations légales publiques des entreprises, associations et services publics en Nouvelle-Calédonie.</p>
             </div>
             <div className="sm:flex hidden gap-2">
                 <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">

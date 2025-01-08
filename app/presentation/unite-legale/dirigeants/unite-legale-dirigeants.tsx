@@ -21,8 +21,8 @@ export default function UniteLegaleDirigeants({ uniteLegale }: { uniteLegale: IU
                 </Link>
             </header>
             <div className='flex flex-col'>
-                <span className='text-zinc-900 font-light text-md'>Cette entreprise possède {fakeDirigeants.length} {fakeDirigeants.length > 1 ? 'dirigeants' : 'dirigeant'}  enregisté au <strong className='font-medium'>Registre du commerce et des sociétés (RCS)</strong> tenu par l'<a className='link neutral' href='' target='_blank'>INFOGREFFE</a></span>
-                <span className='text-zinc-900 font-light text-md'>Pour en savoir plus, vous pouvez consulter la <a className='link neutral' href={`https://www.infogreffe.nc/entreprise/digit/${uniteLegale.rid}/`} target='_blank'>page de l'entreprise</a> sur le site de l'INFOGREFFE</span>
+                <span className='text-common'>Cette entreprise possède {fakeDirigeants.length} {fakeDirigeants.length > 1 ? 'dirigeants' : 'dirigeant'}  enregisté au <strong className='font-medium'>Registre du commerce et des sociétés (RCS)</strong> tenu par l'<a className='link neutral' href='' target='_blank'>INFOGREFFE</a></span>
+                <span className='text-common'>Pour en savoir plus, vous pouvez consulter la <a className='link neutral' href={`https://www.infogreffe.nc/entreprise/digit/${uniteLegale.rid}/`} target='_blank'>page de l'entreprise</a> sur le site de l'INFOGREFFE</span>
             </div>
             <div className='flex flex-col md:gap-0 gap-4'>
                 <div className='flex flex-col gap-6 w-full'>

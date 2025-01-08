@@ -11,7 +11,7 @@ export default function LoginPage() {
                     <div className="flex flex-col gap-6 w-full md:w-1/2">
                         <div className="flex flex-col gap-6 w-full max-w-xl">
                             <h1 className="text-4xl text-blue-dinum font-medium">Les informations des entreprises sont toutes dans l’espace agent !</h1>
-                            <p className="text-zinc-900 font-light text-md">Accessible à toutes les administrations, collectivités et services publics de Nouvelle-Caléonie.</p>
+                            <p className="text-common">Accessible à toutes les administrations, collectivités et services publics de Nouvelle-Caléonie.</p>
                         </div>
                         <div className="flex flex-col items-start gap-4 bg-white w-full p-6 rounded-2xl shadow-sm">
                             <p className="text-zinc-900 font-medium text-md">Vous êtes agent public et souhaitez être informé quand la plateforme sera disponible ?</p>

@@ -10,7 +10,7 @@ export default function EtablissementNotFound() {
                     <Building strokeWidth={1.6} className="w-8 h-8 text-orange-dinum" />
                 </div>
                 <h3 className="text-4xl text-blue-dinum font-medium">Établissement introuvable</h3>
-                <p className="text-zinc-900 font-light text-md">Mince, nous n'avons pas réussi à trouver cet établissement, veuillez réessayer plus tard.</p>
+                <p className="text-common">Mince, nous n'avons pas réussi à trouver cet établissement, veuillez réessayer plus tard.</p>
                 <Link to={`/`}>
                     <Button>Revenir à l'accueil</Button>
                 </Link>
