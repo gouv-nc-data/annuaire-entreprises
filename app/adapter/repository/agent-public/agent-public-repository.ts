@@ -11,7 +11,8 @@ export function AgentPublicRepository(): IAgentPublicRepository {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                email: agentPulic.email
+                email: agentPulic.email,
+                reason: agentPulic.reason
             })
         })
         return res.json()

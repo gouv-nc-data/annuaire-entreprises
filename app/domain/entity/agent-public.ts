@@ -1,5 +1,6 @@
 export interface IAgentPublic {
-    email: string
+    email: string,
+    reason:string
 }
 
 export interface AgentPublicSignupResponse {
