@@ -4,7 +4,7 @@ export default function AboutPage() {
             <div className='max-w-7xl mx-auto px-4 w-full flex justify-between items-center py-20 gap-8'>
                 <article className="max-w-4xl flex flex-col gap-10">
                     <div className="flex flex-col gap-4">
-                        <h1 className="title-big">À propos de l’Annuaire des Entreprises</h1>
+                        <h1 className="title-big">À propos de l’Annuaire des Entreprises test</h1>
                         <p className="text-common">Ce site permet de retrouver toutes les données publiques détenues par l’administration sur une entreprise, une association ou une administration. Ce site ne fait que centraliser les données. Il ne les modifie pas et ne les stocke pas. Il est opéré par une équipe de la Direction Interministérielle du Numérique.</p>
                         <p className="text-common">Ce site ne fait que centraliser les données. Il ne les modifie pas et ne les stocke pas.</p>
                         <p className="text-common">Il est opéré par une équipe de la <a href="/" className="link-common">Direction Interministérielle du Numérique.</a></p>
