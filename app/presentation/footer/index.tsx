@@ -8,10 +8,6 @@ export default function Footer() {
             <div className="bg-primary-200">
                 <div className="max-w-7xl mx-auto px-4 grid grid-cols-12 py-20 gap-20">
                     <div className="flex flex-col gap-10 col-span-4 text-white">
-                    </div>
-                    <div className="flex flex-col gap-10 col-span-4 text-white">
-                    </div>
-                    <div className="flex flex-col gap-10 col-span-4 text-white">
                         <ul className="flex flex-col gap-4">
                             <li>
                                 <p className="font-normal text-sm">L’Annuaire des Entreprises</p>
