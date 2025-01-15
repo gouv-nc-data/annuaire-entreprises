@@ -3,7 +3,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "../ui/button";
 import { Link } from "@remix-run/react";
 
-export default function AdministrationPage() {
+export default function PartenairePage() {
     return (
         <div>
             <div className='max-w-7xl mx-auto px-4 w-full flex justify-between items-center py-20 gap-8'>
