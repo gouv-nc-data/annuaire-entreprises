@@ -7,7 +7,7 @@ export default function SearchAdvancesLink() {
         <Link to="/rechercher" className="group">
             <Button variant={"link"}>
                 <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                Effectuer une recherche avancée
+                Effectuez une recherche avancée
             </Button>
         </Link>
     )

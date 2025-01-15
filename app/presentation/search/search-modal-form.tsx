@@ -65,7 +65,7 @@ export default function SearchModalForm({
                     className="!ps-12 shadow-none border-0 p-4 py-6 focus-visible:outline-none focus-visible:ring-0 outline-none ring-0"
                     type="text"
                     name="terme"
-                    placeholder="Nom, adresse, n° RID..." />
+                    placeholder="Nom, adresse, n° RID ou RIDET..." />
                 <Button className="absolute right-4" onClick={handleFormSubmit}><SearchIcon className="w-5 h-5" /></Button>
             </div>
         </search.Form>

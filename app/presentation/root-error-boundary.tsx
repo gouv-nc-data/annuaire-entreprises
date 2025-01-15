@@ -8,19 +8,7 @@ import SearchModal from "./search/search-modal";
 export function RootErrorBoundary() {
     const error = useRouteError();
 
-    console.log('error boundary: ', error)
-
     if (isRouteErrorResponse(error)) {
-        // switch (error.status) {
-        //     case 404:
-        //         return <div>Invoice not found!</div>;
-
-        //     case 400:
-        //         return <div>{error.data}</div>;
-        // }
-
-        // console.log('error : ', error)
-
         return (
             <div>
                 <SearchFilters />
@@ -28,7 +16,10 @@ export function RootErrorBoundary() {
                     <div className="flex flex-col items-center gap-6 max-w-xl w-full p-4 py-20 md:py-40">
                         <div className="flex flex-col gap-4 w-full items-center">
                             <div className="flex flex-col gap-0 w-full">
-                                <h1 className="text-4xl text-blue-dinum font-medium flex items-center gap-2 text-red-500"><CircleX strokeWidth={2.5} className="w-8 h-8 text-red-500" />Oops, une erreur s'est produite</h1>
+                                {error.data
+                                    ? <h1 className="text-4xl text-blue-dinum font-medium flex items-center gap-2">L'Annuaire des entreprises</h1>
+                                    : <h1 className="text-4xl font-medium flex items-center gap-2 text-red-500"><CircleX strokeWidth={2.5} className="w-8 h-8 text-red-500" />Oops, une erreur s'est produite</h1>
+                                }
                             </div>
                             {error.data
                                 ? <h2 className="text-xl text-primary flex items-start gap-2"><CornerDownRight className="w-7 h-7 -mt-[2px]" /> {error.data}</h2>
