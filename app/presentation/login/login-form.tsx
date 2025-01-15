@@ -3,7 +3,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Label } from "../ui/label";
 
-import { Mail, CornerDownRight, Send } from "lucide-react";
+import { CornerDownRight, Send } from "lucide-react";
 
 export default function LoginForm() {
     return (

@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLoaderData,
+  useRouteError,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
 
@@ -53,7 +54,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
         <Footer />
         <ScrollRestoration />
-        <script defer src={`${data.ENV.UMAMI_URL}/script.js`} data-website-id={`${data.ENV.UMAMI_WEBSITE_ID}`} />
+        {data && data.ENV && data.ENV.UMAMI_URL && <script defer src={`${data.ENV.UMAMI_URL}/script.js`} data-website-id={`${data.ENV.UMAMI_WEBSITE_ID}`} />}
         <Scripts />
       </body>
     </html>
@@ -63,3 +64,5 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return <Outlet />;
 }
+
+export { RootErrorBoundary as ErrorBoundary } from "~/presentation/root-error-boundary";
