@@ -14,16 +14,13 @@ export default function UniteLegaleDirigeant({ dirigeant }: { dirigeant: IDirige
     const fonctions = dirigeant.fonction ? formatPythonStringToJson(dirigeant.fonction) as IFonctionDirigeant[] : null
     const birthDate = dirigeant.date_naissance ? formatBirthDate(dirigeant.date_naissance) : null
 
-    console.log('birth date : ', birthDate)
-
-
     return (
         <li className='flex flex-col md:grid md:grid-cols-12 w-full items-start md:gap-4 gap-3 py-2 md:py-0 border-b-1 border-slate-300 last:border-0 md:border-0'>
             <div className='col-span-3'>
                 <span className="block md:hidden text-base font-medium text-primary">Role</span>
                 {
                     fonctions && fonctions.map((fonction, index) =>
-                        <BasicInformation key={index} information={index > 0 ? `, ${fonction.Qualite.Libelle}` : `${fonction.Qualite.Libelle}`} isBold />
+                        <BasicInformation key={index} information={index > 0 ? `, ${fonction.Qualite.Libelle}` : `${fonction.Qualite.Libelle}`} isBold />
                     )
                 }
             </div>
