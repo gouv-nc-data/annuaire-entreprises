@@ -74,7 +74,7 @@ export default function SearchFiltersDirigeant({ label, icon }: ISearchFilter) {
                     <div className="space-y-2">
                         <h4 className="font-medium leading-none text-md text-primary">Dirigeant(e)</h4>
                         <p className="text-xs text-muted-foreground">
-                            Rechercher toutes les structures liées à une personne dirigeant(e) :
+                            Recherchez toutes les entreprises liées à une personne dirigeant(e)
                         </p>
                     </div>
                     <Form method="GET" action="/rechercher" onSubmit={handleOnSubmit} className="w-full flex flex-col gap-4">
@@ -86,55 +86,6 @@ export default function SearchFiltersDirigeant({ label, icon }: ISearchFilter) {
                                     <Input type="text" name="dirigeant" placeholder="Nom Prénom" defaultValue={searchParamsDirigeant ?? ''} />
                                 </div>
                             </div>
-                        </div>
-                        <div className="flex flex-col gap-2 border-t-1 border-slate-200 pt-4">
-                            <Label>Né(e) entre</Label>
-                            <Popover open={isFromDateOpen} onOpenChange={setIsFromDateIsOpen}>
-                                <PopoverTrigger asChild className={`relative w-full ${isFromDateOpen ? 'ring-2 ring-blue-dinum' : 'ring-2 ring-transparent'}`}>
-                                    <Button
-                                        variant={"outline"}
-                                        className={cn(
-                                            "justify-start text-left font-normal",
-                                            !fromDate && "text-muted-foreground"
-                                        )}
-                                    >
-                                        <CalendarIcon className="mr-2 h-4 w-4" />
-                                        {fromDate ? format(fromDate, "PPP", { locale: fr }) : <span>jj/mm/aaaa</span>}
-                                    </Button>
-                                </PopoverTrigger>
-                                <PopoverContent className="w-auto p-0">
-                                    <Calendar
-                                        mode="single"
-                                        selected={fromDate}
-                                        onSelect={setFromDate}
-                                        initialFocus
-                                    />
-                                </PopoverContent>
-                            </Popover>
-                            <Label>Et</Label>
-                            <Popover open={isToDateOpen} onOpenChange={setIsToDateIsOpen}>
-                                <PopoverTrigger asChild className={`relative w-full ${isToDateOpen ? 'ring-2 ring-blue-dinum' : 'ring-2 ring-transparent'}`}>
-                                    <Button
-                                        variant={"outline"}
-                                        className={cn(
-                                            "justify-start text-left font-normal",
-                                            !toDate && "text-muted-foreground"
-                                        )}
-                                    >
-                                        <CalendarIcon className="mr-2 h-4 w-4" />
-                                        {toDate ? format(toDate, "PPP", { locale: fr }) : <span>jj/mm/aaaa</span>}
-                                    </Button>
-                                </PopoverTrigger>
-                                <PopoverContent className="w-auto p-0">
-                                    <Calendar
-                                        mode="single"
-                                        selected={toDate}
-                                        onSelect={setToDate}
-                                        disabled={fromDate ? (date) => date < fromDate : false}
-                                        initialFocus
-                                    />
-                                </PopoverContent>
-                            </Popover>
                         </div>
                         <div className="flex justify-end">
                             <Button><Plus className="w-5 h-5" />Appliquer</Button>

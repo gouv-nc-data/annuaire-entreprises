@@ -130,7 +130,7 @@ export class SearchParams implements ISearchParams {
         }
 
         if (this.dirigeant && this.dirigeant.length > 0) {
-            searchParams.set('q', this.q && this.q.length > 0 ? this.q + ' ' + this.dirigeant : this.dirigeant)
+            searchParams.set('dirigeant', this.dirigeant)
         }
 
         if (this.page) {

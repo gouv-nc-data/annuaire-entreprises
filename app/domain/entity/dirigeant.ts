@@ -1,9 +1,12 @@
 export interface IDirigeant {
-    role: string | null
     nom: string | null
     date_naissance?: string | null
     nationalite?: string | null
     adresse?: string | null
+    fonction?: string,
+    numerochrono?: number | null
+    ordreaffichage?: number | null
+    type_personne?: string | null
     code_postal?: string | null
     ville?: string | null
     titre_cma?: string | null
@@ -14,20 +17,9 @@ export interface IDirigeant {
     qualifie_dans_son_metier?: string | null
 }
 
-export const fakeDirigeants: IDirigeant[] = [
-    {
-        role: "Directrice général",
-        nom: "Jeanne doe",
-        date_naissance: 'avril 1990'
-    },
-    {
-        role: "Présidente de SAS",
-        nom: "Pascale de NOUMEA",
-        date_naissance: 'avril 1992'
-    },
-    {
-        role: "Président de SAS",
-        nom: "Pascal de NOUMEA",
-        date_naissance: 'avril 1994'
-    },
-]
+export interface IFonctionDirigeant {
+    Actif: boolean,
+    Qualite: {
+        Libelle: string
+    }
+}
