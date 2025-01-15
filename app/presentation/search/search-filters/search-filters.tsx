@@ -1,18 +1,25 @@
 import { ISearchFilter } from "~/domain/entity/search-filters"
-import SearchFiltersCity from "./search-filters-city"
-import SearchFiltersAdministrativeSituation from "./administrative-situation/search-filters-administrative-situation"
+import SearchFiltersCommune from "./commune/search-filters-commune"
+import SearchFiltersFormeJuridique from "./forme-juridique/search-filters-forme-juridique"
+import SearchFiltersCodeNafApe from "./code-naf-ape/search-filters-code-naf-ape"
 
 
-import { MapPinned, Landmark, User2 } from "lucide-react"
+import { MapPinned, BookText, Landmark, User2 } from "lucide-react"
 import SearchFiltersDirigeant from "./dirigeant/search-filters-dirigeant"
 
 const searchFiltersCityProps: ISearchFilter =
 {
-    label: 'Zone géographique',
+    label: 'Commune',
     icon: <MapPinned className="text-blue-dinum" />,
 }
 
-const searchFiltersAdministrativeSituation: ISearchFilter =
+const searchFiltersFormeJuridique: ISearchFilter =
+{
+    label: 'Forme juridique',
+    icon: <BookText className="text-blue-dinum" />,
+}
+
+const searchFiltersCodeNafApe: ISearchFilter =
 {
     label: 'Situation administrative',
     icon: <Landmark className="text-blue-dinum" />,
@@ -25,8 +32,9 @@ const searchFiltersDirigeant: ISearchFilter =
 }
 
 const activeFilters = [
-    <SearchFiltersCity key={searchFiltersCityProps.label} {...searchFiltersCityProps} />,
-    <SearchFiltersAdministrativeSituation key={searchFiltersAdministrativeSituation.label} {...searchFiltersAdministrativeSituation} />,
+    <SearchFiltersCommune key={searchFiltersCityProps.label} {...searchFiltersCityProps} />,
+    <SearchFiltersFormeJuridique key={searchFiltersFormeJuridique.label} {...searchFiltersFormeJuridique} />,
+    <SearchFiltersCodeNafApe key={searchFiltersCodeNafApe.label} {...searchFiltersCodeNafApe} />,
     <SearchFiltersDirigeant key={searchFiltersDirigeant.label} {...searchFiltersDirigeant} />
 ]
 

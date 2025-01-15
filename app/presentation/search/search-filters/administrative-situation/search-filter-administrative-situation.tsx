@@ -19,6 +19,7 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
     const [open, setOpen] = useState(false)
     const [filterValue, setFilterValue] = useState("")
     const [inputValue, setInputValue] = useState("")
+    const [searchCommandInput, setSearchCommandInput] = useState("")
 
     const searchParamsFormatted = new SearchParams(searchParams)
     const activeSearchParams = searchParamsFormatted.getValue(paramName)
@@ -91,11 +92,13 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
                         </PopoverTrigger>
                         <PopoverContent className={`w-xs p-0 shadow-2xl`}>
                             <Command>
-                                <CommandInput placeholder={placeholder} className="h-9" />
+                                <CommandInput value={searchCommandInput} onValueChange={setSearchCommandInput} placeholder={placeholder} className="h-9" />
                                 <CommandList>
                                     <CommandEmpty className="text-left p-2 text-sm">Liste vide</CommandEmpty>
-                                    <CommandGroup className="w-full">
+                                    <CommandGroup className="w-full p-1">
+                                        <CommandItem value="-" className="hidden" />
                                         {Object.keys(data).filter((key: string) => !activeSearchParams?.includes(key)).map((key: string) => (
+
                                             <CommandItem
                                                 key={key}
                                                 value={
@@ -103,7 +106,7 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
                                                         ? `${key} - ${data[key]}`
                                                         : data[key]
                                                 }
-                                                className="text-sm text-slate-600 font-normal hover:text-primary"
+                                                className="text-sm text-slate-600 font-normal hover:text-primary rounded-lg"
                                                 onSelect={() => {
                                                     handleChangeValue(key)
                                                     setOpen(false)

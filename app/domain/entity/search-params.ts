@@ -28,6 +28,8 @@ export class SearchParams implements ISearchParams {
 
     //Booleans values to know if category filters are active
     isAdministrativeFilterActive: boolean = false
+    isFormeJuridiqueFilterActive: boolean = false
+    isCodeNafApeFilterActive: boolean = false
     isCityFilterActive: boolean = false
 
     constructor(params: URLSearchParams) {
@@ -102,7 +104,8 @@ export class SearchParams implements ISearchParams {
 
     checkActiveFilters() {
         this.checkCityFilters()
-        this.checkAdministrativeFilters()
+        this.checkFormeJuridiqueFilters()
+        this.checkCodeApeNafFilters()
     }
 
     checkCityFilters() {
@@ -113,11 +116,19 @@ export class SearchParams implements ISearchParams {
         }
     }
 
-    checkAdministrativeFilters() {
+    checkFormeJuridiqueFilters() {
         if (this.formeJuridique && this.formeJuridique.length > 0) {
-            this.isAdministrativeFilterActive = true
+            this.isFormeJuridiqueFilterActive = true
         } else {
-            this.isAdministrativeFilterActive = false
+            this.isFormeJuridiqueFilterActive = false
+        }
+    }
+
+    checkCodeApeNafFilters() {
+        if (this.activitePrincipale && this.activitePrincipale.length > 0) {
+            this.isCodeNafApeFilterActive = true
+        } else {
+            this.isCodeNafApeFilterActive = false
         }
     }
 

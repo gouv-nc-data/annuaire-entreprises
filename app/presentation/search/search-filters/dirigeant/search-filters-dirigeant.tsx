@@ -1,29 +1,19 @@
 import { useState } from "react"
-import { format } from "date-fns"
-import { fr } from 'date-fns/locale/fr'
 import { Form, Link, useSearchParams, useNavigate } from "@remix-run/react"
 
 import { SearchParams } from "~/domain/entity/search-params"
 import { ExistingSearchParams } from "~/application/search/existing-search-params"
 import { ISearchFilter } from "~/domain/entity/search-filters"
 
-import { CalendarIcon, ChevronDown, Plus, X } from "lucide-react"
+import { ChevronDown, Plus, X } from "lucide-react"
 import { Button } from "~/presentation/ui/button"
 import { Input } from "~/presentation/ui/input"
 import { Popover, PopoverContent, PopoverTrigger } from "~/presentation/ui/popover"
 import { Label } from "~/presentation/ui/label"
 
-import { Calendar } from "~/presentation/ui/calendar"
-import { cn } from "~/utils/tailwind"
-
 export default function SearchFiltersDirigeant({ label, icon }: ISearchFilter) {
 
     const [isOpen, setIsOpen] = useState(false)
-    const [isFromDateOpen, setIsFromDateIsOpen] = useState(false)
-    const [isToDateOpen, setIsToDateIsOpen] = useState(false)
-
-    const [fromDate, setFromDate] = useState<Date>()
-    const [toDate, setToDate] = useState<Date>()
 
     let [searchParams] = useSearchParams();
     const navigate = useNavigate();

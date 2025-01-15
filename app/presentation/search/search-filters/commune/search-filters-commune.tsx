@@ -8,9 +8,9 @@ import { ChevronDown, Plus, X } from "lucide-react"
 import { Button } from "~/presentation/ui/button"
 import { Input } from "~/presentation/ui/input"
 import { Popover, PopoverContent, PopoverTrigger } from "~/presentation/ui/popover"
-import ActiveFilters from "../active-filters"
+import ActiveFilters from "../../active-filters"
 
-export default function SearchFiltersCity({ label, icon }: ISearchFilter) {
+export default function SearchFiltersCommune({ label, icon }: ISearchFilter) {
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -83,9 +83,9 @@ export default function SearchFiltersCity({ label, icon }: ISearchFilter) {
             <PopoverContent className="w-xs shadow-xl" align="start">
                 <div className="flex flex-col justify-start gap-4">
                     <div className="space-y-2">
-                        <h4 className="font-medium leading-none text-md text-primary">Ville, province ou région</h4>
+                        <h4 className="font-medium leading-none text-md text-primary">Commune</h4>
                         <p className="text-xs text-muted-foreground">
-                            Vous pouvez ajouter plusieurs filtre géolocalisé à la fois.
+                            Vous pouvez ajouter plusieurs filtres à la fois.
                         </p>
                     </div>
                     {searchParamsCity && searchParamsCity.length > 0 &&
