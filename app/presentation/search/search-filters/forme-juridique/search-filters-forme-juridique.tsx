@@ -6,7 +6,7 @@ import { ChevronDown, Code } from "lucide-react"
 import { ISearchFilter } from "~/domain/entity/search-filters"
 import { Button } from "~/presentation/ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "~/presentation/ui/popover"
-import SearchFilterAdministrativeSituation from "../administrative-situation/search-filter-administrative-situation"
+import SearchFilterCommand from "../search-filter-command/search-filter-command"
 import { SearchParams } from "~/domain/entity/search-params"
 
 import NatureJuridiques from "~/domain/filters/nature-juridiques.json"
@@ -46,7 +46,7 @@ export default function SearchFiltersFormeJuridique({ label, icon }: ISearchFilt
                         </p>
                     </div>
                     <div className="flex flex-col gap-4">
-                        <SearchFilterAdministrativeSituation
+                        <SearchFilterCommand
                             label="Forme juridique"
                             values={Object.values(NatureJuridiques)}
                             valuesLabel={Object.values(NatureJuridiques)}

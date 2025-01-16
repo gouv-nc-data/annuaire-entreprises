@@ -1,5 +1,5 @@
 import ActiveFilter from "./active-filter"
-import { DataType } from "./search-filters/administrative-situation/search-filters-administrative-situation"
+import { DataType } from "./search-filters/search-filter-command/search-filter-command"
 
 
 

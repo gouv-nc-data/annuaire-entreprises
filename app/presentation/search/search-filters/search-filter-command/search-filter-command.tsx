@@ -10,7 +10,12 @@ import { Popover, PopoverTrigger, PopoverContent, } from "~/presentation/ui/popo
 import { cn } from "~/utils/tailwind"
 import { SearchParams, SearchParamskeyStringType } from "~/domain/entity/search-params"
 import ActiveFilters from "../../active-filters"
-import { DataType } from "./search-filters-administrative-situation"
+
+import { removeAccents } from "~/utils/remove_accents"
+
+export type DataType = {
+    [key: string]: string
+}
 
 export default function SearchFilterAdministrativeSituation({ paramName, label, data, placeholder }: { paramName: SearchParamskeyStringType, label: string, values: string[], valuesLabel: string[], data: DataType, placeholder: string }) {
 
@@ -65,7 +70,6 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
         })
         : []
 
-
     return (
         <div className="flex flex-col gap-4 first:border-none border-t-1 border-slate-200">
             <Form method="GET" action="/rechercher" className="flex flex-col gap-4">
@@ -90,7 +94,12 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
                             </Button>
                         </PopoverTrigger>
                         <PopoverContent className={`w-xs p-0 shadow-2xl`}>
-                            <Command>
+                            <Command
+                                filter={(value, search) => {
+                                    if (value.toLowerCase().includes(removeAccents(search.toLowerCase()))) return 1
+                                    return 0
+                                }}
+                            >
                                 <CommandInput value={searchCommandInput} onValueChange={setSearchCommandInput} placeholder={placeholder} className="h-9" />
                                 <CommandList>
                                     <CommandEmpty className="text-left p-2 text-sm">Liste vide</CommandEmpty>

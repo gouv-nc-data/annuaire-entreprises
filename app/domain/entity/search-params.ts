@@ -72,6 +72,8 @@ export class SearchParams implements ISearchParams {
                 return this.formeJuridique
             case ("activite_principale"):
                 return this.activitePrincipale
+            case ("ville"):
+                return this.ville
         }
     }
 

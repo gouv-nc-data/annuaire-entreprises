@@ -1,60 +1,23 @@
 import { useState } from "react"
-import { Form, Link, useSearchParams, useNavigate } from "@remix-run/react"
+import { useSearchParams, useNavigate } from "@remix-run/react"
 import { SearchParams } from "~/domain/entity/search-params"
-import { ExistingSearchParams } from "~/application/search/existing-search-params"
 import { ISearchFilter } from "~/domain/entity/search-filters"
 
 import { ChevronDown, Plus, X } from "lucide-react"
 import { Button } from "~/presentation/ui/button"
-import { Input } from "~/presentation/ui/input"
 import { Popover, PopoverContent, PopoverTrigger } from "~/presentation/ui/popover"
-import ActiveFilters from "../../active-filters"
+import SearchFilterCommand, { DataType } from "../search-filter-command/search-filter-command"
+
+import Communes from '~/domain/filters/communes.json'
 
 export default function SearchFiltersCommune({ label, icon }: ISearchFilter) {
 
     const [isOpen, setIsOpen] = useState(false)
 
     let [searchParams] = useSearchParams();
-    const navigate = useNavigate();
 
     const searchParamsFormatted = new SearchParams(searchParams)
     const searchParamsCity = searchParamsFormatted.ville
-
-    function createFilterLink(item: string) {
-        const newSearchParams = new SearchParams(searchParams)
-        const newActiveSearchParams = searchParamsCity?.filter(filter => filter !== item)
-
-        newSearchParams.page = "1"
-        newSearchParams.setValue("ville", newActiveSearchParams ? newActiveSearchParams : [])
-
-        newSearchParams.buildUrl();
-        return `/rechercher?${newSearchParams.url}`
-    }
-
-
-    function handleOnSubmit(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault()
-        const formData = new FormData(e.currentTarget)
-        const newCityFilter = formData.get('ville')?.toString().toLocaleLowerCase()
-
-        if (!newCityFilter) {
-            return
-        }
-
-        const alreadyFoundedCityFilter = searchParamsCity?.find(filter => filter === newCityFilter)
-
-        if (alreadyFoundedCityFilter) {
-            return
-        }
-
-        const newSearchParams = new URLSearchParams(searchParams.toString())
-        const newCitySearchParams = searchParamsCity ? searchParamsCity + ', ' + newCityFilter : newCityFilter
-
-        newSearchParams.set('ville', newCitySearchParams)
-
-        setIsOpen(false)
-        navigate(`/rechercher?${newSearchParams.toString()}`)
-    }
 
     return (
         <Popover open={isOpen} onOpenChange={setIsOpen}>
@@ -88,16 +51,17 @@ export default function SearchFiltersCommune({ label, icon }: ISearchFilter) {
                             Vous pouvez ajouter plusieurs filtres à la fois.
                         </p>
                     </div>
-                    {searchParamsCity && searchParamsCity.length > 0 &&
-                        <ActiveFilters activeFilters={searchParamsCity} filterLink={createFilterLink} />
-                    }
-                    <Form method="GET" action="/rechercher" onSubmit={handleOnSubmit} className="w-full">
-                        <ExistingSearchParams exclude={["ville"]} />
-                        <div className="flex w-full items-center space-x-2">
-                            <Input type="text" name="ville" placeholder="ex: Noumea" />
-                            <Button><Plus className="w-5 h-5" /></Button>
-                        </div>
-                    </Form>
+                    <div className="flex flex-col gap-4">
+                        <SearchFilterCommand
+                            key={'search-filter-commune'}
+                            label="Commune"
+                            values={Object.values(Communes)}
+                            valuesLabel={Object.values(Communes)}
+                            data={Communes as DataType}
+                            placeholder="Choisir une commune"
+                            paramName="ville"
+                        />
+                    </div>
                 </div>
             </PopoverContent>
         </Popover >
