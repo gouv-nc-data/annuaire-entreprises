@@ -1,11 +1,14 @@
 export interface IDirigeant {
     nom: string | null
+    prenoms: string | null
+    nom_complet: string | null
+    nom_personne_morale: string | null
     date_naissance?: string | null
     nationalite?: string | null
     adresse?: string | null
     fonction?: string,
-    numerochrono?: number | null
-    ordreaffichage?: number | null
+    numerochrono: number 
+    ordreaffichage: number
     type_personne?: string | null
     code_postal?: string | null
     ville?: string | null

@@ -67,7 +67,7 @@ export default function SearchFiltersDirigeant({ label, icon }: ISearchFilter) {
                             Recherchez toutes les entreprises liées à une personne dirigeant(e)
                         </p>
                     </div>
-                    <Form method="GET" action="/rechercher" onSubmit={handleOnSubmit} className="w-full flex flex-col gap-4">
+                    <Form key={searchParamsDirigeant} method="GET" action="/rechercher" onSubmit={handleOnSubmit} className="w-full flex flex-col gap-4">
                         <ExistingSearchParams exclude={["dirigeant"]} />
                         <div className="flex flex-col gap-2">
                             <Label>Nom prénom</Label>

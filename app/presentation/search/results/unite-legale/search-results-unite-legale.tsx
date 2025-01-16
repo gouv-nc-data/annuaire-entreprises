@@ -23,7 +23,7 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
                             {uniteLegale.code_ape && <p className="text-slate-800 text-md font-normal">({uniteLegale.code_ape})</p>}
                         </div>
                     </div>
-                    <div className="flex items-center gap-0">
+                    <div className="flex items-center gap-0 pt-2">
                         {
                             uniteLegale.dirigeants && uniteLegale.dirigeants.length > 0 &&
                             <SearchResultsUniteLegaleDirigeants dirigeants={uniteLegale.dirigeants} />

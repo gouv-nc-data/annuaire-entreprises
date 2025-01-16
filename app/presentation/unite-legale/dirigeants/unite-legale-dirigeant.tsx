@@ -26,16 +26,18 @@ export default function UniteLegaleDirigeant({ dirigeant }: { dirigeant: IDirige
             </div>
             <div className='col-span-7'>
                 <span className="block md:hidden text-base font-medium text-primary">Details</span>
-                <span className={`text-slate-800 font-normal text-sm`}>{dirigeant.nom}</span>
+                <span className={`text-slate-800 font-normal text-sm`}>{dirigeant.nom_complet ? dirigeant.nom_complet : dirigeant.nom_personne_morale}</span>
                 {birthDate && <span className={`text-slate-800 font-normal text-sm`}>, né(e) en {birthDate}</span>}
             </div>
-            <div className='col-span-2'>
-                <span className="block md:hidden text-base font-medium text-primary">Action</span>
-                <Link to={`/rechercher?dirigeant=${dirigeant.nom}`} className="inline-flex items-center link">
-                    <ArrowRight className="w-4 h-4" />
-                    voir ses entreprises
-                </Link>
-            </div>
+            {dirigeant.type_personne === 'physique' &&
+                <div className='col-span-2'>
+                    <span className="block md:hidden text-base font-medium text-primary">Action</span>
+                    <Link to={`/rechercher?dirigeant=${dirigeant.nom_complet}`} className="inline-flex items-center link">
+                        <ArrowRight className="w-4 h-4" />
+                        voir ses entreprises
+                    </Link>
+                </div>
+            }
         </li>
     )
 }

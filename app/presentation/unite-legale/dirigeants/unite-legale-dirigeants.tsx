@@ -13,6 +13,8 @@ import UniteLegaleDirigeant from './unite-legale-dirigeant'
 
 export default function UniteLegaleDirigeants({ uniteLegale }: { uniteLegale: IUniteLegale }) {
 
+    console.log('unite :', uniteLegale.dirigeants)
+
     return (
         <section className='flex flex-col gap-6 p-6 bg-white rounded-xl shadow-sm border border-input'>
             <header className='flex w-full justify-between items-start gap-6'>
@@ -38,7 +40,7 @@ export default function UniteLegaleDirigeants({ uniteLegale }: { uniteLegale: IU
                                 <UniteLegaleDirigeantsListHeader />
                                 <div className='flex flex-col gap-2 w-full'>
                                     {
-                                        uniteLegale.dirigeants.map(dirigeant => <UniteLegaleDirigeant key={dirigeant.nom} dirigeant={dirigeant} />)
+                                        uniteLegale.dirigeants.sort((a, b) => a.ordreaffichage - b.ordreaffichage).map((dirigeant, index) => <UniteLegaleDirigeant key={index} dirigeant={dirigeant} />)
                                     }
                                 </div>
                             </div>
