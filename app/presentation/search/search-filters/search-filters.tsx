@@ -2,10 +2,10 @@ import { ISearchFilter } from "~/domain/entity/search-filters"
 import SearchFiltersCommune from "./commune/search-filters-commune"
 import SearchFiltersFormeJuridique from "./forme-juridique/search-filters-forme-juridique"
 import SearchFiltersCodeNafApe from "./code-naf-ape/search-filters-code-naf-ape"
-
-
-import { MapPinned, BookText, Landmark, User2 } from "lucide-react"
 import SearchFiltersDirigeant from "./dirigeant/search-filters-dirigeant"
+import SearchFiltersSituationEntreprise from "./situation-entreprise/search-filters-situation-entreprise"
+
+import { MapPinned, BookText, Landmark, User2, BookOpenCheck } from "lucide-react"
 
 const searchFiltersCityProps: ISearchFilter =
 {
@@ -25,6 +25,12 @@ const searchFiltersCodeNafApe: ISearchFilter =
     icon: <Landmark className="text-blue-dinum" />,
 }
 
+const searchFiltersSituationEntreprise: ISearchFilter =
+{
+    label: 'Situation entreprise',
+    icon: <BookOpenCheck className="text-blue-dinum" />,
+}
+
 const searchFiltersDirigeant: ISearchFilter =
 {
     label: 'Dirigeant(e)',
@@ -35,6 +41,7 @@ const activeFilters = [
     <SearchFiltersCommune key={searchFiltersCityProps.label} {...searchFiltersCityProps} />,
     <SearchFiltersFormeJuridique key={searchFiltersFormeJuridique.label} {...searchFiltersFormeJuridique} />,
     <SearchFiltersCodeNafApe key={searchFiltersCodeNafApe.label} {...searchFiltersCodeNafApe} />,
+    <SearchFiltersSituationEntreprise key={searchFiltersSituationEntreprise.label} {...searchFiltersSituationEntreprise} />,
     <SearchFiltersDirigeant key={searchFiltersDirigeant.label} {...searchFiltersDirigeant} />
 ]
 

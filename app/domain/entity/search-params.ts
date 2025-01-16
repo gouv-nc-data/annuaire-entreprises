@@ -6,6 +6,7 @@ interface ISearchParams {
     codePostal: string[] | null,
     page: string | null,
     formeJuridique: string[] | null
+    situationEntreprise: 'I' | 'R' | null;
     activitePrincipale: string[] | null
 }
 
@@ -17,6 +18,7 @@ export class SearchParams implements ISearchParams {
     page: string | null = "1"
     formeJuridique: string[] | null = null;
     activitePrincipale: string[] | null = null;
+    situationEntreprise: 'I' | 'R' | null = null;
     dirigeant: string | null = null;
     perPage: string | null = null;
 
@@ -27,10 +29,9 @@ export class SearchParams implements ISearchParams {
     url: string = ''
 
     //Booleans values to know if category filters are active
-    isAdministrativeFilterActive: boolean = false
+    isCityFilterActive: boolean = false
     isFormeJuridiqueFilterActive: boolean = false
     isCodeNafApeFilterActive: boolean = false
-    isCityFilterActive: boolean = false
 
     constructor(params: URLSearchParams) {
 
@@ -42,6 +43,7 @@ export class SearchParams implements ISearchParams {
         const codePostal = params.get('code_postal')
         const formeJuridique = params.get('forme_juridique')
         const activitePrincipale = params.get('activite_principale')
+        this.situationEntreprise = params.get('situation_entreprise') as 'I' | 'R' ?? ''
 
         if (ville && ville.length > 0) {
             this.ville = ville.split(',')
@@ -168,6 +170,10 @@ export class SearchParams implements ISearchParams {
             searchParams.set('activite_principale', this.activitePrincipale.join())
         }
 
+        if (this.situationEntreprise) {
+            searchParams.set('situation_entreprise', this.situationEntreprise)
+        }
+
         this.query = searchParams.toString()
     }
 
@@ -201,6 +207,10 @@ export class SearchParams implements ISearchParams {
 
         if (this.activitePrincipale && this.activitePrincipale.length > 0) {
             searchParams.set('activite_principale', this.activitePrincipale.join())
+        }
+
+        if (this.situationEntreprise) {
+            searchParams.set('situation_entreprise', this.situationEntreprise)
         }
 
         this.url = searchParams.toString()
