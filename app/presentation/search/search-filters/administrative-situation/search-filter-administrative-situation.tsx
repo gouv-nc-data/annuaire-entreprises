@@ -67,8 +67,7 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
 
 
     return (
-        <div className="flex flex-col gap-4 first:border-none border-t-1 border-slate-200 pt-4">
-            <p className="text-zinc-600 text-sm font-medium flex items-center gap-2"><CornerDownRight className="w-4 h-4 text-blue-dinum -mt-1" /> {label}</p>
+        <div className="flex flex-col gap-4 first:border-none border-t-1 border-slate-200">
             <Form method="GET" action="/rechercher" className="flex flex-col gap-4">
                 <Input type="hidden" name={paramName} value={inputValue} />
                 <ExistingSearchParams exclude={[...paramName, 'page']} />
