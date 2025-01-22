@@ -18,7 +18,7 @@ export async function getSearchResultsLoader({ request }: LoaderFunctionArgs) {
     }
 
     if (searchResults.results === null) {
-        throw json("Not Found", { status: 400 });
+        return []
     }
 
     if (searchResults.erreur) {
