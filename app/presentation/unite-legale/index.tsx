@@ -18,7 +18,7 @@ export default function UniteLegalePage() {
 
     return (
         <div className="flex flex-col">
-            <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col gap-10 w-full">
+            <div className="max-w-7xl w-full mx-auto px-4 py-10 flex flex-col gap-10">
                 <UniteLegaleHeader uniteLegale={uniteLegale} showShareButton />
                 <UniteLegaleNavigation rid={uniteLegale.rid} />
                 <UniteLegaleInformations uniteLegale={uniteLegale} />

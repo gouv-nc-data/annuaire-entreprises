@@ -4,6 +4,7 @@ import UniteLegaleShareButton from "./unite-legale-share-button";
 import { Building2, ChevronRight } from "lucide-react";
 import { Link } from "@remix-run/react";
 import { IEtablissement } from "~/domain/entity/etablissement";
+import BasicInformation from "./common/basic-information";
 
 export default function UniteLegalBanner({ uniteLegale, etablissement }: { uniteLegale: IUniteLegale, etablissement?: IEtablissement }) {
     return (
@@ -13,12 +14,12 @@ export default function UniteLegalBanner({ uniteLegale, etablissement }: { unite
                     {etablissement
                         ? <div className="text-sm text-primary font-medium flex flex-col items-start md:flex-row md:items-center gap-1">
                             Entreprise :
-                            <Link to={`/entreprise/${uniteLegale.rid}`} className="text-blue-dinum font-medium hover:underline">{uniteLegale.nom_complet}</Link>
+                            <Link to={`/entreprise/${uniteLegale.rid}`} className="text-blue-dinum font-medium hover:underline"><BasicInformation isBold information={uniteLegale.nom_complet} /></Link>
                             <ChevronRight className="w-4 h-4 hidden md:inline-flex" />
                             Etablissements
                             <ChevronRight className="w-4 h-4 hidden md:inline-flex" />
                             <div className="inline-flex items-center gap-1">
-                                {etablissement.enseigne && <span className="text-blue-dinum font-medium">{etablissement.enseigne}</span>}
+                                {etablissement.enseigne && <span className="text-blue-dinum font-medium"><BasicInformation isBold information={etablissement.enseigne} /></span>}
                                 {etablissement.designation && <span className="text-blue-dinum font-medium">{etablissement.designation}</span>}
                                 <span className="text-blue-dinum font-medium">({uniteLegale.sigle ? uniteLegale.sigle : uniteLegale.designation})</span>
                             </div>

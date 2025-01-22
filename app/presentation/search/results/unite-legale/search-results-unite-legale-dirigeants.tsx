@@ -10,8 +10,8 @@ export default function SearchResultsUniteLegaleDirigeants({ dirigeants }: { dir
                 {
                     dirigeants.slice(0, 3).map((dirigeant) =>
                         <li key={Math.random()}
-                         className='inline px-2'>
-                            <span className='text-sm font-normal text-slate-600'>{dirigeant.nom_complet ? dirigeant.nom_complet : dirigeant.nom_personne_morale}</span>
+                         className='inline px-2 first:ps-1'>
+                            <span className='text-sm font-light text-slate-800'>{dirigeant.nom_complet ? dirigeant.nom_complet : dirigeant.nom_personne_morale}</span>
                         </li>
                     )
                 }

@@ -22,8 +22,8 @@ export default function UniteLegaleEtablissement({ etablissement }: { etablissem
             </div>
             <div className='col-span-3 flex flex-col md:flex-row md:inline-block gap-1 items-start'>
                 <span className="block md:hidden text-base font-medium text-primary">Détails (nom, enseigne, adresse)</span>
-                <span className={`text-slate-800 font-normal text-sm`}>{etablissement.nom_complet}</span>
-                <span className={`text-slate-800 font-normal text-sm`}> {etablissement.adresse_physique}</span>
+                <BasicInformation information={etablissement.nom_complet} isSmall />
+                <BasicInformation information={' '+ etablissement.adresse_physique} isSmall />
             </div>
             <div className='col-span-2'>
                 <span className="block md:hidden text-base font-medium text-primary">Création</span>

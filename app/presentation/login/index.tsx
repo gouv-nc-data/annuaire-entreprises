@@ -6,7 +6,7 @@ import LoginForm from "./login-form"
 export default function LoginPage() {
     return (
         <div>
-            <div className="max-w-7xl mx-auto px-4 py-20">
+            <div className="max-w-7xl w-full mx-auto px-4 py-20">
                 <header className="flex flex-col md:flex-row gap-20 w-full items-start">
                     <div className="flex flex-col gap-6 w-full md:w-1/2">
                         <div className="flex flex-col gap-6 w-full max-w-xl">

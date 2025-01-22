@@ -7,7 +7,7 @@ export default function Footer() {
     return (
         <footer className="flex flex-col">
             <div className="bg-primary-200">
-                <div className="max-w-7xl mx-auto px-4 grid grid-cols-12 py-20 gap-20">
+                <div className="max-w-7xl w-full mx-auto px-4 flex flex-col sm:grid grid-cols-12 py-20 gap-20">
                     <div className="flex flex-col gap-10 col-span-4 text-white">
                         <ul className="flex flex-col gap-4">
                             <li>
@@ -55,7 +55,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="bg-primary-300 border-t-1 border-slate-600 pt-6 pb-8">
-                <div className="max-w-7xl mx-auto px-4">
+                <div className="max-w-7xl w-full mx-auto px-4">
                     <div className="w-full flex-col lg:flex-row flex items-start lg:items-center justify-between py-10">
                         <Link to="/" className='lg:w-1/2'>
                             <img src={LogoHorizontalPng} alt="Logo de la DINUM" className='w-[150px] md:w-[200px]' />
@@ -76,7 +76,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="max-w-7xl mx-auto px-4">
+                <div className="max-w-7xl w-full mx-auto px-4">
                     <ul className="flex items-center text-white gap-4">
                         <li><a href=""><span className="underline font-light text-sm">Mentions légales</span></a></li>
                         <li><a href=""><span className="underline font-light text-sm">Partenaire</span></a></li>

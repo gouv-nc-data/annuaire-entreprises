@@ -6,6 +6,8 @@ export function SearchResultsList({ searchResults }: { searchResults: SearchResu
 
     const currentPage = searchResults.page
 
+    console.log('search results : ', searchResults)
+
     return (
         <div className="flex flex-col gap-4">
             <div className="flex items-center gap-1 text-primary text-sm text-zinc-600 font-normal">

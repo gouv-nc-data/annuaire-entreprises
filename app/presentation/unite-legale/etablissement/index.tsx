@@ -25,7 +25,7 @@ export default function UniteLegaleEtablissementPage() {
         etablissement
             ? <div className="flex flex-col">
                 <UniteLegalBanner uniteLegale={uniteLegale} etablissement={etablissement} />
-                <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col gap-10">
+                <div className="max-w-7xl w-full mx-auto px-4 py-10 flex flex-col gap-10">
                     <UniteLegaleHeader uniteLegale={uniteLegale} etablissement={etablissement} />
                     <EtablissementInformations uniteLegale={uniteLegale} etablissement={etablissement} />
                 </div>

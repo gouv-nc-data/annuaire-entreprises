@@ -7,6 +7,7 @@ import UniteLegaleShareButton from "./unite-legale-share-button";
 import { IEtablissement } from "~/domain/entity/etablissement";
 import EtablissementTextDescription from "./etablissement/etablissement-text-description";
 import SituationStatus from "./common/situation-status";
+import BasicInformation from "./common/basic-information";
 
 export default function UniteLegaleHeader({ uniteLegale, showShareButton, etablissement }: { uniteLegale: IUniteLegale, showShareButton?: boolean, etablissement?: IEtablissement }) {
 
@@ -21,10 +22,10 @@ export default function UniteLegaleHeader({ uniteLegale, showShareButton, etabli
                                     {etablissement ?
                                         <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
                                             <span>Établissement</span>
-                                            {etablissement.nom_complet} ({uniteLegale.sigle ? uniteLegale.sigle : uniteLegale.designation})
+                                            <BasicInformation information={etablissement.nom_complet} /> ({uniteLegale.sigle ? uniteLegale.sigle : uniteLegale.designation})
                                         </div>
                                         :
-                                        uniteLegale.nom_complet
+                                        <BasicInformation information={uniteLegale.nom_complet} />
                                     }
                                 </h1>
                                 {

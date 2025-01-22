@@ -18,7 +18,6 @@ export default function SearchPage() {
                         : searchResults.results && searchResults.total_results
                             ? <SearchResultsList searchResults={searchResults} />
                             : <SearchResultsEmpty />
-
                 }
             </div>
         </div>

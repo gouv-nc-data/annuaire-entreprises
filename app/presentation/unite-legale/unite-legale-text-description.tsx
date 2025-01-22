@@ -2,6 +2,7 @@ import { Link } from "@remix-run/react";
 import { Building, MapPin } from "lucide-react";
 import { IUniteLegale } from "~/domain/entity/unite-legale";
 import { formatDate } from "~/utils/format-date";
+import BasicInformation from "./common/basic-information";
 
 export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegale: IUniteLegale }) {
 
@@ -21,36 +22,36 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
                 <p className="text-common">
                     {fromDate && yearDifference && creationDate &&
                         <>
-                            La société {uniteLegale.nom_complet} a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference !== -1 ? yearDifference : ''} {yearDifference > 1 ? 'ans. ' : yearDifference === -1 ? "moins d'1 an. " : "an. "}
+                            La société <BasicInformation information={uniteLegale.nom_complet} /> a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference !== -1 ? yearDifference : ''} {yearDifference > 1 ? 'ans. ' : yearDifference === -1 ? "moins d'1 an. " : "an. "}
                         </>
                     }
                     {uniteLegale.forme_juridique &&
                         <>
-                            Sa forme juridique est <strong className="font-medium">{uniteLegale.forme_juridique}. </strong>
+                            Sa forme juridique est <strong className="font-bold"><BasicInformation isBold information={uniteLegale.forme_juridique} /></strong>
                         </>
                     }
                 </p>
                 <p className="text-common">
                     {uniteLegale.ape &&
                         <>
-                            Son domaine d'activité est : <strong className="font-medium">{uniteLegale.ape}. </strong>
+                            Son domaine d'activité est : <strong className="font-medium"><BasicInformation isBold information={uniteLegale.ape} />. </strong>
                         </>
                     }
                 </p>
             </div>
             <div>
-                <p className="flex items-center gap-2 text-common">
+                <div className="md:flex items-center gap-2 text-common">
                     <MapPin className="w-4 h-4 text-blue-dinum hidden md:inline-flex" />
                     {
                         uniteLegale.adresse_complete &&
-                        <>
-                            Son siège social est domicilié au {uniteLegale.adresse_complete}.
-                        </>
+                        <p className="md:flex items-center gap-1">
+                            Son siège social est domicilié au <BasicInformation isBold information={uniteLegale.adresse_complete} />
+                        </p>
                     }
-                </p>
+                </div>
                 <p className="flex items-center gap-2 text-common">
                     <Building className="w-4 h-4 text-blue-dinum hidden md:inline-flex" />
-                    {uniteLegale.etablissements ?
+                    {uniteLegale.etablissements && uniteLegale.etablissements.length > 0 ?
                         <>
                             Elle possède <Link className="text-blue-dinum font-medium border-b-1 border-blue-dinum" to={`/entreprise/${uniteLegale.rid}#etablissements`}>{uniteLegale.etablissements.length} {uniteLegale.etablissements.length > 1 ? 'établissements. ' : 'établissement. '}</Link>
                         </>

@@ -6,6 +6,7 @@ import TooltipInfo from "~/presentation/ui/tooltip-info";
 import { formatDate } from "~/utils/format-date";
 
 import { Building, MapPin } from "lucide-react";
+import BasicInformation from "../common/basic-information";
 
 export default function EtablissementTextDescription({ uniteLegale, etablissement }: { uniteLegale: IUniteLegale, etablissement: IEtablissement }) {
 
@@ -25,50 +26,50 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
                         />
                     </p>
                     <p className="">
-                        <span className="inline-flex md:hidden">Cet établissement</span> immatriculé sous le ridet {etablissement.ridet} est <span className="lowercase">{etablissement.situation}</span>.
+                        <span className="inline-flex md:hidden">Cet établissement</span> immatriculé sous le ridet {etablissement.ridet} est <span className="lowercase"><BasicInformation isBold information={etablissement.situation} /></span>.
                     </p>
                 </div>
                 <p className="text-common">
                     {etablissement.ape &&
                         <>
-                            Son domaine d'activité est : <strong className="font-medium">{etablissement.ape}.</strong>
+                            Son domaine d'activité est : <strong className="font-medium"><BasicInformation isBold information={etablissement.ape} /></strong>
                         </>
                     }
                     {etablissement.code_ape &&
                         <>
-                            <strong className="font-medium">({etablissement.code_ape}).</strong>
+                            <strong className="font-medium"> (<BasicInformation information={etablissement.code_ape} />).</strong>
                         </>
                     }
                 </p>
                 {etablissement.adresse_complete &&
-                    <p className="text-common flex items-center gap-2">
+                    <p className="text-common md:flex items-center gap-2">
                         <MapPin className="w-4 h-4 text-orange-500 hidden md:inline-flex" />
                         {
                             uniteLegale.adresse_complete &&
                             <>
-                                Il est domicilié au {etablissement.adresse_complete}.
+                                Il est domicilié au <BasicInformation information={etablissement.adresse_complete} />
                             </>
                         }
                     </p>
                 }
             </div>
-            <p className="text-common">
+            <div className="text-common w-full">
                 {fromDate && yearDifference && creationDate &&
-                    <>
-                        {etablissement.nom_complet} est un établissement de l'entreprise {uniteLegale.nom_complet} qui a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference} {yearDifference > 1 ? 'ans. ' : 'an. '}
-                    </>
+                    <p className="inline-block">
+                        <BasicInformation information={etablissement.nom_complet} /> est un établissement de l'entreprise <span className="-mt-2"><BasicInformation information={uniteLegale.nom_complet} /></span> qui a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference} {yearDifference > 1 ? 'ans. ' : 'an. '}
+                    </p>
                 }
                 {uniteLegale.forme_juridique &&
-                    <>
-                        Sa forme juridique est <strong className="font-medium">{uniteLegale.forme_juridique}. </strong>
-                    </>
+                    <div>
+                        Sa forme juridique est <strong className="font-medium"><BasicInformation information={uniteLegale.forme_juridique} />.</strong>
+                    </div>
                 }
                 {uniteLegale.ape &&
                     <>
                         Son domaine d'activité est : <strong className="font-medium">{uniteLegale.ape}. </strong>
                     </>
                 }
-            </p>
+            </div>
             <div>
                 <p className="flex items-center gap-2 text-common">
                     <MapPin className="w-4 h-4 text-blue-dinum hidden md:inline-flex" />
