@@ -1,5 +1,7 @@
+import { IDepotActe } from "./depot-acte"
 import { IDirigeant } from "./dirigeant"
 import { IEtablissement } from "./etablissement"
+import { IIndicateursFinanciers } from "./indicateurs-financiers"
 
 export interface IUniteLegale {
     rid: string | null
@@ -49,6 +51,8 @@ export interface IUniteLegale {
 
     dirigeants: IDirigeant[],
     etablissements: IEtablissement[]
+    depot_actes: IDepotActe[]
+    indicateurs_financiers: IIndicateursFinanciers[]
 }
 
 export class UniteLegale implements IUniteLegale {
@@ -99,6 +103,8 @@ export class UniteLegale implements IUniteLegale {
 
     dirigeants: IDirigeant[] = []
     etablissements: IEtablissement[] = []
+    depot_actes: IDepotActe[] = []
+    indicateurs_financiers: IIndicateursFinanciers[] = []
 
     constructor(props: Partial<UniteLegale>) {
         Object.assign(this, props)

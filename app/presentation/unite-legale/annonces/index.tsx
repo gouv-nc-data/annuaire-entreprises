@@ -4,7 +4,8 @@ import { useEffect } from "react";
 import { setUniteLegaleHistoryToLocalStorage } from "~/application/unite-legale/unite-legale-history-store";
 import UniteLegaleHeader from "../unite-legale-header";
 import UniteLegaleNavigation from "../unite-legale-navigation";
-import UniteLegaleAnnonces from "./unite-legale-annonces";
+import UniteLegaleDepotActes from "./unite-legale-depot-actes";
+import UniteLegaleIndicateursFinanciers from "./unite-legale-indicateurs-financiers";
 
 export default function UniteLegaleAnnoncesPage() {
 
@@ -19,7 +20,8 @@ export default function UniteLegaleAnnoncesPage() {
             <div className="w-full max-w-7xl mx-auto px-4 py-10 flex flex-col gap-10">
                 <UniteLegaleHeader uniteLegale={uniteLegale} showShareButton />
                 <UniteLegaleNavigation rid={uniteLegale.rid} />
-                <UniteLegaleAnnonces uniteLegale={uniteLegale} />
+                <UniteLegaleDepotActes uniteLegale={uniteLegale} />
+                <UniteLegaleIndicateursFinanciers uniteLegale={uniteLegale} />
             </div>
         </div>
     )
