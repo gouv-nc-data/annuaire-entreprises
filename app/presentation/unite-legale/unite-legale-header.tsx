@@ -8,6 +8,7 @@ import { IEtablissement } from "~/domain/entity/etablissement";
 import EtablissementTextDescription from "./etablissement/etablissement-text-description";
 import SituationStatus from "./common/situation-status";
 import BasicInformation from "./common/basic-information";
+import { formatRid } from "~/utils/format-rid";
 
 export default function UniteLegaleHeader({ uniteLegale, showShareButton, etablissement }: { uniteLegale: IUniteLegale, showShareButton?: boolean, etablissement?: IEtablissement }) {
 
@@ -37,7 +38,7 @@ export default function UniteLegaleHeader({ uniteLegale, showShareButton, etabli
                             <div className="flex items-start justify-between w-full">
                                 <div className="flex items-center gap-2">
                                     <span className={`flex items-center gap-2 text-lg text-primary font-medium border-2  ${etablissement ? 'bg-orange-100 border-orange-dinum' : 'bg-blue-100 border-blue-dinum'} rounded-2xl px-4 py-1`}>
-                                        <IdCard className={`w-5 h-5 ${etablissement ? 'text-orange-600' : 'text-blue-dinum'}`} /> <strong className={`${etablissement ? 'text-orange-600' : 'text-blue-dinum'} font-medium`}>{etablissement ? 'RIDET' : 'RID'} ‣</strong> {etablissement ? etablissement.ridet : uniteLegale.rid}
+                                        <IdCard className={`w-5 h-5 ${etablissement ? 'text-orange-600' : 'text-blue-dinum'}`} /> <strong className={`${etablissement ? 'text-orange-600' : 'text-blue-dinum'} font-medium`}>{etablissement ? 'RIDET' : 'RID'} ‣</strong> {etablissement ? formatRid(etablissement.ridet as string) : formatRid(uniteLegale.rid as string)}
                                     </span>
                                 </div>
                             </div>
