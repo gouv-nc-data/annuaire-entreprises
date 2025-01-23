@@ -1,11 +1,12 @@
 import { CircleHelp, Ban } from "lucide-react"
+import { isNonDiffusableInformation } from "~/utils/isNonDiffusableInformation"
 
 export default function BasicInformation({ information, uppercase, isSmall, isBold, isBlue, extraClass }: { information: string | any, uppercase?: boolean, isSmall?: boolean, isBold?: boolean, isBlue?: boolean, extraClass?: string }) {
 
     let toHide = false
 
     if (typeof information === 'string') {
-        toHide = information.toLowerCase().includes('information non diffusable')
+        toHide = isNonDiffusableInformation(information)
     }
 
     return (

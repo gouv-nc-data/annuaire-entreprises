@@ -28,7 +28,7 @@ export default function UniteLegaleEtablissements({ uniteLegale }: { uniteLegale
                         <img src={IseeLogo} className='w-20' />
                     </Link>
                 </header>
-                <div className='flex flex-col gap-8'>
+                <div className='flex flex-col gap-8' id='opened-etablissements'>
                     {openedEtablissements && openedEtablissements.length > 0 &&
                         <div className='flex flex-col gap-6 items-start w-full'>
                             <span className='flex items-center gap-2 text-zinc-900 font-medium text-lg border-b-2 border-blue-dinum pb-1'>
@@ -51,7 +51,7 @@ export default function UniteLegaleEtablissements({ uniteLegale }: { uniteLegale
                         <hr />
                     }
                     {closedEtablissements && closedEtablissements.length > 0 &&
-                        <div className='flex flex-col gap-6 items-start w-full'>
+                        <div className='flex flex-col gap-6 items-start w-full' id='closed-etablissements'>
                             <span className='flex items-center gap-2 text-zinc-900 font-medium text-lg border-b-2 border-red-300 pb-1'>
                                 <Building className='w-5 h-5 text-red-400' />
                                 Établissements fermés
