@@ -114,10 +114,10 @@ export default function Footer() {
                 </div>
                 <div className="max-w-7xl w-full mx-auto px-4">
                     <ul className="flex items-center text-white gap-4">
-                        <li><a href=""><span className="underline font-light text-sm">Mentions légales</span></a></li>
-                        <li><a href=""><span className="underline font-light text-sm">Partenaire</span></a></li>
-                        <li><a href=""><span className="underline font-light text-sm">CGU</span></a></li>
-                        <li><a href=""><span className="underline font-light text-sm">Gestion des cookies</span></a></li>
+                        <li><Link to="/mentions-legales"><span className="underline font-light text-sm">Mentions légales</span></Link></li>
+                        <li><Link to="/conditions-generales-utilisation"><span className="underline font-light text-sm">CGU</span></Link></li>
+                        <li><Link to="/gestion-cookies"><span className="underline font-light text-sm">Gestion des cookies</span></Link></li>
+                        <li><Link to="/donnees-personnelles"><span className="underline font-light text-sm">Données personnelles</span></Link></li>
                     </ul>
                 </div>
             </div>

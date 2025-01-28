@@ -1,2 +1,2 @@
-import PartenairePage from "~/presentation/partenaires"
+import PartenairePage from "~/presentation/pages/partenaires"
 export default PartenairePage

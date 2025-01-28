@@ -1,2 +1,2 @@
-import AboutPage from "~/presentation/about"
+import AboutPage from "~/presentation/pages/about/index"
 export default AboutPage
