@@ -1,6 +1,6 @@
 import { type MetaFunction } from "@remix-run/node";
 
-import { MapPinned, User, Scale, Landmark } from "lucide-react";
+import { MapPinned, User, Building2, Briefcase } from "lucide-react";
 import SearchModal from "./search/search-modal";
 import SearchAdvancesLink from "./search/search-advanced-link";
 
@@ -25,7 +25,7 @@ export default function HomePage() {
                 <div className="flex flex-col items-start gap-2">
                     <div className="sm:flex hidden gap-2">
                         <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
-                            <span className="text-xs leading-tight font-medium text-zinc-700">Par son emplacement</span>
+                            <span className="text-xs leading-tight font-medium text-zinc-700">Par sa commune</span>
                             <MapPinned className="w-4 h-4 text-blue-dinum" />
                         </div>
                         <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
@@ -34,11 +34,11 @@ export default function HomePage() {
                         </div>
                         <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
                             <span className="text-xs leading-tight font-medium text-zinc-700">Par sa forme juridique</span>
-                            <Scale className="w-4 h-4 text-blue-dinum" />
+                            <Building2 className="w-4 h-4 text-blue-dinum" />
                         </div>
                         <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
-                            <span className="text-xs leading-tight font-medium text-zinc-700">Par son type de structure</span>
-                            <Landmark className="w-4 h-4 text-blue-dinum" />
+                            <span className="text-xs leading-tight font-medium text-zinc-700">Par son activité</span>
+                            <Briefcase className="w-4 h-4 text-blue-dinum" />
                         </div>
                     </div>
                 </div>
