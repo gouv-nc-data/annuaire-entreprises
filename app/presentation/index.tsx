@@ -20,7 +20,7 @@ export default function HomePage() {
                         <h1 className="text-4xl text-blue-dinum font-medium">L'Annuaire des entreprises</h1>
                         <h2 className="text-xl text-primary">De Nouvelle-Calédonie.</h2>
                     </div>
-                    <p className="text-common">Vérifiez les informations légales publiques des entreprises, associations et services publics en Nouvelle-Calédonie.</p>
+                    <p className="text-common">Recherchez les informations légales publiques des entreprises, associations et services publics en Nouvelle-Calédonie.</p>
                 </div>
                 <div className="flex flex-col items-start gap-2">
                     <div className="sm:flex hidden gap-2">
