@@ -67,7 +67,7 @@ export default function EtablissementInformations({ uniteLegale, etablissement }
                         <span className='text-base font-medium text-primary'>Activité principale (NAF/APE)</span>
                     </div>
                     <div className='w-full md:w-2/3 md:py-[6px]'>
-                        <BasicInformation information={etablissement.ape} />
+                        <BasicInformation information={etablissement.ape !== '.' ? etablissement.ape : null} />
                     </div>
                 </div>
                 <div className='flex md:flex-row flex-col w-full md:gap-10'>

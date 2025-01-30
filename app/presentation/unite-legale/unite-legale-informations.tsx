@@ -60,7 +60,7 @@ export default function UniteLegaleInformations({ uniteLegale }: { uniteLegale: 
                         <span className='text-base font-medium text-primary'>Code NAF/APE</span>
                     </div>
                     <div className='w-full md:w-2/3 md:py-[6px]'>
-                        <BasicInformation information={uniteLegale.code_ape} />
+                        <BasicInformation information={uniteLegale.code_ape !== '.' ? uniteLegale.code_ape : null} />
                     </div>
                 </div>
                 <div className='flex md:flex-row flex-col w-full md:gap-10'>
