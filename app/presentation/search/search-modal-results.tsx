@@ -17,7 +17,7 @@ export function SearchModalResultsList({ searchResults, searchValue, currentSele
                                     <Building2 strokeWidth={1.2} className="w-5 h-5 text-blue-dinum fill-blue-50" />
                                     {searchResults.total_results}
                                 </div>
-                                <p className="text-slate-900 text-xs font-medium">Entreprise trouvés</p>
+                                <p className="text-slate-900 text-xs font-medium">Entreprises trouvées</p>
                             </div>
                         </div>
                         <ul className="flex flex-col bg-white px-2">
