@@ -5,6 +5,7 @@ import { ExternalLink, ArrowRight } from "lucide-react";
 import { IDepotActe } from "~/domain/entity/depot-acte";
 import { Button } from "~/presentation/ui/button";
 import { IUniteLegale } from "~/domain/entity/unite-legale";
+import { formatCommonDate } from "~/utils/format-date";
 
 export default function UniteLegaleDepotActe({ uniteLegale, depotActe }: { uniteLegale: IUniteLegale, depotActe: IDepotActe }) {
 
@@ -12,7 +13,7 @@ export default function UniteLegaleDepotActe({ uniteLegale, depotActe }: { unite
         <li className='flex flex-col md:grid md:grid-cols-12 w-full items-start md:gap-4 gap-3 py-2 md:py-0 border-b-1 border-slate-300 last:border-0 md:border-0'>
             <div className='col-span-2'>
                 <span className="block md:hidden text-base font-medium text-primary">Publication</span>
-                <BasicInformation information={depotActe.datedepot} isBold />
+                <BasicInformation information={formatCommonDate(depotActe.datedepot as string)} isBold />
             </div>
             <div className='col-span-8'>
                 <span className="block md:hidden text-base font-medium text-primary">Details</span>
