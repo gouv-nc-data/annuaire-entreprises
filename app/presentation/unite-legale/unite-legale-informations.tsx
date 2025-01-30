@@ -10,6 +10,7 @@ import TooltipInfo from '../ui/tooltip-info'
 import { Button } from '../ui/button'
 import { InfoIcon } from 'lucide-react'
 import UniteLegaleShareButton from './unite-legale-share-button'
+import { formatCommonDate } from '~/utils/format-date'
 
 export default function UniteLegaleInformations({ uniteLegale }: { uniteLegale: IUniteLegale }) {
 
@@ -80,11 +81,35 @@ export default function UniteLegaleInformations({ uniteLegale }: { uniteLegale: 
                     </div>
                 </div>
                 <div className='flex md:flex-row flex-col w-full md:gap-10'>
-                    <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px] md:pb-6 rounded-xl rounded-t-none rounded-e-none'>
+                    <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px]'>
                         <span className='text-base font-medium text-primary'>Date de création</span>
                     </div>
                     <div className='w-full md:w-2/3 md:py-[6px] pb-6'>
-                        <BasicInformation information={uniteLegale.date_creation} />
+                        <BasicInformation information={formatCommonDate(uniteLegale.date_creation as string)} />
+                    </div>
+                </div>
+                <div className='flex md:flex-row flex-col w-full md:gap-10'>
+                    <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px]'>
+                        <span className='text-base font-medium text-primary'>Date de début d&apos;activité</span>
+                    </div>
+                    <div className='w-full md:w-2/3 md:py-[6px] pb-6'>
+                        <BasicInformation information={null} />
+                    </div>
+                </div>
+                <div className='flex md:flex-row flex-col w-full md:gap-10'>
+                    <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px]'>
+                        <span className='text-base font-medium text-primary'>Date de fin d&apos;activité</span>
+                    </div>
+                    <div className='w-full md:w-2/3 md:py-[6px] pb-6'>
+                        <BasicInformation information={null} />
+                    </div>
+                </div>
+                <div className='flex md:flex-row flex-col w-full md:gap-10'>
+                    <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px] md:pb-6 rounded-xl rounded-t-none rounded-e-none'>
+                        <span className='text-base font-medium text-primary'>Date de radiation</span>
+                    </div>
+                    <div className='w-full md:w-2/3 md:py-[6px] pb-6'>
+                        <BasicInformation information={null} />
                     </div>
                 </div>
             </div>

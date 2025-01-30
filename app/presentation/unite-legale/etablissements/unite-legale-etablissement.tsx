@@ -3,6 +3,7 @@ import { Link } from "@remix-run/react";
 import { IEtablissement } from "~/domain/entity/etablissement";
 import BasicInformation from "../common/basic-information";
 import SituationStatus from "../common/situation-status";
+import { formatCommonDate } from "~/utils/format-date";
 
 export default function UniteLegaleEtablissement({ etablissement }: { etablissement: IEtablissement }) {
     return (
@@ -23,11 +24,11 @@ export default function UniteLegaleEtablissement({ etablissement }: { etablissem
             <div className='col-span-3 flex flex-col md:flex-row md:inline-block gap-1 items-start'>
                 <span className="block md:hidden text-base font-medium text-primary">Détails (nom, enseigne, adresse)</span>
                 <BasicInformation information={etablissement.nom_complet} isSmall />
-                <BasicInformation information={' '+ etablissement.adresse_physique} isSmall />
+                <BasicInformation information={' ' + etablissement.adresse_physique} isSmall />
             </div>
             <div className='col-span-2'>
                 <span className="block md:hidden text-base font-medium text-primary">Création</span>
-                <BasicInformation information={etablissement.date_creation} isSmall />
+                <BasicInformation information={formatCommonDate(etablissement.date_creation as string)} isSmall />
             </div>
             <div className='col-span-3'>
                 <span className="block md:hidden text-base font-medium text-primary">État</span>

@@ -13,7 +13,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
     const creationDate = uniteLegale.date_creation ? formatDate(uniteLegale.date_creation) : null
     const fromDate = uniteLegale.date_creation ? new Date(uniteLegale.date_creation) : null
     const now = new Date()
-    let yearDifference = fromDate?.getFullYear() ? now.getFullYear() - fromDate?.getFullYear() : null
+    const yearDifference = fromDate?.getFullYear() ? now.getFullYear() - fromDate?.getFullYear() : null
 
     return (
         <div className="flex flex-col gap-4">
@@ -32,7 +32,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
                 <p className="text-common">
                     {etablissement.ape &&
                         <>
-                            Son domaine d'activité est : <strong className="font-medium"><BasicInformation isBold information={etablissement.ape} /></strong>
+                            Son domaine d&apos;activité est : <strong className="font-medium"><BasicInformation isBold information={etablissement.ape} /></strong>
                         </>
                     }
                     {etablissement.code_ape &&
@@ -56,7 +56,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
             <div className="text-common w-full">
                 {fromDate && yearDifference && creationDate &&
                     <p className="inline-block">
-                        <BasicInformation information={etablissement.nom_complet} /> est un établissement de l'entreprise <span className="-mt-2"><BasicInformation information={uniteLegale.nom_complet} /></span> qui a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference} {yearDifference > 1 ? 'ans. ' : 'an. '}
+                        <BasicInformation information={etablissement.nom_complet} /> est un établissement de l&apos;entreprise <span className="-mt-2"><BasicInformation information={uniteLegale.nom_complet} /></span> qui a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference} {yearDifference > 1 ? 'ans. ' : 'an. '}
                     </p>
                 }
                 {uniteLegale.forme_juridique &&
@@ -66,7 +66,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
                 }
                 {uniteLegale.ape &&
                     <>
-                        Son domaine d'activité est : <strong className="font-medium">{uniteLegale.ape}. </strong>
+                        Son domaine d&apos;activité est : <strong className="font-medium">{uniteLegale.ape}. </strong>
                     </>
                 }
             </div>

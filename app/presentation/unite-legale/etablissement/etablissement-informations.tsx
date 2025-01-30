@@ -11,6 +11,7 @@ import { Link } from '@remix-run/react'
 import { InfoIcon } from 'lucide-react'
 import UniteLegaleShareButton from '../unite-legale-share-button'
 import { IEtablissement } from '~/domain/entity/etablissement'
+import { formatCommonDate } from '~/utils/format-date'
 
 export default function EtablissementInformations({ uniteLegale, etablissement }: { uniteLegale: IUniteLegale, etablissement: IEtablissement }) {
     return (
@@ -91,7 +92,7 @@ export default function EtablissementInformations({ uniteLegale, etablissement }
                         <span className='text-base font-medium text-primary'>Date de création</span>
                     </div>
                     <div className='w-full md:w-2/3 md:py-[6px] pb-6'>
-                        <BasicInformation information={etablissement.date_creation} />
+                        <BasicInformation information={formatCommonDate(etablissement.date_creation as string)} />
                     </div>
                 </div>
             </div>
