@@ -88,11 +88,35 @@ export default function EtablissementInformations({ uniteLegale, etablissement }
                     </div>
                 </div>
                 <div className='flex md:flex-row flex-col w-full md:gap-10'>
-                    <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px] md:pb-6 rounded-xl rounded-t-none rounded-e-none'>
-                        <span className='text-base font-medium text-primary'>Date de création</span>
+                    <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px]'>
+                        <span className='text-base font-medium text-primary'>Date de création de l&apos;établissement</span>
                     </div>
                     <div className='w-full md:w-2/3 md:py-[6px] pb-6'>
                         <BasicInformation information={formatCommonDate(etablissement.date_creation as string)} />
+                    </div>
+                </div>
+                <div className='flex md:flex-row flex-col w-full md:gap-10'>
+                    <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px]'>
+                        <span className='text-base font-medium text-primary'>Date de début d&apos;activité de l&apos;établissement</span>
+                    </div>
+                    <div className='w-full md:w-2/3 md:py-[6px] pb-6'>
+                        <BasicInformation information={null} />
+                    </div>
+                </div>
+                <div className='flex md:flex-row flex-col w-full md:gap-10'>
+                    <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px]'>
+                        <span className='text-base font-medium text-primary'>Date de fin d&apos;activité de l&apos;établissement</span>
+                    </div>
+                    <div className='w-full md:w-2/3 md:py-[6px] pb-6'>
+                        <BasicInformation information={null} />
+                    </div>
+                </div>
+                <div className='flex md:flex-row flex-col w-full md:gap-10'>
+                    <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px] md:pb-6 rounded-xl rounded-t-none rounded-e-none'>
+                        <span className='text-base font-medium text-primary'>Date de radiation de l&apos;établissement</span>
+                    </div>
+                    <div className='w-full md:w-2/3 md:py-[6px] pb-6'>
+                        <BasicInformation information={null} />
                     </div>
                 </div>
             </div>

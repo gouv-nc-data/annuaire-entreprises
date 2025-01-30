@@ -4,25 +4,28 @@ import { IEtablissement } from "~/domain/entity/etablissement";
 import BasicInformation from "../common/basic-information";
 import SituationStatus from "../common/situation-status";
 import { formatCommonDate } from "~/utils/format-date";
+import { formatRid } from "~/utils/format-rid";
 
 export default function UniteLegaleEtablissement({ etablissement }: { etablissement: IEtablissement }) {
     return (
         <li className='flex flex-col md:grid md:grid-cols-12 w-full items-start md:gap-4 gap-3 py-2 md:py-0 border-b-1 border-slate-300 last:border-0 md:border-0'>
-            <div className='col-span-1'>
+            <div className='col-span-2'>
                 <span className="block md:hidden text-base font-medium text-primary pb-2">RIDET</span>
                 <Link to={`/etablissement/${etablissement.ridet}`} className="!text-blue-dinum hover:underline">
-                    <span className={`text-blue-dinum font-medium text-sm`}>{etablissement.rid}</span>
-                    <br />
-                    <span className={`text-blue-dinum font-medium text-sm`}>{etablissement.et}</span>
+                    {etablissement.ridet &&
+                        formatRid(etablissement.ridet)
+                    }
                 </Link>
             </div>
-            <div className='col-span-3'>
-                <span className="block md:hidden text-base font-medium text-primary">Activité (NAF/APE)</span>
-                <BasicInformation information={etablissement.ape} isSmall />
-                {etablissement.code_ape && <p> (<BasicInformation information={etablissement.code_ape} isSmall />)</p>}
+            <div className='col-span-2'>
+                <span className="block flexmd:hidden text-base font-medium text-primary">Activité (NAF/APE)</span>
+                <div className="inline">
+                    <BasicInformation extraClass="inline" information={etablissement.ape} isSmall />
+                    {etablissement.code_ape && <p className="inline"> (<BasicInformation information={etablissement.code_ape} isSmall />)</p>}
+                </div>
             </div>
             <div className='col-span-3 flex flex-col md:flex-row md:inline-block gap-1 items-start'>
-                <span className="block md:hidden text-base font-medium text-primary">Détails (nom, enseigne, adresse)</span>
+                <span className="block md:hidden text-base font-medium text-primary">Détails (enseigne, adresse)</span>
                 <BasicInformation information={etablissement.nom_complet} isSmall />
                 <BasicInformation information={' ' + etablissement.adresse_physique} isSmall />
             </div>
