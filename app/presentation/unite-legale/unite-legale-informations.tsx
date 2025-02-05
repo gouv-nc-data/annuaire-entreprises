@@ -11,6 +11,7 @@ import { Button } from '../ui/button'
 import { InfoIcon } from 'lucide-react'
 import UniteLegaleShareButton from './unite-legale-share-button'
 import { formatCommonDate } from '~/utils/format-date'
+import { formatRid } from '~/utils/format-rid'
 
 export default function UniteLegaleInformations({ uniteLegale }: { uniteLegale: IUniteLegale }) {
 
@@ -44,7 +45,7 @@ export default function UniteLegaleInformations({ uniteLegale }: { uniteLegale: 
                         <span className='text-base font-medium text-primary'>RID</span>
                     </div>
                     <div className='w-full md:w-2/3 md:py-[6px]'>
-                        <BasicInformation information={uniteLegale.rid} />
+                        <BasicInformation information={uniteLegale.rid ? formatRid(uniteLegale.rid) : null} />
                     </div>
                 </div>
                 <div className='flex md:flex-row flex-col w-full md:gap-10'>
@@ -116,7 +117,7 @@ export default function UniteLegaleInformations({ uniteLegale }: { uniteLegale: 
             <div className='flex flex-col md:flex-row items-start md:items-center justify-between gap-4'>
                 <UniteLegaleShareButton rid={uniteLegale.rid} align='start' />
                 <div className='flex items-center gap-4'>
-                    <span className='text-xs font-light text-slate-500'>Mise à jour le 05/12/2024</span>
+                    <span className='text-xs font-light text-slate-500'>Mise à jour le 06/02/2025</span>
                     <Link to="https://www.isee.nc/" target='_blank' rel="noreferrer">
                         <Button variant={"outline"}>
                             <InfoIcon className="w-3 h-3" />
