@@ -42,7 +42,7 @@ export default function UniteLegaleIndicateursFinanciers({ uniteLegale }: { unit
                                 <UniteLegaleAnnoncesListHeader />
                                 <div className='flex flex-col gap-2 w-full'>
                                     {
-                                        uniteLegale.indicateurs_financiers.map((indicateurFinancier, index) => <UniteLegaleIndicateurFinancier key={indicateurFinancier.numerodepot + '-' + index} uniteLegale={uniteLegale} indicateurFinancier={indicateurFinancier} />)
+                                        uniteLegale.indicateurs_financiers.sort((a, b) => new Date(b.datedepot as unknown as Date).getTime() - new Date(a.datedepot as unknown as Date).getTime()).map((indicateurFinancier, index) => <UniteLegaleIndicateurFinancier key={indicateurFinancier.numerodepot + '-' + index} uniteLegale={uniteLegale} indicateurFinancier={indicateurFinancier} />)
                                     }
                                 </div>
                             </div>
