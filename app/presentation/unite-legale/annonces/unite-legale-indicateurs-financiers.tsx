@@ -34,7 +34,7 @@ export default function UniteLegaleIndicateursFinanciers({ uniteLegale }: { unit
                     <div className='flex flex-col gap-6'>
 
                         <div className='flex flex-col'>
-                            <span className='text-common'>Cette entreprise possède {uniteLegale.indicateurs_financiers.length} {uniteLegale.indicateurs_financiers.length > 1 ? 'dépôts de compte' : 'dépôt de compte'} enregisté au <strong className='font-medium'>Registre du commerce et des sociétés (RCS)</strong> tenu par l&apos;<a className='link neutral' href='' target='_blank'>INFOGREFFE</a></span>
+                            <span className='text-common'>Cette entreprise possède {uniteLegale.indicateurs_financiers.length} {uniteLegale.indicateurs_financiers.length > 1 ? 'dépôts de compte' : 'dépôt de compte'} enregisté au <strong className='font-medium'>Registre du commerce et des sociétés (RCS)</strong> tenu par l&apos;<a className='link neutral' href='https://www.infogreffe.nc' target='_blank' rel="noreferrer">INFOGREFFE</a></span>
                             <span className='text-common'>Pour en savoir plus, vous pouvez consulter la <a className='link neutral' href={`https://www.infogreffe.nc/entreprise/${uniteLegale.designation?.toLocaleLowerCase()}/${uniteLegale.rid}/`} target='_blank' rel="noreferrer">page de l&apos;entreprise</a> sur le site de l&apos;INFOGREFFE</span>
                         </div>
                         <div className='flex flex-col md:gap-0 gap-4'>
@@ -51,15 +51,15 @@ export default function UniteLegaleIndicateursFinanciers({ uniteLegale }: { unit
                     :
                     <div className='flex flex-col gap-6'>
                         <div className='flex flex-col'>
-                            <span className='text-common flex items-center gap-2'><Newspaper className='text-red-500' /> Aucune information concernant les dépots des comptes de cette entreprise n'est disponible</span>
-                            <span className='text-common'>Pour en savoir plus, vous pouvez consulter la <a className='link neutral' href={`https://www.infogreffe.nc/entreprise/${uniteLegale.rid}/`} target='_blank'>page de l'entreprise</a> sur le site de l'INFOGREFFE</span>
+                            <span className='text-common flex items-center gap-2'><Newspaper className='text-red-500' /> Aucune information concernant les dépots des comptes de cette entreprise n&apos;est disponible</span>
+                            <span className='text-common'>Pour en savoir plus, vous pouvez consulter la <a className='link neutral' href={`https://www.infogreffe.nc/entreprise/${uniteLegale.rid}/`} target='_blank' rel="noreferrer">page de l&apos;entreprise</a> sur le site de l&apos;INFOGREFFE</span>
                         </div>
                     </div>
             }
             <div className='flex flex-col md:flex-row items-start md:items-center justify-end gap-4'>
                 <div className='flex items-center gap-4'>
-                    <span className='text-xs font-light text-slate-500'>Mise à jour le 05/12/2024</span>
-                    <Link to="https://www.infogreffe.nc/" target='_blank'>
+                    <span className='text-xs font-light text-slate-500'>Mise à jour le 06/02/2025</span>
+                    <Link to="https://www.infogreffe.nc/" target='_blank' rel="noreferrer">
                         <Button variant={"outline"}>
                             <InfoIcon className="w-3 h-3" />
                             Sources: INFOGREFFE
