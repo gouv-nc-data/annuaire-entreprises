@@ -43,7 +43,7 @@ export default function SearchModal() {
     }, [location])
 
     useEffect(() => {
-        let listener = (event: KeyboardEvent) => {
+        const listener = (event: KeyboardEvent) => {
             if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
                 event.preventDefault()
                 setIsOpen(true)

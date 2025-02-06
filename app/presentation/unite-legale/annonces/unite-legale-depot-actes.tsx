@@ -40,7 +40,7 @@ export default function UniteLegaleDepotActes({ uniteLegale }: { uniteLegale: IU
                                 <UniteLegaleAnnoncesListHeader />
                                 <div className='flex flex-col gap-2 w-full'>
                                     {
-                                        uniteLegale.depot_actes.map((depotActe, index) => <UniteLegaleDepotActe key={depotActe.numerodepot + '-' + index} uniteLegale={uniteLegale} depotActe={depotActe} />)
+                                        uniteLegale.depot_actes.sort((a, b) => a.numerochrono - b.numerochrono).map((depotActe, index) => <UniteLegaleDepotActe key={depotActe.numerodepot + '-' + index} uniteLegale={uniteLegale} depotActe={depotActe} />)
                                     }
                                 </div>
                             </div>

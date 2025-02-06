@@ -55,13 +55,30 @@ export default function UniteLegaleInformations({ uniteLegale }: { uniteLegale: 
                     <div className='w-full md:w-2/3 md:py-[6px]'>
                         <BasicInformation information={uniteLegale.ape} />
                     </div>
-                </div >
+                </div>
+                <div className='flex md:flex-row flex-col w-full md:gap-10'>
+                    <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px]'>
+                        <span className='text-base font-medium text-primary'>Activité secondaire</span>
+                    </div>
+                    <div className='w-full md:w-2/3 md:py-[6px]'>
+                        <BasicInformation information={uniteLegale.activites_secondaires} />
+                    </div>
+                </div>
                 <div className='flex md:flex-row flex-col w-full md:gap-10'>
                     <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px]'>
                         <span className='text-base font-medium text-primary'>Code NAF/APE</span>
                     </div>
                     <div className='w-full md:w-2/3 md:py-[6px]'>
                         <BasicInformation information={uniteLegale.code_ape !== '.' ? uniteLegale.code_ape : null} />
+                    </div>
+                </div>
+                <div className='flex md:flex-row flex-col w-full md:gap-10'>
+                    <div className='md:w-1/3 md:border-e-2 md:bg-blue-50 md:px-6 md:py-[6px]'>
+                        <span className='text-base font-medium text-primary'>Adresse physique</span>
+                    </div>
+                    <div className='w-full md:w-2/3 md:py-[6px] inline'>
+                        <BasicInformation information={uniteLegale.adresse_physique + ', '} uppercase />
+                        <BasicInformation information={uniteLegale.ville_physique} uppercase />
                     </div>
                 </div>
                 <div className='flex md:flex-row flex-col w-full md:gap-10'>

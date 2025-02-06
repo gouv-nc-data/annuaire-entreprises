@@ -30,13 +30,13 @@ export const links: LinksFunction = () => [
   },
 ];
 
-export async function loader() {
-  return json({ ENV: { UMAMI_URL: process.env.UMAMI_URL, UMAMI_WEBSITE_ID: process.env.UMAMI_WEBSITE_ID } });
-}
+// export async function loader() {
+//   return json({ ENV: { UMAMI_URL: process.env.UMAMI_URL, UMAMI_WEBSITE_ID: process.env.UMAMI_WEBSITE_ID } });
+// }
 
 export function Layout({ children }: { children: React.ReactNode }) {
 
-  const data = useLoaderData<typeof loader>();
+  // const data = useLoaderData<typeof loader>();
 
   return (
     <html lang="en" className="font-sans scroll-smooth scroll-pt-4">
@@ -54,7 +54,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </div>
         <Footer />
         <ScrollRestoration />
-        {data && data.ENV && data.ENV.UMAMI_URL && <script defer src={`${data.ENV.UMAMI_URL}/script.js`} data-website-id={`${data.ENV.UMAMI_WEBSITE_ID}`} />}
+        {/* {data && data.ENV && data.ENV.UMAMI_URL && <script defer src={`${data.ENV.UMAMI_URL}/script.js`} data-website-id={`${data.ENV.UMAMI_WEBSITE_ID}`} />} */}
         <Scripts />
       </body>
     </html>

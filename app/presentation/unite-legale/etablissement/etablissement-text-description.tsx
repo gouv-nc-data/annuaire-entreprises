@@ -23,6 +23,7 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
                         <TooltipInfo
                             label='Cet établissement'
                             content="Une société est constituée d’autant d’établissements qu’il y a de lieux différents où elle exerce - ou a exercé - son activité. Il faut bien distinguer la fiche résumé de l'entreprise et les fiches de ses établissements."
+                            isEtablissement
                         />
                     </p>
                     <p className="">
@@ -42,22 +43,21 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
                     }
                 </p>
                 {etablissement.adresse_complete &&
-                    <p className="text-common md:flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-orange-500 hidden md:inline-flex" />
+                    <div className="text-common md:flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-orange-600 hidden md:inline-flex" />
+                        Il est situé au
                         {
                             uniteLegale.adresse_complete &&
-                            <>
-                                Il est domicilié au <BasicInformation information={etablissement.adresse_complete} />
-                            </>
+                            <BasicInformation information={etablissement.adresse_complete} />
                         }
-                    </p>
+                    </div>
                 }
             </div>
             <div className="text-common w-full">
                 {fromDate && yearDifference && creationDate &&
-                    <p className="inline-block">
+                    <div className="inline-block">
                         <BasicInformation information={etablissement.nom_complet} /> est un établissement de l&apos;entreprise <span className="-mt-2"><BasicInformation information={uniteLegale.nom_complet} /></span> qui a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference} {yearDifference > 1 ? 'ans. ' : 'an. '}
-                    </p>
+                    </div>
                 }
                 {uniteLegale.forme_juridique &&
                     <div>
@@ -76,7 +76,10 @@ export default function EtablissementTextDescription({ uniteLegale, etablissemen
                     {
                         uniteLegale.adresse_complete &&
                         <>
-                            Son siège social est domicilié au {uniteLegale.adresse_complete}.
+                            Son siège social est situé au
+                            <BasicInformation isBold information={uniteLegale.adresse_physique} />
+                            {uniteLegale.code_postal_physique && <BasicInformation isBold information={uniteLegale.code_postal_physique} />}
+                            <BasicInformation isBold information={uniteLegale.ville_physique} />
                         </>
                     }
                 </p>

@@ -1,7 +1,7 @@
 
 import { useState } from "react"
 import { useSearchParams } from "@remix-run/react"
-import { ChevronDown, Code } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 
 import { ISearchFilter } from "~/domain/entity/search-filters"
 import { Button } from "~/presentation/ui/button"
@@ -17,7 +17,7 @@ export type DataType = {
 
 export default function SearchFiltersFormeJuridique({ label, icon }: ISearchFilter) {
 
-    let [searchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const [isOpen, setIsOpen] = useState(false)
 
     const searchParamsFormatted = new SearchParams(searchParams)
@@ -40,7 +40,7 @@ export default function SearchFiltersFormeJuridique({ label, icon }: ISearchFilt
             <PopoverContent className="md:w-[400px] shadow-xl max-h-[400px] overflow-y-auto" align="start">
                 <div className="flex flex-col justify-start gap-4">
                     <div className="space-y-2">
-                        <h4 className="font-medium text-md leading-none text-primary">Situation administrative</h4>
+                        <h4 className="font-medium text-md leading-none text-primary">Forme juridique</h4>
                         <p className="text-xs text-muted-foreground">
                             Vous pouvez ajouter plusieurs filtres à la fois.
                         </p>
@@ -57,6 +57,6 @@ export default function SearchFiltersFormeJuridique({ label, icon }: ISearchFilt
                     </div>
                 </div>
             </PopoverContent>
-        </Popover >
+        </Popover>
     )
 }

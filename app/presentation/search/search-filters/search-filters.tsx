@@ -5,7 +5,7 @@ import SearchFiltersCodeNafApe from "./code-naf-ape/search-filters-code-naf-ape"
 import SearchFiltersDirigeant from "./dirigeant/search-filters-dirigeant"
 import SearchFiltersSituationEntreprise from "./situation-entreprise/search-filters-situation-entreprise"
 
-import { MapPinned, BookText, Landmark, User2, BookOpenCheck } from "lucide-react"
+import { MapPinned, Building2, User2, BookOpenCheck, Briefcase } from "lucide-react"
 
 const searchFiltersCityProps: ISearchFilter =
 {
@@ -16,13 +16,13 @@ const searchFiltersCityProps: ISearchFilter =
 const searchFiltersFormeJuridique: ISearchFilter =
 {
     label: 'Forme juridique',
-    icon: <BookText className="text-blue-dinum" />,
+    icon: <Building2 className="text-blue-dinum" />,
 }
 
 const searchFiltersCodeNafApe: ISearchFilter =
 {
-    label: 'Situation administrative',
-    icon: <Landmark className="text-blue-dinum" />,
+    label: 'Activité principale',
+    icon: <Briefcase className="text-blue-dinum" />,
 }
 
 const searchFiltersSituationEntreprise: ISearchFilter =

@@ -6,7 +6,7 @@ export interface IDepotActe {
     libelle: string | null
     nature: string | null
     noncommandable: string | null
-    numerochrono: number | null
+    numerochrono: number
     numerodepot: string | null
     ordreaffichage: number | null
     rid: string | null

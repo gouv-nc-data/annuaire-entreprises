@@ -34,7 +34,7 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
                 <p className="text-common">
                     {uniteLegale.ape &&
                         <>
-                            Son domaine d'activité est : <strong className="font-medium"><BasicInformation isBold information={uniteLegale.ape} />. </strong>
+                            Son domaine d&apos;activité est : <strong className="font-medium"><BasicInformation isBold information={uniteLegale.ape} />. </strong>
                         </>
                     }
                 </p>
@@ -45,7 +45,10 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
                     {
                         uniteLegale.adresse_complete &&
                         <p className="md:flex items-center gap-1">
-                            Son siège social est domicilié au <BasicInformation isBold information={uniteLegale.adresse_complete} />
+                            Son siège social est situé au
+                            <BasicInformation isBold information={uniteLegale.adresse_physique} />
+                            {uniteLegale.code_postal_physique && <BasicInformation isBold information={uniteLegale.code_postal_physique} />}
+                            <BasicInformation isBold information={uniteLegale.ville_physique} />
                         </p>
                     }
                 </div>

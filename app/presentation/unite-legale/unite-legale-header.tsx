@@ -19,14 +19,14 @@ export default function UniteLegaleHeader({ uniteLegale, showShareButton, etabli
                     <div className="flex w-full flex-col sm:flex-row justify-between items-start gap-6">
                         <div className="flex flex-col gap-4">
                             <div className="flex md:flex-row items-start md:items-center flex-col gap-4 md:gap-6">
-                                <h1 className="inline-block text-2xl tracking-wide text-blue-dinum font-medium border-b-2 border-blue-dinum">
+                                <h1 className={`inline-block text-2xl tracking-wide  font-medium border-b-2 ${etablissement ? 'text-orange-500 border-orange-500' : 'text-blue-dinum border-blue-dinum'} `}>
                                     {etablissement ?
-                                        <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
-                                            <span>Établissement</span>
-                                            <BasicInformation information={etablissement.nom_complet} /> ({uniteLegale.sigle ? uniteLegale.sigle : uniteLegale.designation})
+                                        <div className="flex flex-col md:flex-row md:inline items-start md:items-center gap-2">
+                                            <span className="md:pe-2">Établissement</span>
+                                            <BasicInformation extraClass="!text-2xl !tracking-wide !text-orange-500 !font-medium" information={etablissement.nom_complet} /> ({uniteLegale.sigle ? uniteLegale.sigle : uniteLegale.designation})
                                         </div>
                                         :
-                                        <BasicInformation information={uniteLegale.nom_complet} />
+                                        <BasicInformation extraClass="!text-2xl !tracking-wide !text-blue-dinum !font-medium" information={uniteLegale.nom_complet} />
                                     }
                                 </h1>
                                 {

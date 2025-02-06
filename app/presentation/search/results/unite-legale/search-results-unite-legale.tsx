@@ -1,12 +1,16 @@
-import { Link } from "@remix-run/react"
+import { Link, useSearchParams } from "@remix-run/react"
 import { MapPin } from "lucide-react"
 import { IUniteLegale } from "~/domain/entity/unite-legale"
 import SearchResultsUniteLegaleDirigeants from "./search-results-unite-legale-dirigeants"
 import SearchResultsUniteLegaleEtablissements from "./search-results-unite-legale-etablissements"
 import UniteLegaleStatus from "~/presentation/unite-legale/unite-legale-status"
 import BasicInformation from "~/presentation/unite-legale/common/basic-information"
+import HighlightFoundedTerm from "~/presentation/ui/highlight-founded-terme";
 
 export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale: IUniteLegale }) {
+
+    const [searchParams] = useSearchParams();
+    const terme = searchParams.get('terme')
 
     return (
         <div className="flex flex-col items-start gap-2">
@@ -14,7 +18,7 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
                 <div className="flex flex-col gap-0">
                     <div className="flex flex-col gap-0">
                         <div className="flex items-center gap-4">
-                            <p className="text-blue-dinum uppercase group-hover:underline font-medium text-lg"><BasicInformation isBold isBlue information={uniteLegale.nom_complet} /></p>
+                            {uniteLegale.nom_complet && <p className="text-blue-dinum uppercase font-medium text-lg"><HighlightFoundedTerm value={uniteLegale.nom_complet} terms={terme} hoverUnderline={true} /></p>}
                             <UniteLegaleStatus etatRid={uniteLegale.etat_rid} onlyShowExpired={true} />
                         </div>
                         <div className="inline-block gap-2">
@@ -33,13 +37,16 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
             </Link>
             <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-1 text-slate-600">
-                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
-                    <p className="address"><BasicInformation extraClass="!text-sm !font-light !text-primary-300 !uppercase !tracking-wide" isBold isBlue information={uniteLegale.adresse_complete} /></p>
+                    <MapPin strokeWidth={1.6} className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-slate-700" />
+                    <div className="address">
+                        {uniteLegale.adresse_physique && <BasicInformation extraClass="!text-sm !font-light !text-primary-300 !uppercase !tracking-wide" isBold isBlue information={<HighlightFoundedTerm value={uniteLegale.adresse_physique} terms={terme} hoverUnderline={true} />} />}
+                        <BasicInformation extraClass="!text-sm !font-light !text-primary-300 !uppercase !tracking-wide" isBold isBlue information={uniteLegale.ville_physique} />
+                    </div>
                 </div>
                 <div className="flex flex-col ms-6">
                     {
                         uniteLegale.etablissements && uniteLegale.etablissements.length > 0 &&
-                        <SearchResultsUniteLegaleEtablissements rid={uniteLegale.rid} etablissements={uniteLegale.etablissements} />
+                        <SearchResultsUniteLegaleEtablissements rid={uniteLegale.rid} etablissements={uniteLegale.etablissements} uniteLegale={uniteLegale} />
                     }
                 </div>
             </div>

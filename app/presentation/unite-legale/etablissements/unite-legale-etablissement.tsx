@@ -11,7 +11,7 @@ export default function UniteLegaleEtablissement({ etablissement }: { etablissem
         <li className='flex flex-col md:grid md:grid-cols-12 w-full items-start md:gap-4 gap-3 py-2 md:py-0 border-b-1 border-slate-300 last:border-0 md:border-0'>
             <div className='col-span-2'>
                 <span className="block md:hidden text-base font-medium text-primary pb-2">RIDET</span>
-                <Link to={`/etablissement/${etablissement.ridet}`} className="!text-blue-dinum hover:underline">
+                <Link to={`/etablissement/${etablissement.ridet}`} className="!text-orange-500 hover:underline">
                     {etablissement.ridet &&
                         formatRid(etablissement.ridet)
                     }
@@ -26,7 +26,7 @@ export default function UniteLegaleEtablissement({ etablissement }: { etablissem
             </div>
             <div className='col-span-3 flex flex-col md:flex-row md:inline-block gap-1 items-start'>
                 <span className="block md:hidden text-base font-medium text-primary">Détails (enseigne, adresse)</span>
-                <BasicInformation information={etablissement.nom_complet} isSmall />
+                <BasicInformation extraClass="!text-orange-500" information={etablissement.nom_complet  + ' ·'} isSmall />
                 <BasicInformation information={' ' + etablissement.adresse_physique} isSmall />
                 <BasicInformation information={' ' + etablissement.ville_physique} isSmall />
             </div>

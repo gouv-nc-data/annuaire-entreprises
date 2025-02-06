@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react"
 import { Button } from "../ui/button"
+// eslint-disable-next-line import/no-unresolved
 import LoginIllustration from '/login-illustration.png'
 import LoginForm from "./login-form"
 
