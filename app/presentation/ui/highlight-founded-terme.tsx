@@ -2,7 +2,7 @@ import { removeAccents } from "~/utils/remove_accents";
 
 export default function HighlightFoundedTerm({ terms, value, hoverUnderline }: { terms: string | null, value: string, hoverUnderline?: boolean }) {
     if (!terms || !value) {
-        return <p>{value}</p>;
+        return <span className="inline">{value}</span>;
     }
 
     // Create a regex pattern to match the terms globally and case-insensitively

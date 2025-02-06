@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import { Building2, ChevronDown, IdCard } from "lucide-react";
+import { Building2, ChevronDown } from "lucide-react";
 import { SearchResults } from "~/domain/entity/search-results";
 import { UniteLegale } from "~/domain/entity/unite-legale";
 

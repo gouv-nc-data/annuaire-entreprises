@@ -21,10 +21,10 @@ export default function UniteLegaleEtablissements({ uniteLegale }: { uniteLegale
 
     return (
         <section className='flex flex-col gap-4' id='etablissements'>
-            <span className='text-common'>Cette structure possède {etablissements.length} établissements. Cliquez sur un n° RIDET pour obtenir plus d’information :</span>
+            <span className='text-common'>Cette structure possède {etablissements.length} {etablissements.length > 1 ? 'établissements' : 'établissement'}. Cliquez sur un n° RIDET pour obtenir plus d’information :</span>
             <div className='flex flex-col gap-6 p-6 bg-white rounded-xl shadow-sm border border-input'>
                 <header className='flex w-full justify-between items-start gap-6'>
-                    <h2 className='bg-orange-100 ring-2 ring-orange-dinum border-1 shadow-md  text-orange-600  font-medium text-xl rounded-lg px-2'>{etablissements.length} Établissements de {uniteLegale.nom_complet}</h2>
+                    <h2 className='bg-orange-100 ring-2 ring-orange-dinum border-1 shadow-md  text-orange-600  font-medium text-xl rounded-lg px-2'>{etablissements.length} {etablissements.length > 1 ? 'établissements' : 'établissement'} de {uniteLegale.nom_complet}</h2>
                     <Link to="https://www.isee.nc/" target='_blank' rel="noreferrer">
                         <img src={IseeLogo} className='w-20' alt="Isee Logo" />
                     </Link>

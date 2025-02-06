@@ -18,7 +18,7 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
                 <div className="flex flex-col gap-0">
                     <div className="flex flex-col gap-0">
                         <div className="flex items-center gap-4">
-                            {uniteLegale.nom_complet && <p className="text-blue-dinum uppercase font-medium text-lg"><HighlightFoundedTerm value={uniteLegale.nom_complet} terms={terme} hoverUnderline={true} /></p>}
+                            {uniteLegale.nom_complet && <div className="text-blue-dinum uppercase font-medium text-lg"><HighlightFoundedTerm value={uniteLegale.nom_complet} terms={terme} hoverUnderline={true} /></div>}
                             <UniteLegaleStatus etatRid={uniteLegale.etat_rid} onlyShowExpired={true} />
                         </div>
                         <div className="inline-block gap-2">
@@ -38,9 +38,9 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
             <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-1 text-slate-600">
                     <MapPin strokeWidth={1.6} className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-slate-700" />
-                    <div className="address">
-                        {uniteLegale.adresse_physique && <BasicInformation extraClass="!text-sm !font-light !text-primary-300 !uppercase !tracking-wide" isBold isBlue information={<HighlightFoundedTerm value={uniteLegale.adresse_physique} terms={terme} hoverUnderline={true} />} />}
-                        <BasicInformation extraClass="!text-sm !font-light !text-primary-300 !uppercase !tracking-wide" isBold isBlue information={uniteLegale.ville_physique} />
+                    <div className="block">
+                        {uniteLegale.adresse_physique && <BasicInformation extraClass="!inline !text-sm !font-light !text-primary-300 !uppercase !tracking-wide inline" isBold isBlue information={<HighlightFoundedTerm value={uniteLegale.adresse_physique} terms={terme} hoverUnderline={true} />} />}
+                        <BasicInformation extraClass="inline !text-sm !font-light !text-primary-300 !uppercase !tracking-wide inline" isBold isBlue information={uniteLegale.ville_physique} />
                     </div>
                 </div>
                 <div className="flex flex-col ms-6">
