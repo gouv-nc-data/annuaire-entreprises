@@ -1,104 +1,40 @@
 export default function GestionCookiesPage() {
     return (
         <div>
-            <div className='max-w-7xl mx-auto px-4 w-full flex justify-between items-center py-20 gap-8'>
-                <article className="max-w-4xl flex flex-col gap-10">
-                    <div className="flex flex-col gap-4">
-                        <h1 className="title-big">À propos de l’Annuaire des Entreprises test</h1>
-                        <p className="text-common">Ce site permet de retrouver toutes les données publiques détenues par l’administration sur une entreprise, une association ou une administration. Ce site ne fait que centraliser les données. Il ne les modifie pas et ne les stocke pas. Il est opéré par une équipe de la Direction Interministérielle du Numérique.</p>
-                        <p className="text-common">Ce site ne fait que centraliser les données. Il ne les modifie pas et ne les stocke pas.</p>
-                        <p className="text-common">Il est opéré par une équipe de la <a href="/" className="link-common">Direction Interministérielle du Numérique.</a></p>
-                    </div>
-                    <div className="flex flex-col gap-4">
-                        <h1 className="title-medium">Que trouve-t-on dans l’Annuaire des Entreprises ?</h1>
-                        <p className="text-common">Les fiches de l’Annuaire regroupent des informations légales sur toutes les personnes morales basées en France (entreprises, associations, administrations, entrepreneurs…) à travers plusieurs onglets :</p>
-                        <ul className="list-disc ps-6 flex flex-col gap-2">
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Résumé :</strong> les informations générales (adresse, SIRET, SIREN, code NAF/ APE, numéro de TVA, RNA pour les associations…), les informations sur le siège social ainsi que la liste des établissements.
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Justificatif d’immatriculation :</strong> permettant d’obtenir le document pour prouver l’existence d’une entreprise ou d’une association (équivalent des extraits KBIS et D1)
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    Informations sur les <strong className="font-semibold">dirigeants</strong> (d’entreprises) ou élus (collectivités)
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Annonces légales :</strong> les informations générales (adresse, SIRET, SIREN, code NAF/ APE, numéro de TVA, RNA pour les associations…), les informations sur le siège social ainsi que la liste des établissements.
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Données financières des entreprises : </strong> les informations générales (adresse, SIRET, SIREN, code NAF/ APE, numéro de TVA, RNA pour les associations…), les informations sur le siège social ainsi que la liste des établissements.
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Annonces légales :</strong> les informations générales (adresse, SIRET, SIREN, code NAF/ APE, numéro de TVA, RNA pour les associations…), les informations sur le siège social ainsi que la liste des établissements.
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Labels et certificats :</strong> les informations générales (adresse, SIRET, SIREN, code NAF/ APE, numéro de TVA, RNA pour les associations…), les informations sur le siège social ainsi que la liste des établissements.
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Conventions collectives :</strong> les informations générales (adresse, SIRET, SIREN, code NAF/ APE, numéro de TVA, RNA pour les associations…), les informations sur le siège social ainsi que la liste des établissements.
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="flex flex-col gap-4">
-                        <h1 className="title-medium">D’où viennent les informations affichées par l’Annuaire des Entreprises ?</h1>
-                        <p className="text-common">Toutes les informations affichées sur ce site sont des informations publiques, accessibles librement et gratuitement. On appelle cela des données ouvertes ou open data.</p>
-                        <p className="text-common">Ces bases de données sont récupérées grâce aux téléservices développés par les <a href="/" className="link-common">administrations partenaires</a> :</p>
-                        <ul className="list-disc ps-6 flex flex-col gap-2">
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-        </div>
+      <div className="max-w-7xl mx-auto px-4 w-full flex justify-between items-center py-20 gap-8">
+        <article className="max-w-4xl flex flex-col gap-10">
+
+          <div className="flex flex-col gap-4">
+            <h1 className="title-big">Gestion des cookies</h1>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h1 className="title-medium">Utilisation des cookies</h1>
+            <p className="text-common">
+              Ce site utilise des cookies uniquement pour :
+            </p>
+            <ul className="list-disc ps-6 flex flex-col gap-2">
+              <li><p className="text-common">mesurer l’audience de fréquentation de manière anonyme,</p></li>
+              <li><p className="text-common">améliorer l'expérience utilisateur.</p></li>
+            </ul>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h1 className="title-medium">Cookies utilisés</h1>
+            <p className="text-common">
+              Aucun cookie publicitaire n'est installé. Les cookies techniques nécessaires au bon fonctionnement du service peuvent être déposés sans consentement préalable.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h1 className="title-medium">Refuser les cookies</h1>
+            <p className="text-common">
+              Vous pouvez configurer votre navigateur pour refuser tout ou partie des cookies. Toutefois, certaines fonctionnalités du site pourraient être altérées.
+            </p>
+          </div>
+
+        </article>
+      </div>
+    </div>
     )
 }
