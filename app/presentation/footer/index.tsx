@@ -2,7 +2,7 @@ import { Link } from "@remix-run/react";
 import { ExternalLink } from "lucide-react";
 
 import LogoHorizontalPng from '/logo-horizontal.png'
-import LogoIsee from '/logo_isee.jpg'
+import LogoIsee from '/logo_isee.png'
 import LogoGnc from '/logo_gnc.jpeg'
 import LogoCci from '/logo_cci.jpg'
 import LogoCma from '/logo_cma.png'
