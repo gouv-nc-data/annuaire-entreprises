@@ -10,9 +10,6 @@ export default function AboutPage() {
               Bienvenue sur <a href="https://annuaire-entreprises.gouv.nc" className="link-common">annuaire-entreprises.gouv.nc</a>, 
               le service public qui facilite l'accès aux données administratives des entreprises en Nouvelle-Calédonie.
             </p>
-            <p className="text-common">
-              Cet annuaire agrège les informations disponibles auprès des organismes officiels, pour simplifier vos démarches et favoriser la transparence économique.
-            </p>
               <p className="text-common">
               Cet annuaire facilite l’accès aux données publiques détenues par l’administration sur les entreprises de Nouvelle-Calédonie. 
               Il agrège les informations disponibles auprès des organismes officiels, pour simplifier vos démarches et favoriser la transparence économique.
@@ -30,7 +27,7 @@ export default function AboutPage() {
             <ul className="list-disc ps-6 flex flex-col gap-2">
               <li>
                 <p className="text-common">
-                  du <strong className="font-semibold">Répertoire du Commerce et des Sociétés (RCS)</strong>, diffusées par la Direction des Affaires Économiques (DAE) du Gouvernement de la Nouvelle-Calédonie ;
+                  du <strong className="font-semibold">Répertoire du Commerce et des Sociétés (RCS)</strong>, géré par la Direction des Affaires Économiques (DAE) du Gouvernement de la Nouvelle-Calédonie ;
                 </p>
               </li>
               <li>
@@ -40,10 +37,10 @@ export default function AboutPage() {
               </li>
             </ul>
             <p className="text-common">
-              Lorsque les informations RCS sont disponibles, elles sont privilégiées pour les entreprises immatriculées. À défaut, l'annuaire affiche les données issues du RIDET de l'ISEE.
+              Lorsque les informations RCS sont disponibles, elles sont privilégiées pour les entreprises immatriculées. À défaut, l'annuaire affiche les données issues du RIDET.
             </p>
             <p className="text-common">
-              <strong className="font-semibold">Attention :</strong> Toutes les entreprises ne sont pas immatriculées au RCS ; certaines sont uniquement enregistrées au RIDET de l'ISEE.
+              <strong className="font-semibold">Attention :</strong> Toutes les entreprises ne sont pas immatriculées au RCS ; certaines sont uniquement enregistrées au RIDET.
             </p>
           </div>
 
