@@ -1,4 +1,5 @@
-import Logo from "../../header/Logo";
+import LogoIsee from '/logo_isee.png';
+import LogoGnc from '/logo_gnc.jpeg';
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "../../ui/button";
 import { Link } from "@remix-run/react";
@@ -6,7 +7,7 @@ import { Link } from "@remix-run/react";
 export default function PartenairePage() {
     return (
         (
-    <div>
+   <div>
       <div className="max-w-7xl mx-auto px-4 w-full flex justify-between items-center py-20 gap-8">
         <article className="max-w-4xl flex flex-col gap-10">
 
@@ -20,7 +21,7 @@ export default function PartenairePage() {
           {/* ISEE */}
           <div className="flex items-center gap-10">
             <div className="flex-shrink-0">
-              <Logo />
+              <img src={LogoIsee} alt="Logo de l'ISEE" className="w-[150px] md:w-[200px]" />
             </div>
             <div className="flex flex-col gap-4">
               <h1 className="title-medium">Institut de la Statistique et des Études Économiques (ISEE)</h1>
@@ -41,7 +42,7 @@ export default function PartenairePage() {
           {/* DAE */}
           <div className="flex items-center gap-10">
             <div className="flex-shrink-0">
-              <Logo />
+              <img src={LogoGnc} alt="Logo du Gouvernement de la Nouvelle-Calédonie" className="w-[150px] md:w-[200px]" />
             </div>
             <div className="flex flex-col gap-4">
               <h1 className="title-medium">Direction des Affaires Économiques (DAE)</h1>
