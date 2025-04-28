@@ -1,104 +1,93 @@
 export default function MentionLegalesPage() {
     return (
-        <div>
-            <div className='max-w-7xl mx-auto px-4 w-full flex justify-between items-center py-20 gap-8'>
-                <article className="max-w-4xl flex flex-col gap-10">
-                    <div className="flex flex-col gap-4">
-                        <h1 className="title-big">À propos de l’Annuaire des Entreprises test</h1>
-                        <p className="text-common">Ce site permet de retrouver toutes les données publiques détenues par l’administration sur une entreprise, une association ou une administration. Ce site ne fait que centraliser les données. Il ne les modifie pas et ne les stocke pas. Il est opéré par une équipe de la Direction Interministérielle du Numérique.</p>
-                        <p className="text-common">Ce site ne fait que centraliser les données. Il ne les modifie pas et ne les stocke pas.</p>
-                        <p className="text-common">Il est opéré par une équipe de la <a href="/" className="link-common">Direction Interministérielle du Numérique.</a></p>
-                    </div>
-                    <div className="flex flex-col gap-4">
-                        <h1 className="title-medium">Que trouve-t-on dans l’Annuaire des Entreprises ?</h1>
-                        <p className="text-common">Les fiches de l’Annuaire regroupent des informations légales sur toutes les personnes morales basées en France (entreprises, associations, administrations, entrepreneurs…) à travers plusieurs onglets :</p>
-                        <ul className="list-disc ps-6 flex flex-col gap-2">
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Résumé :</strong> les informations générales (adresse, SIRET, SIREN, code NAF/ APE, numéro de TVA, RNA pour les associations…), les informations sur le siège social ainsi que la liste des établissements.
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Justificatif d’immatriculation :</strong> permettant d’obtenir le document pour prouver l’existence d’une entreprise ou d’une association (équivalent des extraits KBIS et D1)
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    Informations sur les <strong className="font-semibold">dirigeants</strong> (d’entreprises) ou élus (collectivités)
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Annonces légales :</strong> les informations générales (adresse, SIRET, SIREN, code NAF/ APE, numéro de TVA, RNA pour les associations…), les informations sur le siège social ainsi que la liste des établissements.
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Données financières des entreprises : </strong> les informations générales (adresse, SIRET, SIREN, code NAF/ APE, numéro de TVA, RNA pour les associations…), les informations sur le siège social ainsi que la liste des établissements.
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Annonces légales :</strong> les informations générales (adresse, SIRET, SIREN, code NAF/ APE, numéro de TVA, RNA pour les associations…), les informations sur le siège social ainsi que la liste des établissements.
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Labels et certificats :</strong> les informations générales (adresse, SIRET, SIREN, code NAF/ APE, numéro de TVA, RNA pour les associations…), les informations sur le siège social ainsi que la liste des établissements.
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <strong className="font-semibold">Conventions collectives :</strong> les informations générales (adresse, SIRET, SIREN, code NAF/ APE, numéro de TVA, RNA pour les associations…), les informations sur le siège social ainsi que la liste des établissements.
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="flex flex-col gap-4">
-                        <h1 className="title-medium">D’où viennent les informations affichées par l’Annuaire des Entreprises ?</h1>
-                        <p className="text-common">Toutes les informations affichées sur ce site sont des informations publiques, accessibles librement et gratuitement. On appelle cela des données ouvertes ou open data.</p>
-                        <p className="text-common">Ces bases de données sont récupérées grâce aux téléservices développés par les <a href="/" className="link-common">administrations partenaires</a> :</p>
-                        <ul className="list-disc ps-6 flex flex-col gap-2">
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                            <li>
-                                <p className="text-common">
-                                    <a href="/" className="link-common">administrations partenaires</a>
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-        </div>
+<div>
+      <div className="max-w-7xl mx-auto px-4 w-full flex justify-between items-center py-20 gap-8">
+        <article className="max-w-4xl flex flex-col gap-10">
+
+          {/* Titre principal */}
+          <div className="flex flex-col gap-4">
+            <h1 className="title-big">Mentions légales</h1>
+          </div>
+
+          {/* Informations éditeur */}
+          <div className="flex flex-col gap-4">
+            <h1 className="title-medium">Informations éditeur</h1>
+            <p className="text-common">
+              Éditeur : Gouvernement de la Nouvelle-Calédonie - Direction du Numérique et de la Modernisation (DINUM)
+            </p>
+            <p className="text-common">
+              Adresse : 127, rue Arnold Daly - BP M2 - 98 849 Nouméa CEDEX
+            </p>
+            <p className="text-common">
+              Adresse de courrier électronique : <a href="mailto:dinum@gouv.nc" className="link-common">dinum@gouv.nc</a>
+            </p>
+            <p className="text-common">
+              Téléphone : +687 27 58 88 - Fax : +687 28 19 19
+            </p>
+          </div>
+
+          {/* Informations publication */}
+          <div className="flex flex-col gap-4">
+            <h1 className="title-medium">Informations publication</h1>
+            <p className="text-common">
+              Directeur de la publication : Monsieur Alcide Ponga, président du gouvernement de la Nouvelle-Calédonie
+            </p>
+            <p className="text-common">
+              Adresse : « Immeuble le Lys Rouge », angle des rues Galliéni et Anatole France - BP M2 - 98 849 Nouméa CEDEX
+            </p>
+            <p className="text-common">
+              Adresse de courrier électronique : <a href="mailto:pole.communication@gouv.nc" className="link-common">pole.communication@gouv.nc</a>
+            </p>
+            <p className="text-common">
+              Téléphone : +687 24 65 65
+            </p>
+          </div>
+
+          {/* Réalisation, maintenance et hébergement */}
+          <div className="flex flex-col gap-4">
+            <h1 className="title-medium">Réalisation, maintenance et hébergement</h1>
+            <p className="text-common">
+              Ce site est hébergé par la Direction du Numérique et de la Modernisation (DINUM) du Gouvernement de la Nouvelle-Calédonie.
+            </p>
+          </div>
+
+          {/* Propriété intellectuelle */}
+          <div className="flex flex-col gap-4">
+            <h1 className="title-medium">Propriété intellectuelle</h1>
+            <p className="text-common">
+              Sauf mention contraire, les contenus présents sur le site sont mis à disposition sous licence ouverte.
+            </p>
+          </div>
+
+          {/* Responsabilité */}
+          <div className="flex flex-col gap-4">
+            <h1 className="title-medium">Responsabilité</h1>
+            <p className="text-common">
+              Le Gouvernement de la Nouvelle-Calédonie s'efforce de garantir l'exactitude et l'actualisation des informations diffusées sur le site.
+              Toutefois, certaines erreurs ou omissions peuvent subsister. <br />
+              Les données affichées proviennent directement des organismes partenaires (ISEE, DAE, etc.). Elles sont fournies à titre indicatif et n'ont pas de valeur contractuelle.
+            </p>
+          </div>
+
+          {/* Liens hypertextes */}
+          <div className="flex flex-col gap-4">
+            <h1 className="title-medium">Liens hypertextes</h1>
+            <p className="text-common">
+              La présence de liens hypertextes vers d'autres sites ne saurait engager la responsabilité du Gouvernement de la Nouvelle-Calédonie quant à leur contenu.
+            </p>
+          </div>
+
+          {/* Données personnelles */}
+          <div className="flex flex-col gap-4">
+            <h1 className="title-medium">Protection des données personnelles</h1>
+            <p className="text-common">
+              Pour plus d’informations sur le traitement des données personnelles, veuillez consulter la page dédiée : 
+              <a href="/donnees-personnelles" className="link-common"> Protection des données personnelles</a>.
+            </p>
+          </div>
+
+        </article>
+      </div>
+    </div>
     )
 }
