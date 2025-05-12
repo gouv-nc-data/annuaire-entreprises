@@ -49,6 +49,11 @@ export default function MentionLegalesPage() {
             <p className="text-common">
               Ce site est hébergé par la Direction du Numérique et de la Modernisation (DINUM) du Gouvernement de la Nouvelle-Calédonie.
             </p>
+            <p className="text-common">127, rue Arnold Daly - BP 15101 - 98 804 NOUMEA CEDEX
+            </p>
+            <p className="text-common">
+              Téléphone : +687 27 58 88
+            </p>
           </div>
 
           {/* Propriété intellectuelle */}
