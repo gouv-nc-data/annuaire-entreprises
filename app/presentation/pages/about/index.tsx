@@ -11,19 +11,21 @@ export default function AboutPage() {
               le service public qui facilite l'accès aux données administratives des entreprises en Nouvelle-Calédonie.
             </p>
               <p className="text-common">
-              Cet annuaire facilite l’accès aux données publiques détenues par l’administration sur les entreprises de Nouvelle-Calédonie. 
-              Il agrège les informations disponibles auprès des organismes officiels, pour simplifier vos démarches et favoriser la transparence économique.
+              Ce service permet de retrouver toutes les données publiques détenues par l’administration sur une entreprise ou un travailleur indépendant en Nouvelle-Calédonie.  
+              Ce site ne fait que centraliser les données, sans les modifier: il agrège les informations disponibles auprès des organismes officiels, pour simplifier vos démarches et favoriser la transparence économique.
             </p>
             <p className="text-common">
-              Il est opéré par la Direction du Numérique et de la Modernisation du Gouvernement de la Nouvelle-Calédonie.
+              Il rassemble plusieurs types de données sur les entreprises et les travailleurs indépendants, dont les informations générales : adresse, RIDET, code NAF/APE, informations sur le siège social, ainsi que la liste des établissements. 
             </p>
-          </div>
+            </div>
 
           <div className="flex flex-col gap-4">
             <h1 className="title-medium">D’où viennent les informations affichées ?</h1>
             <p className="text-common">
-              Actuellement, les données proviennent :
+                Toutes les informations affichées sur ce site sont des informations publiques.
             </p>
+            <p className="text-common">
+                Actuellement, elles proviennent des registres ou répertoires suivants : 
             <ul className="list-disc ps-6 flex flex-col gap-2">
               <li>
                 <p className="text-common">
@@ -50,6 +52,25 @@ export default function AboutPage() {
               L'annuaire est en cours d'enrichissement. De nouveaux partenaires rejoindront bientôt la démarche pour élargir les sources de données accessibles.
             </p>
           </div>
+
+        <div className="flex flex-col gap-4">
+          <h1 className="title-medium">Effacer mes données personnelles</h1>
+          <p className="text-common">
+            En tant que dirigeant(e) d’entreprise ou travailleur indépendant, les données publiques publiées sur ce site peuvent contenir des informations personnelles vous concernant (nom et prénom).
+          </p>
+          <p className="text-common">
+            En outre, pour les travailleurs indépendants, ces données publiques sont susceptibles de contenir votre adresse personnelle.
+          </p>
+          <p className="text-common">
+            Ces données sont publiques mais vous pouvez vous opposer à ce qu’un site internet les publie.
+          </p>
+          <p className="text-common">
+            Ainsi, pour faire disparaître ces informations du site web <a href="https://annuaire-entreprises.gouv.nc" className="link-common">annuaire-entreprises.gouv.nc</a>, 
+            vous pouvez nous en faire la demande, en nous transmettant un justificatif d’identité, à l’adresse suivante : 
+            <a href="mailto:data@gouv.nc" className="link-common">data@gouv.nc</a>.
+          </p>
+        </div>
+
 
         </article>
       </div>
