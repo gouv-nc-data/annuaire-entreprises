@@ -26,6 +26,7 @@ export default function AboutPage() {
             </p>
             <p className="text-common">
                 Actuellement, elles proviennent des registres ou répertoires suivants : 
+            </p>
             <ul className="list-disc ps-6 flex flex-col gap-2">
               <li>
                 <p className="text-common">
