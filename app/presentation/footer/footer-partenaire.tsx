@@ -17,6 +17,9 @@ export default function FooterPartenaire() {
                 </div>
                 <ul className="flex flex-col sm:grid grid-cols-12 gap-4">
                     <li className="flex items-center w-full justify-center col-span-2">
+                        <img src={LogoGnc} alt="Logo GNC" className='w-[120px] md:w-[100px]' />
+                    </li>
+                    <li className="flex items-center w-full justify-center col-span-2">
                         <img src={LogoIsee} alt="Logo ISEE" className='block w-[120px] md:w-[100px]' />
                     </li>
                     <li className="flex items-center w-full justify-center col-span-2">
@@ -30,9 +33,6 @@ export default function FooterPartenaire() {
                     </li>
                     <li className="flex items-center w-full justify-center col-span-2">
                         <img src={LogoCafat} alt="Logo CAFAT" className='w-[120px] md:w-[100px]' />
-                    </li>
-                    <li className="flex items-center w-full justify-center col-span-2">
-                        <img src={LogoGnc} alt="Logo GNC" className='w-[120px] md:w-[100px]' />
                     </li>
                 </ul>
             </div>
