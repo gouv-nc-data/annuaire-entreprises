@@ -1,12 +1,25 @@
 import { isRouteErrorResponse, useRouteError } from "@remix-run/react";
 import SearchFilters from "./search/search-filters/search-filters";
-import LoginIllustration from '/login-illustration.png'
 import { CircleX, CornerDownRight } from "lucide-react";
 import SearchAdvancesLink from "./search/search-advanced-link";
 import SearchModal from "./search/search-modal";
+import SearchResultsTooShortRequestTerms from "./search/results/search-results-too-short-request-terms";
+import SearchBar from "./search/search-bar";
+import type { ErrorResponse } from "@remix-run/react";
 
 export function RootErrorBoundary() {
-    const error = useRouteError();
+    const error = useRouteError() as ErrorResponse;
+
+    if (error && error.data.includes('3 caractères minimum')) {
+        return (
+            <div>
+                <SearchFilters />
+                <div className="py-10 max-w-7xl mx-auto px-4 min-h-[500px]">
+                    <SearchResultsTooShortRequestTerms />
+                </div>
+            </div>
+        )
+    }
 
     if (isRouteErrorResponse(error)) {
         return (
@@ -26,10 +39,9 @@ export function RootErrorBoundary() {
                                 : <h2 className="text-xl text-primary flex items-start gap-2"><CornerDownRight /> Quelque chose s'est mal passé</h2>
                             }
                         </div>
-
                         <div className="flex flex-col items-start gap-2 bg-white w-full p-6 rounded-2xl shadow-sm">
                             <p>Recherche une entreprise</p>
-                            <SearchModal />
+                            <SearchBar />
                         </div>
                         <SearchAdvancesLink />
                     </div>
@@ -49,10 +61,9 @@ export function RootErrorBoundary() {
                         </div>
                         <h2 className="text-xl text-primary flex items-start gap-2"><CornerDownRight /> Quelque chose s'est mal passé</h2>
                     </div>
-
                     <div className="flex flex-col items-start gap-2 bg-white w-full p-6 rounded-2xl shadow-sm">
                         <p>Recherche une entreprise</p>
-                        <SearchModal />
+                        <SearchBar />
                     </div>
                     <SearchAdvancesLink />
                 </div>
