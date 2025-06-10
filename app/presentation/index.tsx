@@ -1,8 +1,8 @@
 import { type MetaFunction } from "@remix-run/node";
 
 import { MapPinned, User, Building2, Briefcase } from "lucide-react";
-import SearchModal from "./search/search-modal";
 import SearchAdvancesLink from "./search/search-advanced-link";
+import SearchBar from "./search/search-bar";
 
 export const meta: MetaFunction = () => {
     return [
@@ -43,7 +43,7 @@ export default function HomePage() {
                     </div>
                 </div>
                 <div className="flex flex-col items-start gap-2 bg-white w-full p-6 rounded-2xl shadow-sm">
-                    <SearchModal />
+                    <SearchBar />
                 </div>
                 <SearchAdvancesLink />
             </div>

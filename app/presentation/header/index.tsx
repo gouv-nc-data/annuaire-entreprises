@@ -3,7 +3,7 @@ import { Button } from '../ui/button'
 
 import { ArrowUpRight } from 'lucide-react'
 import Logo from './Logo'
-import SearchModal from '../search/search-modal'
+import SearchBar from '../search/search-bar'
 
 export default function Header() {
 
@@ -16,7 +16,7 @@ export default function Header() {
                 <Link to="/" className='w-80'>
                     <Logo />
                 </Link>
-                <div className='hidden md:flex w-full'>{!isIndex && <SearchModal />}</div>
+                <div className='hidden md:flex w-full'>{!isIndex && <SearchBar />}</div>
                 <div>
                     <Link to="/se-connecter">
                         <Button>
@@ -28,7 +28,7 @@ export default function Header() {
             </div>
             {!isIndex &&
                 <div className='md:hidden px-4 pb-4'>
-                    <SearchModal />
+                    <SearchBar />
                 </div>
             }
         </header>
