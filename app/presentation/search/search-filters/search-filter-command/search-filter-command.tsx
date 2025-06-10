@@ -114,7 +114,7 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
                                                         ? `${key} - ${data[key]}`
                                                         : data[key]
                                                 }
-                                                className="text-sm text-slate-600 font-normal hover:text-primary rounded-lg"
+                                                className="text-sm text-slate-600 font-normal hover:text-primary rounded-lg uppercase"
                                                 onSelect={() => {
                                                     handleChangeValue(key)
                                                     setOpen(false)
