@@ -7,6 +7,7 @@ import UniteLegaleHeader from "./unite-legale-header";
 import UniteLegaleNavigation from "./unite-legale-navigation";
 import UniteLegaleInformations from "./unite-legale-informations";
 import UniteLegaleEtablissements from "./etablissements/unite-legale-etablissements";
+import Footer from "../footer";
 
 export default function UniteLegalePage() {
 
@@ -24,6 +25,7 @@ export default function UniteLegalePage() {
                 <UniteLegaleInformations uniteLegale={uniteLegale} />
                 <UniteLegaleEtablissements uniteLegale={uniteLegale} />
             </div>
+            <Footer withPartenaire={false} withBacklinks={false} />
         </div>
     )
 }

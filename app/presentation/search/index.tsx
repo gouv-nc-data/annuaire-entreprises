@@ -4,6 +4,7 @@ import { SearchResultsList } from "./results/search-results-list"
 import SearchResultsGuide from "./results/search-results-guide";
 import SearchFilters from "./search-filters/search-filters";
 import SearchResultsEmpty from "./results/search-results-empty";
+import Footer from "../footer";
 
 export default function SearchPage() {
     const searchResults = useLoaderData<typeof getSearchResultsLoader>();
@@ -20,6 +21,7 @@ export default function SearchPage() {
                             : <SearchResultsEmpty />
                 }
             </div>
+            <Footer withPartenaire={false} withBacklinks={false} />
         </div>
     )
 }

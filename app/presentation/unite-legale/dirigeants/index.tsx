@@ -5,6 +5,7 @@ import { setUniteLegaleHistoryToLocalStorage } from "~/application/unite-legale/
 import UniteLegaleHeader from "../unite-legale-header";
 import UniteLegaleNavigation from "../unite-legale-navigation";
 import UniteLegaleDirigeants from "./unite-legale-dirigeants";
+import Footer from "~/presentation/footer";
 
 export default function UniteLegaleDirigeantsPage() {
 
@@ -21,6 +22,7 @@ export default function UniteLegaleDirigeantsPage() {
                 <UniteLegaleNavigation rid={uniteLegale.rid} />
                 <UniteLegaleDirigeants uniteLegale={uniteLegale} />
             </div>
+            <Footer withPartenaire={false} withBacklinks={false} />
         </div>
     )
 }
