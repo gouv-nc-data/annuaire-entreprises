@@ -3,7 +3,6 @@ import { IdCard, CornerDownRightIcon } from "lucide-react";
 import { IUniteLegale } from "~/domain/entity/unite-legale";
 import UniteLegaleStatus from "./unite-legale-status";
 import UniteLegaleTextDescription from "./unite-legale-text-description";
-import UniteLegaleShareButton from "./unite-legale-share-button";
 import { IEtablissement } from "~/domain/entity/etablissement";
 import EtablissementTextDescription from "./etablissement/etablissement-text-description";
 import SituationStatus from "./common/situation-status";
@@ -51,9 +50,6 @@ export default function UniteLegaleHeader({ uniteLegale, showShareButton, etabli
 
                             }
                         </div>
-                        {showShareButton &&
-                            <UniteLegaleShareButton rid={uniteLegale.rid} align="end" />
-                        }
                     </div>
                     {
                         etablissement

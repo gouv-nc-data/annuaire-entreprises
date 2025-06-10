@@ -1,5 +1,4 @@
 import { IUniteLegale } from "~/domain/entity/unite-legale";
-import UniteLegaleShareButton from "./unite-legale-share-button";
 
 import { ChevronRight } from "lucide-react";
 import { Link } from "@remix-run/react";
@@ -30,7 +29,6 @@ export default function UniteLegalBanner({ uniteLegale, etablissement }: { unite
                         </div>
                     }
                 </div>
-                <UniteLegaleShareButton rid={uniteLegale.rid} align="end" />
             </div>
         </div >
     )

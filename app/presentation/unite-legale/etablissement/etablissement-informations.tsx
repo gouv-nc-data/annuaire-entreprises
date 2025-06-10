@@ -9,7 +9,6 @@ import TooltipInfo from '../../ui/tooltip-info'
 import { Button } from '../../ui/button'
 import { Link } from '@remix-run/react'
 import { InfoIcon } from 'lucide-react'
-import UniteLegaleShareButton from '../unite-legale-share-button'
 import { IEtablissement } from '~/domain/entity/etablissement'
 import { formatCommonDate } from '~/utils/format-date'
 import { formatRid } from '~/utils/format-rid'
@@ -142,7 +141,6 @@ export default function EtablissementInformations({ uniteLegale, etablissement }
             </div>
 
             <div className='flex flex-col md:flex-row items-start md:items-center justify-between gap-4'>
-                <UniteLegaleShareButton rid={uniteLegale.rid} align='start' />
                 <div className='flex items-center gap-4'>
                     <span className='text-xs font-light text-slate-500'>Mise à jour le 05/12/2024</span>
                     <Link to="https://www.isee.nc/" target='_blank' rel="noreferrer">
