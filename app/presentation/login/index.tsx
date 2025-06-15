@@ -3,6 +3,7 @@ import { Button } from "../ui/button"
 // eslint-disable-next-line import/no-unresolved
 import LoginIllustration from '/login-illustration.png'
 import LoginForm from "./login-form"
+import Footer from "../footer"
 
 export default function LoginPage() {
     return (
@@ -33,6 +34,7 @@ export default function LoginPage() {
                     </div>
                 </header>
             </div>
+            <Footer withPartenaire={false} withBacklinks={false} />
         </div>
     )
 }
