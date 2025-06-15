@@ -1,9 +1,9 @@
 import { Link } from '@remix-run/react'
 import LogoIsee from '/logo_isee.png'
 import LogoCma from '/logo_cma.png'
-import LogoCapNc from '/logo_capnc.png'
-import LogoCci from '/logo_cci.png'
-import LogoCafat from '/logo_cafat.png'
+import LogoCapNc from '/logo_cap-nc.png'
+import LogoCci from '/logo_cci.jpg'
+import LogoCafat from '/logo_cafat.jpg'
 import LogoGnc from '/logo_gnc.jpeg'
 
 export default function FooterPartenaire() {
