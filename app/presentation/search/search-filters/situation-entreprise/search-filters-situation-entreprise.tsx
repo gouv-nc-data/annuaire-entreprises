@@ -58,7 +58,6 @@ export default function SearchFiltersSituationEntreprise({ label, icon }: ISearc
             <PopoverContent className="w-xs shadow-xl" align="start">
                 <div className="flex flex-col justify-start gap-4">
                     <div className="space-y-2">
-                        <h4 className="font-medium leading-none text-md text-primary">Situation entreprise</h4>
                         <p className="text-xs text-muted-foreground">
                             Il s'agit d'un filtre sur la situation de l'entreprise et non sur la situation de l'établissement
                         </p>

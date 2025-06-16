@@ -62,7 +62,6 @@ export default function SearchFiltersDirigeant({ label, icon }: ISearchFilter) {
             <PopoverContent className="md:w-[400px] shadow-xl" align="start">
                 <div className="flex flex-col justify-start gap-4">
                     <div className="space-y-2">
-                        <h4 className="font-medium leading-none text-md text-primary">Dirigeant(e)</h4>
                         <p className="text-xs text-muted-foreground">
                             Recherchez toutes les entreprises liées à une personne dirigeant(e)
                         </p>

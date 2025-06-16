@@ -40,9 +40,8 @@ export default function SearchFiltersFormeJuridique({ label, icon }: ISearchFilt
             <PopoverContent className="md:w-[400px] shadow-xl max-h-[400px] overflow-y-auto" align="start">
                 <div className="flex flex-col justify-start gap-4">
                     <div className="space-y-2">
-                        <h4 className="font-medium text-md leading-none text-primary">Forme juridique</h4>
                         <p className="text-xs text-muted-foreground">
-                            Vous pouvez ajouter plusieurs filtres à la fois.
+                            Choisir une forme juridique
                         </p>
                     </div>
                     <div className="flex flex-col gap-4">

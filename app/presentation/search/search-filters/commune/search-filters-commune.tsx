@@ -46,9 +46,8 @@ export default function SearchFiltersCommune({ label, icon }: ISearchFilter) {
             <PopoverContent className="w-xs shadow-xl" align="start">
                 <div className="flex flex-col justify-start gap-4">
                     <div className="space-y-2">
-                        <h4 className="font-medium leading-none text-md text-primary">Commune</h4>
                         <p className="text-xs text-muted-foreground">
-                            Vous pouvez ajouter plusieurs filtres à la fois.
+                            Choisir une commune
                         </p>
                     </div>
                     <div className="flex flex-col gap-4">
