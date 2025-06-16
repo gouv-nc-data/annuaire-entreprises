@@ -11,7 +11,7 @@ export default function SearchBar({ withoutOutline }: { withoutOutline?: boolean
 
     return (
         <Form key={query} method="GET" action="/rechercher" className="w-full">
-            <ExistingSearchParams exclude={["terme"]} />
+            <ExistingSearchParams exclude={["terme", "page"]} />
             <Input type="hidden" name="page" value="1" />
             <div className="flex w-full items-center space-x-2">
                 <Input className={`bg-white ${withoutOutline ? 'outline-none focus-visible:outline-none focus-visible:ring-0' : ''}`} type="text" name="terme" placeholder="Nom, adresse, n° RID ou RIDET..." defaultValue={query ?? ''} />
