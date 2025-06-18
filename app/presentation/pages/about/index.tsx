@@ -1,3 +1,5 @@
+import Footer from "~/presentation/footer";
+
 export default function AboutPage() {
     return (
 <div>
@@ -71,10 +73,9 @@ export default function AboutPage() {
             <a href="mailto:data@gouv.nc" className="link-common">data@gouv.nc</a>.
           </p>
         </div>
-
-
         </article>
       </div>
+      <Footer withPartenaire={true} withBacklinks={true} />
     </div>
     )
 }

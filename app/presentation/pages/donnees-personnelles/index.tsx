@@ -1,3 +1,5 @@
+import Footer from "~/presentation/footer";
+
 export default function DonneesPersonnellesPage() {
   return (
     <div>
@@ -104,6 +106,7 @@ export default function DonneesPersonnellesPage() {
 
         </article>
       </div>
+      <Footer withPartenaire={true} withBacklinks={true} />
     </div>
   );
 }

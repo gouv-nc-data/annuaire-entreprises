@@ -1,3 +1,5 @@
+import Footer from "~/presentation/footer";
+
 export default function GestionCookiesPage() {
     return (
         <div>
@@ -35,6 +37,7 @@ export default function GestionCookiesPage() {
 
         </article>
       </div>
+      <Footer withPartenaire={true} withBacklinks={true} />
     </div>
     )
 }

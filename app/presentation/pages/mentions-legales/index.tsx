@@ -1,6 +1,8 @@
+import Footer from "~/presentation/footer";
+
 export default function MentionLegalesPage() {
-    return (
-<div>
+  return (
+    <div>
       <div className="max-w-7xl mx-auto px-4 w-full flex justify-between items-center py-20 gap-8">
         <article className="max-w-4xl flex flex-col gap-10">
 
@@ -86,13 +88,14 @@ export default function MentionLegalesPage() {
           <div className="flex flex-col gap-4">
             <h1 className="title-medium">Protection des données personnelles</h1>
             <p className="text-common">
-              Pour plus d’informations sur le traitement des données personnelles, veuillez consulter la page dédiée : 
+              Pour plus d’informations sur le traitement des données personnelles, veuillez consulter la page dédiée :
               <a href="/donnees-personnelles" className="link-common"> Protection des données personnelles</a>.
             </p>
           </div>
 
         </article>
       </div>
+      <Footer withPartenaire={true} withBacklinks={true} />
     </div>
-    )
+  )
 }
