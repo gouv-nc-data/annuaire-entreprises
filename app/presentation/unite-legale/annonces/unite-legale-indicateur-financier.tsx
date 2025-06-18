@@ -18,7 +18,7 @@ export default function UniteLegaleIndicateurFinancier({ indicateurFinancier, un
             <div className='col-span-8'>
                 <span className="block md:hidden text-base font-medium text-primary">Details</span>
                 <div className="flex flex-col gap">
-                    <span className={`text-slate-800 font-normal text-sm`}>Comptes annuels et rapports de l&apos;exercice clos le {indicateurFinancier.datecloture}</span>
+                    <span className={`text-slate-800 font-normal text-sm`}>Comptes annuels et rapports de l&apos;exercice clos le {formatCommonDate(indicateurFinancier.datecloture as string)}</span>
                     <span className={`text-slate-800 font-medium text-sm`}>Dépôt numéro : {indicateurFinancier.numerodepot}</span>
                 </div>
             </div>
