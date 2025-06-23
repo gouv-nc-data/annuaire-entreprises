@@ -1,5 +1,5 @@
 import {
-  json,
+  data,
   Links,
   Meta,
   Outlet,
@@ -28,10 +28,14 @@ export const links: LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
+  {
+    rel: "stylesheet",
+    href: "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css",
+  },
 ];
 
 export async function loader() {
-  return json({ ENV: { UMAMI_URL: process.env.UMAMI_URL, UMAMI_WEBSITE_ID: process.env.UMAMI_WEBSITE_ID } });
+  return data({ ENV: { UMAMI_URL: process.env.UMAMI_URL, UMAMI_WEBSITE_ID: process.env.UMAMI_WEBSITE_ID } });
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {

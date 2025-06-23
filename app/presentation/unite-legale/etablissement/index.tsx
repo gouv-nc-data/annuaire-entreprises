@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLoaderData, useParams } from "@remix-run/react";
-import { getUniteLegaleLoader } from "~/application/unite-legale/get-unite-legale-by-rid";
+import { getUniteLegaleEtablissementLoader } from "~/application/unite-legale/get-unite-legale-by-ridet";
 import { setUniteLegaleHistoryToLocalStorage } from "~/application/unite-legale/unite-legale-history-store";
 
 import UniteLegaleHeader from "../unite-legale-header";
@@ -14,7 +14,7 @@ import EtablissementUniteLegaleResume from "./etablissement-unite-legale-resume"
 
 export default function UniteLegaleEtablissementPage() {
 
-    const uniteLegale = useLoaderData<typeof getUniteLegaleLoader>();
+    const { uniteLegale, ENV, etablissementLocation } = useLoaderData<typeof getUniteLegaleEtablissementLoader>();
     const { ridet } = useParams()
 
     const etablissement = uniteLegale.etablissements.find(e => e.ridet === ridet)
@@ -34,7 +34,7 @@ export default function UniteLegaleEtablissementPage() {
                                 <EtablissementUniteLegaleResume uniteLegale={uniteLegale} etablissement={etablissement} />
                             </div>
                             <div className="w-full md:w-3/5">
-                                <EtablissementLocation />
+                                {ENV && ENV.MAPTILER_API_KEY && etablissementLocation && <EtablissementLocation MAPTILER_API_KEY={ENV.MAPTILER_API_KEY} etablissementLocation={etablissementLocation} />}
                             </div>
                         </div>
                     </div>
