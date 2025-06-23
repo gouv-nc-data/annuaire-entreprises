@@ -18,7 +18,7 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
                 <div className="flex flex-col gap-0">
                     <div className="flex flex-col gap-0">
                         <div className="flex items-center gap-4">
-                            {uniteLegale.nom_complet && <div className="text-blue-dinum uppercase font-medium text-lg"><HighlightFoundedTerm value={uniteLegale.nom_complet} terms={terme} hoverUnderline={true} /></div>}
+                            {uniteLegale.nom_complet && <div className="text-blue-dinum uppercase font-medium text-lg group-hover:underline"><HighlightFoundedTerm value={uniteLegale.nom_complet} terms={terme} hoverUnderline={true} /></div>}
                             <UniteLegaleStatus etatRid={uniteLegale.etat_rid} onlyShowExpired={true} />
                         </div>
                         <div className="inline-block gap-2">

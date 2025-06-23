@@ -18,13 +18,13 @@ export default function UniteLegaleDirigeants({ uniteLegale }: { uniteLegale: IU
     return (
         <section className='flex flex-col gap-6 p-6 bg-white rounded-xl shadow-sm border border-input'>
             <header className='flex w-full justify-between items-start gap-6'>
-                <h2 className='bg-blue-100 ring-2 ring-blue-200 border-1 shadow-md  text-blue-dinum  font-medium text-xl rounded-lg px-2'>Dirigeant(s)</h2>
+                <h2 className='text-blue-dinum font-normal text-xl'>Dirigeant(s)</h2>
                 <div className='flex items-center gap-6'>
                     <Link to="https://www.infogreffe.nc/" target='_blank' rel="noreferrer">
-                        <img src={InfogreffeLogo} className='w-20' alt='Infogreffe Logo'/>
+                        <img src={InfogreffeLogo} className='w-20' alt='Infogreffe Logo' />
                     </Link>
                     <Link to="https://www.isee.nc/" target='_blank' rel="noreferrer">
-                        <img src={IseeLogo} className='w-20' alt='Isee Logo'/>
+                        <img src={IseeLogo} className='w-20' alt='Isee Logo' />
                     </Link>
                 </div>
             </header>

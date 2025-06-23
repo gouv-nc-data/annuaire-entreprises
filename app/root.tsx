@@ -46,10 +46,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="flex flex-col flex-1 h-svh">
+      <body className="flex flex-col flex-1 h-svh" id="top">
         <GlobalLoading />
         <Header />
-        <div className="flex-grow bg-zinc-100">
+        <div className="flex-grow">
           {children}
         </div>
         <ScrollRestoration />

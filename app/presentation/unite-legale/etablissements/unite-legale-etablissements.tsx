@@ -22,9 +22,9 @@ export default function UniteLegaleEtablissements({ uniteLegale }: { uniteLegale
     return (
         <section className='flex flex-col gap-4' id='etablissements'>
             <span className='text-common'>Cette structure possède {etablissements.length} {etablissements.length > 1 ? 'établissements' : 'établissement'}. Cliquez sur un n° RIDET pour obtenir plus d’information :</span>
-            <div className='flex flex-col gap-6 p-6 bg-white rounded-xl shadow-sm border border-input'>
+            <div className='flex flex-col gap-6 p-4 md:p-6 bg-white rounded-xl shadow-sm border border-input'>
                 <header className='flex w-full justify-between items-start gap-6'>
-                    <h2 className='bg-orange-100 ring-2 ring-orange-dinum border-1 shadow-md  text-orange-600  font-medium text-xl rounded-lg px-2'>{etablissements.length} {etablissements.length > 1 ? 'établissements' : 'établissement'} de {uniteLegale.nom_complet}</h2>
+                    <h2 className='text-blue-dinum  font-normal text-xl'>{etablissements.length} {etablissements.length > 1 ? 'établissements' : 'établissement'} de {uniteLegale.nom_complet}</h2>
                     <Link to="https://www.isee.nc/" target='_blank' rel="noreferrer">
                         <img src={IseeLogo} className='w-20' alt="Isee Logo" />
                     </Link>
@@ -32,9 +32,9 @@ export default function UniteLegaleEtablissements({ uniteLegale }: { uniteLegale
                 <div className='flex flex-col gap-8' id='opened-etablissements'>
                     {openedEtablissements && openedEtablissements.length > 0 &&
                         <div className='flex flex-col gap-6 items-start w-full'>
-                            <span className='flex items-center gap-2 text-zinc-900 font-medium text-lg border-b-2 border-blue-dinum pb-1'>
+                            <span className='flex items-center gap-2 text-zinc-900 font-normal text-lg border-b-2 border-blue-dinum pb-1'>
                                 <Building className='w-5 h-5 text-blue-dinum' />
-                                Établissements ouverts
+                                Établissements en activité
                             </span>
                             <div className='flex flex-col gap-6 w-full'>
                                 <UniteLegaleEtablissementsListHeader />
@@ -53,7 +53,7 @@ export default function UniteLegaleEtablissements({ uniteLegale }: { uniteLegale
                     }
                     {closedEtablissements && closedEtablissements.length > 0 &&
                         <div className='flex flex-col gap-6 items-start w-full' id='closed-etablissements'>
-                            <span className='flex items-center gap-2 text-zinc-900 font-medium text-lg border-b-2 border-red-300 pb-1'>
+                            <span className='flex items-center gap-2 text-zinc-900 font-normal text-lg border-b-2 border-red-300 pb-1'>
                                 <Building className='w-5 h-5 text-red-400' />
                                 Établissements fermés
                             </span>

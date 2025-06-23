@@ -18,25 +18,13 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
 
     return (
         <div className="flex flex-col gap-2">
-            <div className="flex flex-col gap-0">
+            <div className="">
                 <p className="text-common">
-                    {fromDate && yearDifference && creationDate &&
-                        <>
-                            La société <BasicInformation information={uniteLegale.nom_complet} /> a été créée le <strong className="font-medium">{creationDate}</strong>, il y {yearDifference !== -1 ? yearDifference : ''} {yearDifference > 1 ? 'ans. ' : yearDifference === -1 ? "moins d'1 an. " : "an. "}
-                        </>
-                    }
-                    {uniteLegale.forme_juridique &&
-                        <>
-                            Sa forme juridique est <strong className="font-bold"><BasicInformation isBold information={uniteLegale.forme_juridique} /></strong>
-                        </>
-                    }
-                </p>
-                <p className="text-common">
-                    {uniteLegale.ape &&
-                        <>
-                            Son domaine d&apos;activité est : <strong className="font-medium"><BasicInformation isBold information={uniteLegale.ape} />. </strong>
-                        </>
-                    }
+                    {`La société ${uniteLegale.nom_complet}`}
+                    {` a été créée le `} <BasicInformation information={creationDate} />
+                    {`, il y ${yearDifference !== -1 ? yearDifference : ''} ${yearDifference && yearDifference > 1 ? 'ans. ' : yearDifference === -1 ? "moins d'1 an. " : "an. "}`}
+                    {`Sa forme juridique est `} <BasicInformation information={uniteLegale.forme_juridique} />
+                    {` et son domaine d'activité est : `} <BasicInformation information={uniteLegale.ape} /> {uniteLegale.code_ape ? `(${uniteLegale.code_ape})` : ''}
                 </p>
             </div>
             <div>
@@ -46,9 +34,9 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
                         uniteLegale.adresse_complete &&
                         <p className="md:flex items-center gap-1">
                             Son siège social est situé au
-                            <BasicInformation isBold information={uniteLegale.adresse_physique} />
-                            {uniteLegale.code_postal_physique && <BasicInformation isBold information={uniteLegale.code_postal_physique} />}
-                            <BasicInformation isBold information={uniteLegale.ville_physique} />
+                            <BasicInformation information={uniteLegale.adresse_physique} />
+                            {uniteLegale.code_postal_physique && <BasicInformation information={uniteLegale.code_postal_physique} />}
+                            <BasicInformation information={uniteLegale.ville_physique} />
                         </p>
                     }
                 </div>
@@ -56,7 +44,7 @@ export default function UniteLegaleTextDescription({ uniteLegale }: { uniteLegal
                     <Building className="w-4 h-4 text-blue-dinum hidden md:inline-flex" />
                     {uniteLegale.etablissements && uniteLegale.etablissements.length > 0 ?
                         <>
-                            Elle possède <Link className="text-blue-dinum font-medium border-b-1 border-blue-dinum" to={`/entreprise/${uniteLegale.rid}#etablissements`}>{uniteLegale.etablissements.length} {uniteLegale.etablissements.length > 1 ? 'établissements. ' : 'établissement. '}</Link>
+                            Elle possède <Link className="text-blue-dinum font-normal border-b-1 border-blue-dinum" to={`/entreprise/${uniteLegale.rid}#etablissements`}>{uniteLegale.etablissements.length} {uniteLegale.etablissements.length > 1 ? 'établissements. ' : 'établissement. '}</Link>
                         </>
                         :
                         <>

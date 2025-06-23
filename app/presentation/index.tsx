@@ -14,7 +14,7 @@ export const meta: MetaFunction = () => {
 
 export default function HomePage() {
     return (
-        <div>
+        <div className="bg-zinc-50">
             <div className="flex flex-col gap-4 items-center justify-center h-full">
                 <div className="flex flex-col items-center gap-6 max-w-xl w-full p-4 py-20 md:py-40">
                     <div className="flex flex-col gap-4 w-full items-center">

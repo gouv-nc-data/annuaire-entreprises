@@ -130,7 +130,7 @@ body {
   /* Content page component style */
 
   .text-common {
-    @apply text-zinc-900 font-light text-base;
+    @apply text-slate-700 font-light text-base;
   }
 
   .link-common {
