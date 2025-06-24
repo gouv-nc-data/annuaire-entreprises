@@ -1,0 +1,9 @@
+version: "3.8" # this the version of Docker Compose
+services:
+  app:
+    build:
+      context: ./ 
+      dockerfile: ./Dockerfile.qualif
+    env_file: .env
+    ports:
+      - '3001:3001'

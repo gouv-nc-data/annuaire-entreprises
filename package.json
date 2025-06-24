@@ -7,6 +7,7 @@
     "build": "remix vite:build",
     "dev": "node ./server.js",
     "start": "cross-env NODE_ENV=production node ./server.js",
+    "start-qualif": "cross-env NODE_ENV=production NODE_TLS_REJECT_UNAUTHORIZED=0 node ./server.js",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "typecheck": "tsc",
     "pretest:e2e:run": "npm run build",
