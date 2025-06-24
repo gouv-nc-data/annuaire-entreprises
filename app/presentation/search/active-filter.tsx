@@ -20,7 +20,7 @@ export default function ActiveFilter({ index, label, filterLink }: { index: stri
 
     return (
         <div className="filter-tag flex" key={value}>
-            <span className="py-1 pe-1 ps-2 flex items-center">{displayLabel}</span>
+            <span className="py-1 pe-1 ps-2 flex items-center uppercase">{displayLabel}</span>
             <Link to={filterLink(value)} className="flex justify-center items-center bg-blue-200 hover:bg-blue-300 py-1 px-1">
                 <X className="w-4 h-4  text-blue-400" />
             </Link>

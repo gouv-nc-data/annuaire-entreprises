@@ -85,7 +85,7 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
                                 variant="outline"
                                 role="combobox"
                                 aria-expanded={open}
-                                className="flex flex-wrap max-w-xs h-full items-center justify-start whitespace-normal text-left pe-6 ps-2"
+                                className="flex flex-wrap max-w-xs h-full items-center justify-start whitespace-normal text-left pe-6 ps-2 uppercase"
                             >
                                 {filterValue
                                     ? handleDisplayValueName(data[filterValue])
@@ -106,7 +106,6 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
                                     <CommandGroup className="w-full p-1">
                                         <CommandItem value="-" className="hidden" />
                                         {Object.keys(data).filter((key: string) => !activeSearchParams?.includes(key)).map((key: string) => (
-
                                             <CommandItem
                                                 key={key}
                                                 value={
