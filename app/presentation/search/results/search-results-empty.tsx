@@ -1,7 +1,7 @@
 export default function SearchResultsEmpty() {
     return (
         <div className="flex flex-col items-start gap-4 text-left px-4">
-            <h3 className="text-2xl text-blue-dinum font-medium">Aucune structure n'a été trouvée pour vos critères de recherche. Nous vous suggérons de modifier votre recherche :</h3>
+            <h3 className="text-2xl text-blue-dinum font-medium">Aucune structure n'a été trouvée pour vos critères de recherche.</h3>
             <section className="flex flex-col gap-4">
                 <p className="text-zinc-900 font-normal text-md">Nous vous suggérons de modifier votre recherche :</p>
                 <ul className='list-item list-disc ms-4'>
