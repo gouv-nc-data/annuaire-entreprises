@@ -15,8 +15,8 @@ export default function HighlightFoundedTerm({ terms, value, hoverUnderline }: {
         <span className={`${hoverUnderline ? 'group-hover:underline' : ''}`}>
             {parts.map((part, index) =>
                 regex.test(part) ? (
-                    <span className="inline bg-yellow-200" key={index}>{part}</span>
-                ) : (<span className="inline whitespace-pre-wrap" key={index}>{part}</span>)
+                    <span className="inline bg-blue-100" key={index}>{part}</span>
+                ) : (<span className="inline" key={index}>{part}</span>)
             )}
         </span>
     );

@@ -12,7 +12,7 @@ export default function SearchPage() {
     return (
         <div>
             <SearchFilters />
-            <div className="py-10 max-w-7xl mx-auto px-4 min-h-[500px]">
+            <div className="py-10 max-w-7xl mx-auto px-4 min-h-[700px]">
                 {
                     searchResults === null
                         ? <SearchResultsGuide />

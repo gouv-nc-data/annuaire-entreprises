@@ -12,13 +12,15 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
     const [searchParams] = useSearchParams();
     const terme = searchParams.get('terme')
 
+    console.log(uniteLegale.dirigeants)
+
     return (
-        <div className="flex flex-col items-start gap-2">
+        <div className="flex flex-col items-start">
             <Link to={`/entreprise/${uniteLegale.rid}`} className="group flex flex-col gap-2">
                 <div className="flex flex-col gap-0">
                     <div className="flex flex-col gap-0">
                         <div className="flex items-center gap-4">
-                            {uniteLegale.nom_complet && <div className="text-blue-dinum uppercase font-medium text-lg group-hover:underline"><HighlightFoundedTerm value={uniteLegale.nom_complet} terms={terme} hoverUnderline={true} /></div>}
+                            {uniteLegale.nom_complet && <div className="text-blue-dinum uppercase font-medium text-lg group-hover:underline">{uniteLegale.nom_complet}</div>}
                             <UniteLegaleStatus etatRid={uniteLegale.etat_rid} onlyShowExpired={true} />
                         </div>
                         <div className="inline-block gap-2">
@@ -28,22 +30,21 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
                     </div>
                     {
                         uniteLegale.dirigeants && uniteLegale.dirigeants.length > 0 &&
-                        <div className="flex items-center gap-0 pt-1">
-
+                        <div className="flex items-center gap-0 pt-1 pb-1">
                             <SearchResultsUniteLegaleDirigeants dirigeants={uniteLegale.dirigeants} />
                         </div>
                     }
                 </div>
             </Link>
             <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-1 text-slate-600">
-                    <MapPin strokeWidth={1.6} className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-slate-700" />
-                    <div className="block">
-                        {uniteLegale.adresse_physique && <BasicInformation extraClass="!inline !text-sm !font-light !text-primary-300 !uppercase !tracking-wide inline" isBold isBlue information={<HighlightFoundedTerm value={uniteLegale.adresse_physique} terms={terme} hoverUnderline={true} />} />}
-                        <BasicInformation extraClass="inline !text-sm !font-light !text-primary-300 !uppercase !tracking-wide inline" isBold isBlue information={uniteLegale.ville_physique} />
+                <div className={`flex items-center gap-1 text-slate-600 ${uniteLegale.dirigeants && uniteLegale.dirigeants.length === 0 ? 'pt-0.5' : ''}`}>
+                    <MapPin strokeWidth={1.6} className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-slate-700 me-1" />
+                    <div className="inline">
+                        {uniteLegale.adresse_physique && <BasicInformation extraClass="!inline !font-normal text-sm !text-slate-700 uppercase" information={<HighlightFoundedTerm value={uniteLegale.adresse_physique} terms={terme} hoverUnderline={true} />} />}
+                        <BasicInformation extraClass="inline !font-normal text-sm !text-slate-700" isBold isBlue information={` ${uniteLegale.ville_physique}`} />
                     </div>
                 </div>
-                <div className="flex flex-col ms-6">
+                <div className="flex flex-col ms-7">
                     {
                         uniteLegale.etablissements && uniteLegale.etablissements.length > 0 &&
                         <SearchResultsUniteLegaleEtablissements rid={uniteLegale.rid} etablissements={uniteLegale.etablissements} uniteLegale={uniteLegale} />
