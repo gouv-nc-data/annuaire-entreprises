@@ -55,7 +55,7 @@ export default function SearchFiltersSituationEntreprise({ label, icon }: ISearc
                     <ChevronDown className={`w-3 h-3 ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
                 </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-xs shadow-xl" align="start">
+            <PopoverContent className="sm:w-[400px] shadow-xl" align="start">
                 <div className="flex flex-col justify-start gap-4">
                     <div className="space-y-2">
                         <p className="text-xs text-muted-foreground">
