@@ -34,7 +34,7 @@ export default function UniteLegaleEtablissementPage() {
                                 <EtablissementUniteLegaleResume uniteLegale={uniteLegale} etablissement={etablissement} />
                             </div>
                             <div className="w-full md:w-3/5">
-                                {ENV && ENV.MAPTILER_API_KEY && etablissementLocation && <EtablissementLocation MAPTILER_API_KEY={ENV.MAPTILER_API_KEY} etablissementLocation={etablissementLocation} />}
+                                {ENV && ENV.ESRI_API_KEY && etablissementLocation && <EtablissementLocation ESRI_API_KEY={ENV.ESRI_API_KEY} etablissementLocation={etablissementLocation} etablissement={etablissement} />}
                             </div>
                         </div>
                     </div>
