@@ -80,7 +80,7 @@ export default function PartenairePage() {
 
           </article>
         </div>
-        <Footer withPartenaire={true} withBacklinks={true} />
+        <Footer withPartenaire={false} withBacklinks={true} />
       </div>
     )
   )
