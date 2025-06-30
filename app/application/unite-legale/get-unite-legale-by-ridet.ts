@@ -6,7 +6,7 @@ import { UniteLegale } from "~/domain/entity/unite-legale";
 export async function getUniteLegaleEtablissementLoader({ params }: LoaderFunctionArgs) {
 
     const ridet = params.ridet
-    const MAPTILER_API_KEY = process.env.MAPTILER_API_KEY
+    const ESRI_API_KEY = process.env.ESRI_API_KEY
 
     if (!ridet || ridet.length === 0) {
         throw redirect(`/rechercher`)
@@ -40,7 +40,7 @@ export async function getUniteLegaleEtablissementLoader({ params }: LoaderFuncti
         uniteLegale: uniteLegaleEntity,
         etablissementLocation: geoSearchResult,
         ENV: {
-            MAPTILER_API_KEY
+            ESRI_API_KEY
         }
     }
 };

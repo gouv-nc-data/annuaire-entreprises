@@ -12,10 +12,10 @@ import type { LinksFunction } from "@remix-run/node";
 
 
 import Header from "./presentation/header";
-import Footer from "./presentation/footer";
 import GlobalLoading from "./presentation/ui/loader";
 
 import "./presentation/tailwind.css"
+// import "@arcgis/core/assets/esri/themes/light/main.css";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -30,8 +30,8 @@ export const links: LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css",
-  },
+    href: "https://js.arcgis.com/4.34/esri/themes/light/main.css",
+  }
 ];
 
 export async function loader() {
@@ -59,6 +59,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <ScrollRestoration />
         {data && data.ENV && data.ENV.UMAMI_URL && <script defer src={`${data.ENV.UMAMI_URL}/script.js`} data-website-id={`${data.ENV.UMAMI_WEBSITE_ID}`} />}
         <Scripts />
+
       </body>
     </html>
   );
