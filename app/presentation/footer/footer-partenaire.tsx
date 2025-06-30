@@ -2,7 +2,6 @@ import { Link } from '@remix-run/react'
 import LogoIsee from '/logo_isee.png'
 import LogoCma from '/logo_cma.png'
 import LogoCapNc from '/logo_cap-nc.png'
-import LogoCci from '/logo_cci.jpg'
 import LogoCafat from '/logo_cafat.jpg'
 import LogoGnc from '/logo_gnc.jpeg'
 
@@ -15,7 +14,7 @@ export default function FooterPartenaire() {
                         Nos partenaires actuels et à venir
                     </Link>
                 </div>
-                <ul className="flex flex-col sm:grid grid-cols-12 gap-4">
+                <ul className="flex flex-col sm:grid grid-cols-10 gap-4 w-full">
                     <li className="flex items-center w-full justify-center col-span-2">
                         <img src={LogoGnc} alt="Logo GNC" className='w-[120px] md:w-[100px]' />
                     </li>
@@ -27,9 +26,6 @@ export default function FooterPartenaire() {
                     </li>
                     <li className="flex items-center w-full justify-center col-span-2">
                         <img src={LogoCapNc} alt="Logo CAPNC" className='w-[120px] md:w-[100px]' />
-                    </li>
-                    <li className="flex items-center w-full justify-center col-span-2">
-                        <img src={LogoCci} alt="Logo CCI" className='w-[120px] md:w-[100px]' />
                     </li>
                     <li className="flex items-center w-full justify-center col-span-2">
                         <img src={LogoCafat} alt="Logo CAFAT" className='w-[120px] md:w-[100px]' />
