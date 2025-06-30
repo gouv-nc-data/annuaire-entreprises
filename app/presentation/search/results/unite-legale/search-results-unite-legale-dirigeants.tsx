@@ -9,9 +9,6 @@ export default function SearchResultsUniteLegaleDirigeants({ dirigeants }: { dir
     const terme = searchParams.get('terme')
     const dirigeantQuery = searchParams.get('dirigeant')
 
-
-    console.log(dirigeants)
-
     return (
         <div className='text-slate-600 flex items-start sm:items-center'>
             <UserRound strokeWidth={1.6} className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-slate-700 me-2" />

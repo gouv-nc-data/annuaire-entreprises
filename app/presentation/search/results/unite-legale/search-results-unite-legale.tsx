@@ -12,8 +12,6 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
     const [searchParams] = useSearchParams();
     const terme = searchParams.get('terme')
 
-    console.log(uniteLegale.dirigeants)
-
     return (
         <div className="flex flex-col items-start">
             <Link to={`/entreprise/${uniteLegale.rid}`} className="group flex flex-col gap-2">
