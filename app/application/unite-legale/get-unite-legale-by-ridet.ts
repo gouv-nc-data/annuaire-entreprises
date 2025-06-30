@@ -8,6 +8,8 @@ export async function getUniteLegaleEtablissementLoader({ params }: LoaderFuncti
     const ridet = params.ridet
     const ESRI_API_KEY = process.env.ESRI_API_KEY
 
+    console.log('ESRI_API_KEY', ESRI_API_KEY)
+
     if (!ridet || ridet.length === 0) {
         throw redirect(`/rechercher`)
     }
