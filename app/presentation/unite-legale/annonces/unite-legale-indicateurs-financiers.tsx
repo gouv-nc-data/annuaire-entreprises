@@ -20,22 +20,14 @@ export default function UniteLegaleIndicateursFinanciers({ uniteLegale }: { unit
         <section className='flex flex-col gap-6 p-6 bg-white rounded-xl shadow-sm border border-input'>
             <header className='flex w-full justify-between items-start gap-6'>
                 <h2 className='text-blue-dinum font-normal text-xl'>Dépôts des comptes</h2>
-                <div className='flex items-center gap-6'>
-                    <Link to="https://www.infogreffe.nc/" target='_blank' rel="noreferrer">
-                        <img src={InfogreffeLogo} className='w-20' alt={'Infogreffe logo'} />
-                    </Link>
-                    <Link to="https://www.isee.nc/" target='_blank' rel="noreferrer">
-                        <img src={IseeLogo} className='w-20' alt={'ISEE logo'} />
-                    </Link>
-                </div>
             </header>
             {
                 uniteLegale.indicateurs_financiers && uniteLegale.indicateurs_financiers.length > 0 ?
                     <div className='flex flex-col gap-6'>
 
                         <div className='flex flex-col'>
-                            <span className='text-common'>Cette entreprise possède {uniteLegale.indicateurs_financiers.length} {uniteLegale.indicateurs_financiers.length > 1 ? 'dépôts de compte' : 'dépôt de compte'} enregisté au <strong className='font-medium'>Registre du commerce et des sociétés (RCS)</strong> tenu par l&apos;<a className='link neutral' href='https://www.infogreffe.nc' target='_blank' rel="noreferrer">INFOGREFFE</a></span>
-                            <span className='text-common'>Pour en savoir plus, vous pouvez consulter la <a className='link neutral' href={`https://www.infogreffe.nc/entreprise/${uniteLegale.designation?.toLocaleLowerCase()}/${uniteLegale.rid}/`} target='_blank' rel="noreferrer">page de l&apos;entreprise</a> sur le site de l&apos;INFOGREFFE</span>
+                            <span className='text-common'>Cette entreprise possède {uniteLegale.indicateurs_financiers.length} {uniteLegale.indicateurs_financiers.length > 1 ? 'dépôts de compte' : 'dépôt de compte'} enregisté au <strong className='font-medium'>Registre du commerce et des sociétés (RCS).</strong></span>
+                            <span className='text-common'>Pour en savoir plus, vous pouvez consulter la <a className='link neutral' href={`https://www.infogreffe.nc/entreprise/${uniteLegale.designation?.toLocaleLowerCase()}/${uniteLegale.rid}/`} target='_blank' rel="noreferrer">page de l&apos;entreprise</a> sur le site de infogreffe.nc</span>
                         </div>
                         <div className='flex flex-col md:gap-0 gap-4'>
                             <div className='flex flex-col gap-6 w-full'>

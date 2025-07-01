@@ -18,9 +18,6 @@ export default function UniteLegaleInformations({ uniteLegale }: { uniteLegale: 
         <section className='flex flex-col gap-6 p-6 bg-white rounded-xl shadow-sm border border-input'>
             <header className='flex w-full justify-between items-start md:-mb-5'>
                 <h2 className='text-blue-dinum  font-normal text-xl'>Informations légales de {uniteLegale.nom_complet}</h2>
-                <Link to="https://www.isee.nc/" target='_blank' rel="noreferrer">
-                    <img src={IseeLogo} className='w-20' alt='Logo ISEE' />
-                </Link>
             </header>
             <div className='flex flex-col md:gap-0 gap-4'>
                 <div className='flex md:flex-row flex-col w-full md:gap-10 md:pb-0 pb-6'>

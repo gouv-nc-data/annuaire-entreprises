@@ -25,9 +25,6 @@ export default function UniteLegaleEtablissements({ uniteLegale }: { uniteLegale
             <div className='flex flex-col gap-6 p-4 md:p-6 bg-white rounded-xl shadow-sm border border-input'>
                 <header className='flex w-full justify-between items-start gap-6'>
                     <h2 className='text-blue-dinum  font-normal text-xl'>{etablissements.length} {etablissements.length > 1 ? 'établissements' : 'établissement'} de {uniteLegale.nom_complet}</h2>
-                    <Link to="https://www.isee.nc/" target='_blank' rel="noreferrer">
-                        <img src={IseeLogo} className='w-20' alt="Isee Logo" />
-                    </Link>
                 </header>
                 <div className='flex flex-col gap-8' id='opened-etablissements'>
                     {openedEtablissements && openedEtablissements.length > 0 &&
