@@ -14,6 +14,8 @@ export default function SearchResultsUniteLegaleDirigeants({ dirigeants }: { dir
     if (terme || dirigeantQuery) {
         const foundedDirigeants = dirigeants.filter(d => d.nom_complet?.toLowerCase().includes(terme?.toLowerCase() || dirigeantQuery?.toLowerCase() || ''))
 
+        console.log('foundedDirigeants', foundedDirigeants)
+
         if (foundedDirigeants.length > 0) {
             displayedDirigeants.push(...foundedDirigeants)
         }
