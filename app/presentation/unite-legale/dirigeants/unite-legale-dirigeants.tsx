@@ -47,7 +47,7 @@ export default function UniteLegaleDirigeants({ uniteLegale }: { uniteLegale: IU
                     </div>
             }
 
-            <div className='flex flex-col md:flex-row items-start md:items-center justify-end gap-4'>
+            <div className='flex flex-col md:flex-row items-start md:items-center justify-start gap-4 pt-4'>
                 <div className='flex items-center gap-4'>
                     <span className='text-xs font-light text-slate-500'>Mise à jour le 05/12/2024</span>
                     <Link to="https://www.infogreffe.nc/" target='_blank' rel="noreferrer">

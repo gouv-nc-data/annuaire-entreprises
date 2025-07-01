@@ -48,7 +48,7 @@ export default function UniteLegaleDepotActes({ uniteLegale }: { uniteLegale: IU
                         </div>
                     </div>
             }
-            <div className='flex flex-col md:flex-row items-start md:items-center justify-end gap-4'>
+            <div className='flex flex-col md:flex-row items-start md:items-center justify-start gap-4 pt-4'>
                 <div className='flex items-center gap-4'>
                     <span className='text-xs font-light text-slate-500'>Mise à jour le 06/02/2025</span>
                     <Link to={"https://www.infogreffe.nc/"} target='_blank' rel="noreferrer">
