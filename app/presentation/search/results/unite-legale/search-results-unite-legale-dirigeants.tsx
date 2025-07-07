@@ -35,7 +35,7 @@ export default function SearchResultsUniteLegaleDirigeants({ dirigeants }: { dir
                     displayedDirigeants.slice(0, 3).map((dirigeant) =>
                         <li key={Math.random()}
                             className='inline px-1 sm:px-2 sm:first:ps-0 !font-normal text-sm text-slate-700'>
-                            {(dirigeant.nom_complet || dirigeant.nom_personne_morale) && <HighlightFoundedTerm value={dirigeant.nom_complet?.toUpperCase() !== 'NULL NULL' ? dirigeant.nom_complet as string : dirigeant.nom_personne_morale as string} terms={dirigeantQuery ? dirigeantQuery : terme} />}
+                            {(dirigeant.nom_complet || dirigeant.nom_personne_morale) && <HighlightFoundedTerm value={dirigeant.nom_complet?.toUpperCase() !== 'NULL NULL' && dirigeant.nom_complet !== '' ? dirigeant.nom_complet as string : dirigeant.nom_personne_morale as string} terms={dirigeantQuery ? dirigeantQuery : terme} />}
                         </li>
                     )
                 }
