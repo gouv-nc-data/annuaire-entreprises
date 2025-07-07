@@ -32,7 +32,7 @@ export default function UniteLegaleDirigeant({ dirigeant }: { dirigeant: IDirige
             {dirigeant.type_personne === 'physique' &&
                 <div className='col-span-2'>
                     <span className="block md:hidden text-base font-medium text-primary">Action</span>
-                    <Link to={`/rechercher?dirigeant=${dirigeant.nom_complet}`} className="inline-flex items-center link">
+                    <Link to={`/rechercher?dirigeant=${dirigeant.nom_complet?.replace(/,/g, '')}`} className="inline-flex items-center link">
                         <ArrowRight className="w-4 h-4" />
                         voir ses entreprises
                     </Link>
