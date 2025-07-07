@@ -37,7 +37,7 @@ export default function GestionCookiesPage() {
 
         </article>
       </div>
-      <Footer withPartenaire={true} withBacklinks={true} />
+      <Footer withPartenaire={false} withBacklinks={false} />
     </div>
     )
 }

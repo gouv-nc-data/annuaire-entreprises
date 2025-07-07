@@ -75,7 +75,7 @@ export default function AboutPage() {
         </div>
         </article>
       </div>
-      <Footer withPartenaire={true} withBacklinks={true} />
+      <Footer withPartenaire={false} withBacklinks={false} />
     </div>
     )
 }
