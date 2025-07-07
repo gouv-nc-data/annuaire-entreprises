@@ -43,7 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const data = useLoaderData<typeof loader>();
 
   return (
-    <html lang="en" className="font-sans scroll-smooth scroll-pt-4">
+    <html lang="en" className="!font-sans scroll-smooth scroll-pt-4">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
