@@ -24,10 +24,15 @@ export default function SearchResultsUniteLegaleEtablissements({ etablissements,
 
 
     if (terme) {
-        openedEtablissements.forEach(etablissement => {
+
+
+        etablissements.forEach(etablissement => {
+
             if (etablissement.nom_complet && removeAccents(etablissement.nom_complet.toLowerCase()).includes(removeAccents(terme.toLowerCase()))) {
                 foundEtablissementsByQueryTerme.push(etablissement)
             } else if (etablissement.adresse_physique && removeAccents(etablissement.adresse_physique.toLowerCase()).includes(removeAccents(terme.toLocaleLowerCase()))) {
+                foundEtablissementsByQueryTerme.push(etablissement)
+            } else if (etablissement.ridet && etablissement.ridet.includes(terme.split(' ').join(''))) {
                 foundEtablissementsByQueryTerme.push(etablissement)
             }
         })
@@ -39,6 +44,8 @@ export default function SearchResultsUniteLegaleEtablissements({ etablissements,
             }
         })
     }
+
+    console.log('foundEtablissementsByQueryTerme : ', foundEtablissementsByQueryTerme)
 
     return (
         <div>
