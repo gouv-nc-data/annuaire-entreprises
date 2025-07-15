@@ -30,6 +30,7 @@ export default function FooterMain() {
                 <ul className="flex items-center text-white gap-4">
                     <li><Link to="/a-propos"><span className="underline font-light text-sm">À propos</span></Link></li>
                     <li><Link to="/mentions-legales"><span className="underline font-light text-sm">Mentions légales</span></Link></li>
+                    <li><Link to="/retours-usagers"><span className="underline font-light text-sm">Contact</span></Link></li>
                     <li><Link to="/gestion-cookies"><span className="underline font-light text-sm">Gestion des cookies</span></Link></li>
                     <li><Link to="/donnees-personnelles"><span className="underline font-light text-sm">Données personnelles</span></Link></li>
                 </ul>

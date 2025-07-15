@@ -30,7 +30,7 @@ export default function UsageForm() {
                 </div>
                 <Textarea placeholder="Décrivez votre retour" name="reason" />
                 <p className="text-muted-foreground text-sm font-light">
-                    LEs données de ce formulaire sont anonymes et sont traitées par la DINUM pour permettre d&apos;améliorer le service annuaire-entreprise.gouv.nc.
+                    Les données de ce formulaire sont anonymes et sont traitées par la DINUM pour permettre d&apos;améliorer le service annuaire-entreprise.gouv.nc.
                 </p>
                 <Button>Envoyer <Send className="w-4 h-4" /></Button>
             </div>
