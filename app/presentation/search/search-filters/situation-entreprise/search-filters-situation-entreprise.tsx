@@ -67,7 +67,7 @@ export default function SearchFiltersSituationEntreprise({ label, icon }: ISearc
                             <button onClick={() => handleOnClick('R')}
                                 className={`w-full flex gap-2 items-center rounded-lg p-2 px-3 font-light border-1 text-sm ${searchParamsSituationEntreprise === 'R' ? 'bg-red-100  border-red-400 border-1 text-red-600 font-medium' : 'text-red-500 hover:bg-red-50 hover:text-red-600 border-transparent'}`}
                             >
-                                <FileX strokeWidth={1.2} className={`${searchParamsSituationEntreprise === 'R' ? 'fill-red-200' : 'text-red-500 fill-red-50'} w-5 h-5 text-red-dinum`} />
+                                <FileX strokeWidth={1.2} className={`${searchParamsSituationEntreprise === 'R' ? 'fill-red-200' : 'text-red-500 fill-red-50'} w-4 h-4 text-red-dinum`} />
                                 <span>Fermée</span>
                             </button>
                         </li>
@@ -75,7 +75,7 @@ export default function SearchFiltersSituationEntreprise({ label, icon }: ISearc
                             <button onClick={() => handleOnClick('I')}
                                 className={`w-full flex gap-2 items-center  rounded-lg p-2 px-3 font-light border-1 text-sm ${searchParamsSituationEntreprise === 'I' ? 'bg-blue-100  border-blue-200 border-1  text-blue-dinum  font-medium' : 'text-blue-600 hover:bg-blue-50 hover:text-blue-dinum border-transparent'}`}
                             >
-                                <FileCheck strokeWidth={1.2} className={`${searchParamsSituationEntreprise === 'I' ? 'fill-blue-200' : 'fill-blue-50'} w-5 h-5 text-blue-dinum `} />
+                                <FileCheck strokeWidth={1.2} className={`${searchParamsSituationEntreprise === 'I' ? 'fill-blue-200' : 'fill-blue-50'} w-4 h-4 text-blue-dinum `} />
                                 <span>En activité</span>
                             </button>
                         </li>

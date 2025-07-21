@@ -1,11 +1,12 @@
-export type SearchParamskeyStringType = 'activite_principale' | 'forme_juridique' | 'ville' | 'dirigeant';
+export type SearchParamskeyStringType = 'activite_principale' | 'forme_juridique' | 'ville' | 'dirigeant' | 'type_structure';
 
 interface ISearchParams {
     q: string | null,
     ville: string[] | null,
     codePostal: string[] | null,
     page: string | null,
-    formeJuridique: string[] | null
+    formeJuridique: string[] | null,
+    typeStructure: string | null,
     situationEntreprise: 'I' | 'R' | null;
     activitePrincipale: string[] | null
 }
@@ -18,6 +19,7 @@ export class SearchParams implements ISearchParams {
     page: string | null = "1"
     formeJuridique: string[] | null = null;
     activitePrincipale: string[] | null = null;
+    typeStructure: string | null = null;
     situationEntreprise: 'I' | 'R' | null = null;
     dirigeant: string | null = null;
     perPage: string | null = null;
@@ -30,8 +32,8 @@ export class SearchParams implements ISearchParams {
 
     //Booleans values to know if category filters are active
     isCityFilterActive: boolean = false
-    isFormeJuridiqueFilterActive: boolean = false
     isCodeNafApeFilterActive: boolean = false
+    isStructureFilterActive: boolean = false
 
     constructor(params: URLSearchParams) {
 
@@ -39,6 +41,7 @@ export class SearchParams implements ISearchParams {
         this.dirigeant = params.get('dirigeant') ?? '';
         this.page = params.get('page') ?? '1';
         this.perPage = params.get('per_page') ?? '';
+        this.typeStructure = params.get('type_structure') ?? '';
         const ville = params.get('ville');
         const codePostal = params.get('code_postal')
         const formeJuridique = params.get('forme_juridique')
@@ -74,6 +77,8 @@ export class SearchParams implements ISearchParams {
                 return this.activitePrincipale
             case ("ville"):
                 return this.ville
+            case ("type_structure"):
+                return this.typeStructure
         }
     }
 
@@ -103,12 +108,19 @@ export class SearchParams implements ISearchParams {
                 }
 
                 return
+
+            case ("type_structure"):
+                if (typeof value === 'string') {
+                    this.typeStructure = value
+                }
+
+                return
         }
     }
 
     checkActiveFilters() {
         this.checkCityFilters()
-        this.checkFormeJuridiqueFilters()
+        this.checkStructureFilters()
         this.checkCodeApeNafFilters()
     }
 
@@ -120,11 +132,12 @@ export class SearchParams implements ISearchParams {
         }
     }
 
-    checkFormeJuridiqueFilters() {
-        if (this.formeJuridique && this.formeJuridique.length > 0) {
-            this.isFormeJuridiqueFilterActive = true
+    checkStructureFilters() {
+
+        if (this.typeStructure && this.typeStructure.length > 0 || this.formeJuridique && this.formeJuridique.length > 0) {
+            this.isStructureFilterActive = true
         } else {
-            this.isFormeJuridiqueFilterActive = false
+            this.isStructureFilterActive = false
         }
     }
 
@@ -176,6 +189,10 @@ export class SearchParams implements ISearchParams {
             searchParams.set('situation_entreprise', this.situationEntreprise)
         }
 
+        if (this.typeStructure) {
+            searchParams.set('type_structure', this.typeStructure)
+        }
+
         this.query = searchParams.toString()
     }
 
@@ -213,6 +230,10 @@ export class SearchParams implements ISearchParams {
 
         if (this.situationEntreprise) {
             searchParams.set('situation_entreprise', this.situationEntreprise)
+        }
+
+        if (this.typeStructure) {
+            searchParams.set('type_structure', this.typeStructure)
         }
 
         this.url = searchParams.toString()

@@ -32,6 +32,7 @@ export interface IUniteLegale {
     etat_rid: 'R' | 'I' | 'S' | null
     nom_complet: string | null
     adresse_complete: string | null
+    type_structure: string | null
 
     numero_rcs: string | null
     date_immat_rcs: string | null
@@ -81,6 +82,7 @@ export class UniteLegale implements IUniteLegale {
     motif_radiation: string | null = null
     convention_collective: string | null = null
     situation_entreprise: string | null = null
+    type_structure: string | null = null
     nom_complet: string | null = null
     adresse_complete: string | null = null
     etat_rid: 'R' | 'I' | 'S' | null = null

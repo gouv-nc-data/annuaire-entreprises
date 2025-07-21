@@ -45,8 +45,6 @@ export default function SearchResultsUniteLegaleEtablissements({ etablissements,
         })
     }
 
-    console.log('foundEtablissementsByQueryTerme : ', foundEtablissementsByQueryTerme)
-
     return (
         <div>
             <ul className='flex flex-col'>
