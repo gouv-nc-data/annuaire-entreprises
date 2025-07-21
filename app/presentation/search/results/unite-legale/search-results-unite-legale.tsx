@@ -6,6 +6,8 @@ import SearchResultsUniteLegaleEtablissements from "./search-results-unite-legal
 import UniteLegaleStatus from "~/presentation/unite-legale/unite-legale-status"
 import BasicInformation from "~/presentation/unite-legale/common/basic-information"
 import HighlightFoundedTerm from "~/presentation/ui/highlight-founded-terme";
+import BadgeTypeStructure from "~/presentation/unite-legale/common/badge-type-structure"
+import { TypeStructure } from "~/domain/entity/type-structure"
 
 export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale: IUniteLegale }) {
 
@@ -19,6 +21,7 @@ export default function SearchResultsUniteLegale({ uniteLegale }: { uniteLegale:
                     <div className="flex flex-col gap-0">
                         <div className="flex items-center gap-4">
                             {uniteLegale.nom_complet && <div className="text-blue-dinum uppercase font-medium text-lg group-hover:underline">{uniteLegale.nom_complet}</div>}
+                            {uniteLegale.type_structure && <BadgeTypeStructure typeStructure={uniteLegale.type_structure as TypeStructure} />}
                             <UniteLegaleStatus etatRid={uniteLegale.etat_rid} onlyShowExpired={true} />
                         </div>
                         <div className="inline-block gap-2">

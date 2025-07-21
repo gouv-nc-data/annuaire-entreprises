@@ -1,12 +1,10 @@
 import { IUniteLegale } from "~/domain/entity/unite-legale";
-import UniteLegaleStatus from "./unite-legale-status";
 import UniteLegaleTextDescription from "./unite-legale-text-description";
 import { IEtablissement } from "~/domain/entity/etablissement";
-import EtablissementTextDescription from "./etablissement/etablissement-text-description";
-import SituationStatus from "./common/situation-status";
 import BasicInformation from "./common/basic-information";
-import { formatRid } from "~/utils/format-rid";
 import CommonRidetStatus from "./common/common-ridet-status";
+import BadgeTypeStructure from "./common/badge-type-structure";
+import { TypeStructure } from "~/domain/entity/type-structure";
 
 export default function UniteLegaleHeader({ uniteLegale, showShareButton, etablissement }: { uniteLegale: IUniteLegale, showShareButton?: boolean, etablissement?: IEtablissement }) {
 
@@ -40,7 +38,6 @@ export default function UniteLegaleHeader({ uniteLegale, showShareButton, etabli
                             ? null
                             : <UniteLegaleTextDescription uniteLegale={uniteLegale} />
                     }
-
                 </div>
             </div>
 
