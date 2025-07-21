@@ -8,6 +8,7 @@ import Footer from "../footer";
 
 export default function SearchPage() {
     const searchResults = useLoaderData<typeof getSearchResultsLoader>();
+    
 
     return (
         <div>
