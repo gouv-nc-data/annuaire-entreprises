@@ -6,10 +6,12 @@ import HighlightFoundedTermDirigeants from '~/presentation/ui/highlight-founded-
 
 export default function SearchResultsUniteLegaleDirigeants({ dirigeants }: { dirigeants: IDirigeant[] }) {
 
+
+
     const [searchParams] = useSearchParams();
     const terme = searchParams.get('terme')
     const dirigeantQuery = searchParams.get('dirigeant')
-    const displayedDirigeants: IDirigeant[] = []
+    let displayedDirigeants: IDirigeant[] = []
 
     if (terme || dirigeantQuery) {
         const foundedDirigeants: IDirigeant[] = []
@@ -49,6 +51,10 @@ export default function SearchResultsUniteLegaleDirigeants({ dirigeants }: { dir
                 }
             })
         }
+    }
+
+    if (displayedDirigeants.length === 0) {
+        displayedDirigeants.push(...dirigeants)
     }
 
     return (
