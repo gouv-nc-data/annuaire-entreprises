@@ -24,7 +24,7 @@ export default function UsageForm() {
                         </div>
                         <div className="flex items-center space-x-2">
                             <RadioGroupItem value="other" id="option-other" />
-                            <Label htmlFor="option-other">Autre retours</Label>
+                            <Label htmlFor="option-other">Autre retour</Label>
                         </div>
                     </RadioGroup>
                 </div>
