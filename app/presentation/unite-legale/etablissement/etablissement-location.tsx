@@ -7,7 +7,7 @@ import EtablissementMap from './etablissement-map.client'
 export default function EtablissementLocation({ ESRI_API_KEY, etablissementLocation, etablissement }: { ESRI_API_KEY: string, etablissementLocation: IGeoSearchResult, etablissement: IEtablissement }) {
 
     return (
-        <div className='relative w-full rounded-xl bg-white shadow-sm flex-1 overflow-hidden h-full min-h-[100px]'>
+        <div className='relative w-full rounded-xl bg-white shadow-sm flex-1 overflow-hidden h-full min-h-[100px]' id="etablissement-map">
             {/* <img className="absolute left-0 top-0 w-full h-full object-cover" src={LocationIllustration} alt="Illustrations agents publiques | Annuaire entreprise" /> */}
             <ClientOnly fallback={<div>Loading...</div>}>
                 {() => <EtablissementMap ESRI_API_KEY={ESRI_API_KEY} etablissementLocation={etablissementLocation} etablissement={etablissement} />}

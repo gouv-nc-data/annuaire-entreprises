@@ -11,6 +11,8 @@ import Footer from "~/presentation/footer";
 import EtablissementLocation from "./etablissement-location";
 import EtablissementTextDescription from "./etablissement-text-description";
 import EtablissementUniteLegaleResume from "./etablissement-unite-legale-resume";
+import { Button } from "~/presentation/ui/button";
+import { Printer } from "lucide-react";
 
 export default function UniteLegaleEtablissementPage() {
 
@@ -22,6 +24,10 @@ export default function UniteLegaleEtablissementPage() {
     useEffect(() => {
         setUniteLegaleHistoryToLocalStorage(uniteLegale)
     }, [])
+
+    const handleOnPrint = () => {
+        window.print();
+    }
 
     return (
         etablissement
@@ -37,6 +43,11 @@ export default function UniteLegaleEtablissementPage() {
                                 {ENV && ENV.ESRI_API_KEY && etablissementLocation && <EtablissementLocation ESRI_API_KEY={ENV.ESRI_API_KEY} etablissementLocation={etablissementLocation} etablissement={etablissement} />}
                             </div>
                         </div>
+                    </div>
+                    <div className={`w-full flex items-center justify-end`} id="print-button">
+                        <Button variant="outline" onClick={handleOnPrint}>
+                            <Printer className="w-4 h-4" />
+                        </Button>
                     </div>
                     <EtablissementTextDescription uniteLegale={uniteLegale} etablissement={etablissement} />
                     <EtablissementInformations uniteLegale={uniteLegale} etablissement={etablissement} />

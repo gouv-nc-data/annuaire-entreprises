@@ -97,6 +97,26 @@ body {
   }
 }
 
+@layer utilities {
+  @media print {
+    #header {
+      display: none !important;
+    }
+
+    #unite-legale-navigation {
+      display: none !important;
+    }
+
+    #print-button {
+      display: none !important;
+    }
+
+    #etablissement-map {
+      display: none !important;
+    }
+  }
+}
+
 @layer components {
   .tag {
     @apply rounded-xl flex items-center gap-2 text-xs overflow-hidden text-primary font-medium tracking-wide

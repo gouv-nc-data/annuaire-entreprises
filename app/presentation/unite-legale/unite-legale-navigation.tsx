@@ -7,7 +7,7 @@ export default function UniteLegaleNavigation({ rid }: { rid: IUniteLegale['rid'
     const location = useLocation()
 
     return (
-        <nav className="">
+        <nav className="" id="unite-legale-navigation">
             <ul className="inline-flex items-center gap-1 bg-white p-1 rounded-xl shadow-sm border border-input">
                 <li>
                     <Link
