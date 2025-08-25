@@ -24,26 +24,6 @@ export default function HomePage() {
                         </div>
                         <p className="text-common">Recherchez les informations légales publiques des entreprises, associations et services publics en Nouvelle-Calédonie.</p>
                     </div>
-                    <div className="flex flex-col items-start gap-2">
-                        <div className="sm:flex hidden gap-2">
-                            <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
-                                <span className="text-xs leading-tight font-medium text-zinc-700">Par sa commune</span>
-                                <MapPinned className="w-4 h-4 text-blue-dinum" />
-                            </div>
-                            <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
-                                <span className="text-xs leading-tight font-medium text-zinc-700">Par ses dirigeants</span>
-                                <User className="w-4 h-4 text-blue-dinum" />
-                            </div>
-                            <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
-                                <span className="text-xs leading-tight font-medium text-zinc-700">Par sa forme juridique</span>
-                                <Building2 className="w-4 h-4 text-blue-dinum" />
-                            </div>
-                            <div className="flex flex-col gap-6 border-1 border-zinc-200 rounded-xl p-4">
-                                <span className="text-xs leading-tight font-medium text-zinc-700">Par son activité</span>
-                                <Briefcase className="w-4 h-4 text-blue-dinum" />
-                            </div>
-                        </div>
-                    </div>
                     <div className="flex flex-col items-start gap-2 bg-white w-full p-6 rounded-2xl shadow-sm">
                         <SearchBar />
                     </div>
