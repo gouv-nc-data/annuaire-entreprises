@@ -22,12 +22,8 @@ export default function SearchResultsUniteLegaleEtablissements({ etablissements,
             : openedEtablissements.push(etablissement)
     }
 
-
     if (terme) {
-
-
-        etablissements.forEach(etablissement => {
-
+        openedEtablissements.forEach(etablissement => {
             if (etablissement.nom_complet && removeAccents(etablissement.nom_complet.toLowerCase()).includes(removeAccents(terme.toLowerCase()))) {
                 foundEtablissementsByQueryTerme.push(etablissement)
             } else if (etablissement.adresse_physique && removeAccents(etablissement.adresse_physique.toLowerCase()).includes(removeAccents(terme.toLocaleLowerCase()))) {
