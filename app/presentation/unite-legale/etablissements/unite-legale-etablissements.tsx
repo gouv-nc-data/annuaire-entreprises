@@ -37,7 +37,7 @@ export default function UniteLegaleEtablissements({ uniteLegale }: { uniteLegale
                                 <UniteLegaleEtablissementsListHeader />
                                 <div className='flex flex-col gap-2 w-full'>
                                     {
-                                        openedEtablissements.map(etablissement => <UniteLegaleEtablissement key={etablissement.ridet} etablissement={etablissement} />)
+                                        openedEtablissements.sort((a, b) => Number(a.ridet) - Number(b.ridet)).map(etablissement => <UniteLegaleEtablissement key={etablissement.ridet} etablissement={etablissement} />)
                                     }
                                 </div>
                             </div>
@@ -58,7 +58,7 @@ export default function UniteLegaleEtablissements({ uniteLegale }: { uniteLegale
                                 <UniteLegaleEtablissementsListHeader />
                                 <div className='flex flex-col gap-2 w-full'>
                                     {
-                                        closedEtablissements.map(etablissement => <UniteLegaleEtablissement key={etablissement.ridet} etablissement={etablissement} />)
+                                        closedEtablissements.sort((a, b) => Number(a.ridet) - Number(b.ridet)).map(etablissement => <UniteLegaleEtablissement key={etablissement.ridet} etablissement={etablissement} />)
                                     }
                                 </div>
                             </div>
