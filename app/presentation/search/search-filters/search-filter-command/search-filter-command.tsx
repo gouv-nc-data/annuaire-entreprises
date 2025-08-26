@@ -42,7 +42,9 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
 
     function createFilterLink(item: string) {
         const newSearchParams = new SearchParams(searchParams)
-        const newActiveSearchParams = activeSearchParams?.filter(filter => filter !== item)
+        const newActiveSearchParams = Array.isArray(activeSearchParams)
+            ? activeSearchParams.filter((filter: string) => filter !== item)
+            : (activeSearchParams && activeSearchParams !== item ? [activeSearchParams] : []);
 
         newSearchParams.page = "1"
         newSearchParams.setValue(paramName, newActiveSearchParams ? newActiveSearchParams : [])
@@ -63,11 +65,15 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
     }
 
     const activeSearchParamsData = activeSearchParams && activeSearchParams.length > 0
-        ? activeSearchParams.map((param: string) => {
-            return {
-                [param]: data[param]
-            }
-        })
+        ? Array.isArray(activeSearchParams)
+            ? activeSearchParams.map((param: string) => {
+                return {
+                    [param]: data[param]
+                }
+            })
+            : [{
+                [activeSearchParams]: data[activeSearchParams]
+            }]
         : []
 
     return (
@@ -137,7 +143,9 @@ export default function SearchFilterAdministrativeSituation({ paramName, label, 
                             </Command>
                         </PopoverContent>
                     </Popover>
-                    <Button><Plus className="w-5 h-5" /></Button>
+                </div>
+                <div className="flex items-center justify-end">
+                    <Button><Plus className="w-5 h-5" />Appliquer</Button>
                 </div>
             </Form>
         </div>
